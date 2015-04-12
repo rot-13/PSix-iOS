@@ -16,6 +16,9 @@
 		D0958F9D1ADA9D0900FC4AA4 /* PSixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F9C1ADA9D0900FC4AA4 /* PSixTests.swift */; };
 		D0958FA81ADA9E2900FC4AA4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FA61ADA9E2900FC4AA4 /* Bolts.framework */; };
 		D0958FA91ADA9E2900FC4AA4 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FA71ADA9E2900FC4AA4 /* Parse.framework */; };
+		D0958FAE1ADAA44000FC4AA4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FAB1ADAA44000FC4AA4 /* FBSDKCoreKit.framework */; };
+		D0958FAF1ADAA44000FC4AA4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FAC1ADAA44000FC4AA4 /* FBSDKLoginKit.framework */; };
+		D0958FB01ADAA44000FC4AA4 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FAD1ADAA44000FC4AA4 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		D0958F9C1ADA9D0900FC4AA4 /* PSixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSixTests.swift; sourceTree = "<group>"; };
 		D0958FA61ADA9E2900FC4AA4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		D0958FA71ADA9E2900FC4AA4 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		D0958FAB1ADAA44000FC4AA4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		D0958FAC1ADAA44000FC4AA4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		D0958FAD1ADAA44000FC4AA4 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0958FA91ADA9E2900FC4AA4 /* Parse.framework in Frameworks */,
+				D0958FAE1ADAA44000FC4AA4 /* FBSDKCoreKit.framework in Frameworks */,
+				D0958FB01ADAA44000FC4AA4 /* FBSDKShareKit.framework in Frameworks */,
+				D0958FAF1ADAA44000FC4AA4 /* FBSDKLoginKit.framework in Frameworks */,
 				D0958FA81ADA9E2900FC4AA4 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +134,9 @@
 		D0958FAA1ADA9E9300FC4AA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0958FAB1ADAA44000FC4AA4 /* FBSDKCoreKit.framework */,
+				D0958FAC1ADAA44000FC4AA4 /* FBSDKLoginKit.framework */,
+				D0958FAD1ADAA44000FC4AA4 /* FBSDKShareKit.framework */,
 				D0958FA61ADA9E2900FC4AA4 /* Bolts.framework */,
 				D0958FA71ADA9E2900FC4AA4 /* Parse.framework */,
 			);
@@ -365,6 +377,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/aturzion/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = PSix/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -379,6 +392,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/aturzion/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = PSix/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
