@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0501E0F1ADBD7E900EB6A83 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */; };
+		D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */; };
 		D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */; };
 		D0958F871ADA9D0900FC4AA4 /* PSix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0958F851ADA9D0900FC4AA4 /* PSix.xcdatamodeld */; };
-		D0958F891ADA9D0900FC4AA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F881ADA9D0900FC4AA4 /* ViewController.swift */; };
 		D0958F8C1ADA9D0900FC4AA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8A1ADA9D0900FC4AA4 /* Main.storyboard */; };
 		D0958F8E1ADA9D0900FC4AA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */; };
 		D0958F911ADA9D0900FC4AA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8F1ADA9D0900FC4AA4 /* LaunchScreen.xib */; };
@@ -43,11 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D0501E0C1ADBBA9000EB6A83 /* ObjCBridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridging.h; sourceTree = "<group>"; };
+		D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsListViewController.swift; sourceTree = "<group>"; };
 		D0958F7E1ADA9D0900FC4AA4 /* PSix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0958F821ADA9D0900FC4AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0958F861ADA9D0900FC4AA4 /* PSix.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PSix.xcdatamodel; sourceTree = "<group>"; };
-		D0958F881ADA9D0900FC4AA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D0958F8B1ADA9D0900FC4AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D0958F901ADA9D0900FC4AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -128,8 +131,10 @@
 		D0958F801ADA9D0900FC4AA4 /* PSix */ = {
 			isa = PBXGroup;
 			children = (
+				D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */,
+				D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */,
 				D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */,
-				D0958F881ADA9D0900FC4AA4 /* ViewController.swift */,
+				D0501E0C1ADBBA9000EB6A83 /* ObjCBridging.h */,
 				D0958F8A1ADA9D0900FC4AA4 /* Main.storyboard */,
 				D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */,
 				D0958F8F1ADA9D0900FC4AA4 /* LaunchScreen.xib */,
@@ -287,9 +292,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0958F891ADA9D0900FC4AA4 /* ViewController.swift in Sources */,
+				D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */,
 				D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */,
 				D0958F871ADA9D0900FC4AA4 /* PSix.xcdatamodeld in Sources */,
+				D0501E0F1ADBD7E900EB6A83 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +432,7 @@
 				INFOPLIST_FILE = PSix/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = PSix/ObjCBridging.h;
 			};
 			name = Debug;
 		};
@@ -441,6 +448,7 @@
 				INFOPLIST_FILE = PSix/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = PSix/ObjCBridging.h;
 			};
 			name = Release;
 		};
@@ -497,6 +505,7 @@
 				D0958FA21ADA9D0900FC4AA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0958FA31ADA9D0900FC4AA4 /* Build configuration list for PBXNativeTarget "PSixTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +514,7 @@
 				D0958FA51ADA9D0900FC4AA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

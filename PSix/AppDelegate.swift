@@ -29,7 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
-        return true
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController = storyboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
+        window?.rootViewController = initialViewController
+        window?.makeKeyAndVisible()
+        
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -48,6 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        FBSDKAppEvents.activateApp()
     }
 
     func applicationWillTerminate(application: UIApplication) {

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Onboarding View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="OnboardingViewController" customModule="PSix" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,62 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Onboarding" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdE-uQ-8j0">
+                                <rect key="frame" x="227" y="274" width="146" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="146" id="cwZ-ch-qTG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UdE-uQ-8j0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6Zy-TH-lb0"/>
+                            <constraint firstItem="UdE-uQ-8j0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BuM-Mg-T5L"/>
+                            <constraint firstItem="UdE-uQ-8j0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="254" id="cIA-pc-a3b"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="215" y="132"/>
+        </scene>
+        <!--Events List View Controller-->
+        <scene sceneID="OkU-2M-bDP">
+            <objects>
+                <viewController storyboardIdentifier="EventsListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BP8-32-AkL" customClass="EventsListViewController" customModule="PSix" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sc9-X4-zWy"/>
+                        <viewControllerLayoutGuide type="bottom" id="o2o-aq-baU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Myu-gp-6mD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egW-de-kqG">
+                                <rect key="frame" x="233" y="274" width="135" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="Qf2-fV-TJV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="egW-de-kqG" firstAttribute="top" secondItem="sc9-X4-zWy" secondAttribute="bottom" constant="254" id="Bj4-88-hj8"/>
+                            <constraint firstItem="egW-de-kqG" firstAttribute="centerX" secondItem="Myu-gp-6mD" secondAttribute="centerX" id="K4K-wk-IIb"/>
+                            <constraint firstItem="egW-de-kqG" firstAttribute="centerY" secondItem="Myu-gp-6mD" secondAttribute="centerY" id="ThL-8x-f9k"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VJ5-tc-pD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="215" y="844"/>
         </scene>
     </scenes>
 </document>
