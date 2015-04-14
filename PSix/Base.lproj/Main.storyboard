@@ -55,6 +55,7 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="UfD-J0-CwR" id="fAd-F4-Rvn"/>
+                        <segue destination="BP8-32-AkL" kind="show" identifier="showEventsList" id="06O-CZ-9XZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -32,7 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewController = storyboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
+        let initialViewController: UIViewController
+        
+        if CurrentUser.isLoggedIn() {
+            initialViewController = storyboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
+        } else {
+            initialViewController = storyboard.instantiateViewControllerWithIdentifier("EventsListViewController") as! EventsListViewController
+        }
+        
         window?.rootViewController = initialViewController
         window?.makeKeyAndVisible()
         
