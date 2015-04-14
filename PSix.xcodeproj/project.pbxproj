@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D008A1181ADD001B00AF6666 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D008A1171ADD001B00AF6666 /* ParseFacebookUtilsV4.framework */; };
+		A01FAC2E013F6AB831E287F0 /* libPods-PSix.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39BDBF7FFA39053123B247C8 /* libPods-PSix.a */; };
 		D008A11A1ADD2F9E00AF6666 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D008A1191ADD2F9E00AF6666 /* CurrentUser.swift */; };
 		D0501E0F1ADBD7E900EB6A83 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */; };
 		D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */; };
@@ -17,21 +17,6 @@
 		D0958F8E1ADA9D0900FC4AA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */; };
 		D0958F911ADA9D0900FC4AA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8F1ADA9D0900FC4AA4 /* LaunchScreen.xib */; };
 		D0958F9D1ADA9D0900FC4AA4 /* PSixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F9C1ADA9D0900FC4AA4 /* PSixTests.swift */; };
-		D0958FA81ADA9E2900FC4AA4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FA61ADA9E2900FC4AA4 /* Bolts.framework */; };
-		D0958FA91ADA9E2900FC4AA4 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FA71ADA9E2900FC4AA4 /* Parse.framework */; };
-		D0958FAE1ADAA44000FC4AA4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FAB1ADAA44000FC4AA4 /* FBSDKCoreKit.framework */; };
-		D0958FAF1ADAA44000FC4AA4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FAC1ADAA44000FC4AA4 /* FBSDKLoginKit.framework */; };
-		D0958FB01ADAA44000FC4AA4 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FAD1ADAA44000FC4AA4 /* FBSDKShareKit.framework */; };
-		D0958FB21ADAB69E00FC4AA4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FB11ADAB69E00FC4AA4 /* AudioToolbox.framework */; };
-		D0958FB41ADAB6A400FC4AA4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FB31ADAB6A400FC4AA4 /* CFNetwork.framework */; };
-		D0958FB61ADAB6AE00FC4AA4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FB51ADAB6AE00FC4AA4 /* CoreGraphics.framework */; };
-		D0958FB81ADAB6B500FC4AA4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FB71ADAB6B500FC4AA4 /* CoreLocation.framework */; };
-		D0958FBA1ADAB6BB00FC4AA4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FB91ADAB6BB00FC4AA4 /* MobileCoreServices.framework */; };
-		D0958FBC1ADAB6C200FC4AA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FBB1ADAB6C200FC4AA4 /* QuartzCore.framework */; };
-		D0958FBE1ADAB6C800FC4AA4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FBD1ADAB6C800FC4AA4 /* Security.framework */; };
-		D0958FC21ADAB6D600FC4AA4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FC11ADAB6D600FC4AA4 /* SystemConfiguration.framework */; };
-		D0958FC41ADAB6E000FC4AA4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FC31ADAB6E000FC4AA4 /* libz.dylib */; };
-		D0958FC61ADAB6E800FC4AA4 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D0958FC51ADAB6E800FC4AA4 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D008A1171ADD001B00AF6666 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		0ED50DFA5BC13E55468E6751 /* Pods-PSix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PSix/Pods-PSix.debug.xcconfig"; sourceTree = "<group>"; };
+		1FDEA9F7EB8198959E50BE9E /* Pods-PSix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSix.release.xcconfig"; path = "Pods/Target Support Files/Pods-PSix/Pods-PSix.release.xcconfig"; sourceTree = "<group>"; };
+		39BDBF7FFA39053123B247C8 /* libPods-PSix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PSix.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D008A1191ADD2F9E00AF6666 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		D0501E0C1ADBBA9000EB6A83 /* ObjCBridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridging.h; sourceTree = "<group>"; };
 		D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -60,21 +47,6 @@
 		D0958F961ADA9D0900FC4AA4 /* PSixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0958F9B1ADA9D0900FC4AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0958F9C1ADA9D0900FC4AA4 /* PSixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSixTests.swift; sourceTree = "<group>"; };
-		D0958FA61ADA9E2900FC4AA4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		D0958FA71ADA9E2900FC4AA4 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		D0958FAB1ADAA44000FC4AA4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		D0958FAC1ADAA44000FC4AA4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		D0958FAD1ADAA44000FC4AA4 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
-		D0958FB11ADAB69E00FC4AA4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		D0958FB31ADAB6A400FC4AA4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		D0958FB51ADAB6AE00FC4AA4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D0958FB71ADAB6B500FC4AA4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		D0958FB91ADAB6BB00FC4AA4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		D0958FBB1ADAB6C200FC4AA4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		D0958FBD1ADAB6C800FC4AA4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		D0958FC11ADAB6D600FC4AA4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D0958FC31ADAB6E000FC4AA4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		D0958FC51ADAB6E800FC4AA4 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,22 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0958FC61ADAB6E800FC4AA4 /* libsqlite3.dylib in Frameworks */,
-				D0958FC41ADAB6E000FC4AA4 /* libz.dylib in Frameworks */,
-				D0958FC21ADAB6D600FC4AA4 /* SystemConfiguration.framework in Frameworks */,
-				D0958FBE1ADAB6C800FC4AA4 /* Security.framework in Frameworks */,
-				D0958FBC1ADAB6C200FC4AA4 /* QuartzCore.framework in Frameworks */,
-				D0958FBA1ADAB6BB00FC4AA4 /* MobileCoreServices.framework in Frameworks */,
-				D0958FB81ADAB6B500FC4AA4 /* CoreLocation.framework in Frameworks */,
-				D0958FB61ADAB6AE00FC4AA4 /* CoreGraphics.framework in Frameworks */,
-				D0958FB41ADAB6A400FC4AA4 /* CFNetwork.framework in Frameworks */,
-				D0958FB21ADAB69E00FC4AA4 /* AudioToolbox.framework in Frameworks */,
-				D008A1181ADD001B00AF6666 /* ParseFacebookUtilsV4.framework in Frameworks */,
-				D0958FA91ADA9E2900FC4AA4 /* Parse.framework in Frameworks */,
-				D0958FAE1ADAA44000FC4AA4 /* FBSDKCoreKit.framework in Frameworks */,
-				D0958FB01ADAA44000FC4AA4 /* FBSDKShareKit.framework in Frameworks */,
-				D0958FAF1ADAA44000FC4AA4 /* FBSDKLoginKit.framework in Frameworks */,
-				D0958FA81ADA9E2900FC4AA4 /* Bolts.framework in Frameworks */,
+				A01FAC2E013F6AB831E287F0 /* libPods-PSix.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A3D360FEF0536E3EFF77E6C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0ED50DFA5BC13E55468E6751 /* Pods-PSix.debug.xcconfig */,
+				1FDEA9F7EB8198959E50BE9E /* Pods-PSix.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D0958F751ADA9D0900FC4AA4 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +84,7 @@
 				D0958F991ADA9D0900FC4AA4 /* PSixTests */,
 				D0958F7F1ADA9D0900FC4AA4 /* Products */,
 				D0958FAA1ADA9E9300FC4AA4 /* Frameworks */,
+				9A3D360FEF0536E3EFF77E6C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,22 +142,7 @@
 		D0958FAA1ADA9E9300FC4AA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D0958FC51ADAB6E800FC4AA4 /* libsqlite3.dylib */,
-				D0958FC31ADAB6E000FC4AA4 /* libz.dylib */,
-				D0958FC11ADAB6D600FC4AA4 /* SystemConfiguration.framework */,
-				D0958FBD1ADAB6C800FC4AA4 /* Security.framework */,
-				D0958FBB1ADAB6C200FC4AA4 /* QuartzCore.framework */,
-				D0958FB91ADAB6BB00FC4AA4 /* MobileCoreServices.framework */,
-				D0958FB71ADAB6B500FC4AA4 /* CoreLocation.framework */,
-				D0958FB51ADAB6AE00FC4AA4 /* CoreGraphics.framework */,
-				D0958FB31ADAB6A400FC4AA4 /* CFNetwork.framework */,
-				D0958FB11ADAB69E00FC4AA4 /* AudioToolbox.framework */,
-				D0958FAB1ADAA44000FC4AA4 /* FBSDKCoreKit.framework */,
-				D0958FAC1ADAA44000FC4AA4 /* FBSDKLoginKit.framework */,
-				D0958FAD1ADAA44000FC4AA4 /* FBSDKShareKit.framework */,
-				D0958FA61ADA9E2900FC4AA4 /* Bolts.framework */,
-				D0958FA71ADA9E2900FC4AA4 /* Parse.framework */,
-				D008A1171ADD001B00AF6666 /* ParseFacebookUtilsV4.framework */,
+				39BDBF7FFA39053123B247C8 /* libPods-PSix.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0958FA01ADA9D0900FC4AA4 /* Build configuration list for PBXNativeTarget "PSix" */;
 			buildPhases = (
+				DB7210D0B8673B5511558EDB /* Check Pods Manifest.lock */,
 				D0958F7A1ADA9D0900FC4AA4 /* Sources */,
 				D0958F7B1ADA9D0900FC4AA4 /* Frameworks */,
 				D0958F7C1ADA9D0900FC4AA4 /* Resources */,
+				98A78551BCF6452193A7CB0D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -295,6 +249,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		98A78551BCF6452193A7CB0D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PSix/Pods-PSix-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB7210D0B8673B5511558EDB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0958F7A1ADA9D0900FC4AA4 /* Sources */ = {
@@ -432,6 +419,7 @@
 		};
 		D0958FA11ADA9D0900FC4AA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ED50DFA5BC13E55468E6751 /* Pods-PSix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -448,6 +436,7 @@
 		};
 		D0958FA21ADA9D0900FC4AA4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FDEA9F7EB8198959E50BE9E /* Pods-PSix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (

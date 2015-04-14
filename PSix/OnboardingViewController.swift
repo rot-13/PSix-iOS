@@ -30,7 +30,6 @@ class OnboardingViewController: UIViewController {
             CurrentUser.loginWithFacebook(["public_profile", "user_events"]) {
                 (user, error) -> Void in
                 if let user = user {
-                    user.saveInBackground()
                     self.setToLogoutMode()
                     self.performSegueWithIdentifier("showEventsList", sender: self)
                 }
