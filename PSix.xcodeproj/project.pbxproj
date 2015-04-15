@@ -16,7 +16,6 @@
 		D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */; };
 		D0958F871ADA9D0900FC4AA4 /* PSix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0958F851ADA9D0900FC4AA4 /* PSix.xcdatamodeld */; };
 		D0958F8E1ADA9D0900FC4AA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */; };
-		D0958F911ADA9D0900FC4AA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8F1ADA9D0900FC4AA4 /* LaunchScreen.xib */; };
 		D0958F9D1ADA9D0900FC4AA4 /* PSixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F9C1ADA9D0900FC4AA4 /* PSixTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +44,6 @@
 		D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0958F861ADA9D0900FC4AA4 /* PSix.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PSix.xcdatamodel; sourceTree = "<group>"; };
 		D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D0958F901ADA9D0900FC4AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D0958F961ADA9D0900FC4AA4 /* PSixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0958F9B1ADA9D0900FC4AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0958F9C1ADA9D0900FC4AA4 /* PSixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSixTests.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 		D0958F811ADA9D0900FC4AA4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D0958F8F1ADA9D0900FC4AA4 /* LaunchScreen.xib */,
 				D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */,
 				D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */,
 				D0501E0C1ADBBA9000EB6A83 /* ObjCBridging.h */,
@@ -263,7 +260,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0958F911ADA9D0900FC4AA4 /* LaunchScreen.xib in Resources */,
 				D0958F8E1ADA9D0900FC4AA4 /* Images.xcassets in Resources */,
 				D00632431ADE547400022DDF /* Onboarding.storyboard in Resources */,
 				D00632451ADE54DA00022DDF /* EventsList.storyboard in Resources */,
@@ -342,17 +338,6 @@
 			targetProxy = D0958F971ADA9D0900FC4AA4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D0958F8F1ADA9D0900FC4AA4 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D0958F901ADA9D0900FC4AA4 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D0958F9E1ADA9D0900FC4AA4 /* Debug */ = {
@@ -443,6 +428,7 @@
 			baseConfigurationReference = 0ED50DFA5BC13E55468E6751 /* Pods-PSix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -460,6 +446,7 @@
 			baseConfigurationReference = 1FDEA9F7EB8198959E50BE9E /* Pods-PSix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
