@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		A01FAC2E013F6AB831E287F0 /* libPods-PSix.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39BDBF7FFA39053123B247C8 /* libPods-PSix.a */; };
+		D00632431ADE547400022DDF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00632421ADE547400022DDF /* Onboarding.storyboard */; };
+		D00632451ADE54DA00022DDF /* EventsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00632441ADE54DA00022DDF /* EventsList.storyboard */; };
 		D008A11A1ADD2F9E00AF6666 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D008A1191ADD2F9E00AF6666 /* CurrentUser.swift */; };
 		D0501E0F1ADBD7E900EB6A83 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */; };
 		D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */; };
 		D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */; };
 		D0958F871ADA9D0900FC4AA4 /* PSix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0958F851ADA9D0900FC4AA4 /* PSix.xcdatamodeld */; };
-		D0958F8C1ADA9D0900FC4AA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8A1ADA9D0900FC4AA4 /* Main.storyboard */; };
 		D0958F8E1ADA9D0900FC4AA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */; };
 		D0958F911ADA9D0900FC4AA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8F1ADA9D0900FC4AA4 /* LaunchScreen.xib */; };
 		D0958F9D1ADA9D0900FC4AA4 /* PSixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F9C1ADA9D0900FC4AA4 /* PSixTests.swift */; };
@@ -33,7 +34,9 @@
 		0ED50DFA5BC13E55468E6751 /* Pods-PSix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PSix/Pods-PSix.debug.xcconfig"; sourceTree = "<group>"; };
 		1FDEA9F7EB8198959E50BE9E /* Pods-PSix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSix.release.xcconfig"; path = "Pods/Target Support Files/Pods-PSix/Pods-PSix.release.xcconfig"; sourceTree = "<group>"; };
 		39BDBF7FFA39053123B247C8 /* libPods-PSix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PSix.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D008A1191ADD2F9E00AF6666 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		D00632421ADE547400022DDF /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		D00632441ADE54DA00022DDF /* EventsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsList.storyboard; sourceTree = "<group>"; };
+		D008A1191ADD2F9E00AF6666 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentUser.swift; path = PSix/CurrentUser.swift; sourceTree = "<group>"; };
 		D0501E0C1ADBBA9000EB6A83 /* ObjCBridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridging.h; sourceTree = "<group>"; };
 		D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsListViewController.swift; sourceTree = "<group>"; };
@@ -41,7 +44,6 @@
 		D0958F821ADA9D0900FC4AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0958F861ADA9D0900FC4AA4 /* PSix.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PSix.xcdatamodel; sourceTree = "<group>"; };
-		D0958F8B1ADA9D0900FC4AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D0958F901ADA9D0900FC4AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D0958F961ADA9D0900FC4AA4 /* PSixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D078119C1ADE52210005E643 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D0958F851ADA9D0900FC4AA4 /* PSix.xcdatamodeld */,
+				D008A1191ADD2F9E00AF6666 /* CurrentUser.swift */,
+			);
+			name = Models;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		D078119E1ADE52380005E643 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */,
+				D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D078119F1ADE52400005E643 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D00632421ADE547400022DDF /* Onboarding.storyboard */,
+				D00632441ADE54DA00022DDF /* EventsList.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		D0958F751ADA9D0900FC4AA4 = {
 			isa = PBXGroup;
 			children = (
@@ -100,16 +130,10 @@
 		D0958F801ADA9D0900FC4AA4 /* PSix */ = {
 			isa = PBXGroup;
 			children = (
-				D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */,
-				D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */,
-				D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */,
-				D0501E0C1ADBBA9000EB6A83 /* ObjCBridging.h */,
-				D0958F8A1ADA9D0900FC4AA4 /* Main.storyboard */,
-				D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */,
-				D0958F8F1ADA9D0900FC4AA4 /* LaunchScreen.xib */,
-				D0958F851ADA9D0900FC4AA4 /* PSix.xcdatamodeld */,
+				D078119C1ADE52210005E643 /* Models */,
+				D078119E1ADE52380005E643 /* ViewControllers */,
+				D078119F1ADE52400005E643 /* Storyboards */,
 				D0958F811ADA9D0900FC4AA4 /* Supporting Files */,
-				D008A1191ADD2F9E00AF6666 /* CurrentUser.swift */,
 			);
 			path = PSix;
 			sourceTree = "<group>";
@@ -117,6 +141,10 @@
 		D0958F811ADA9D0900FC4AA4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D0958F8F1ADA9D0900FC4AA4 /* LaunchScreen.xib */,
+				D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */,
+				D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */,
+				D0501E0C1ADBBA9000EB6A83 /* ObjCBridging.h */,
 				D0958F821ADA9D0900FC4AA4 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -235,9 +263,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0958F8C1ADA9D0900FC4AA4 /* Main.storyboard in Resources */,
 				D0958F911ADA9D0900FC4AA4 /* LaunchScreen.xib in Resources */,
 				D0958F8E1ADA9D0900FC4AA4 /* Images.xcassets in Resources */,
+				D00632431ADE547400022DDF /* Onboarding.storyboard in Resources */,
+				D00632451ADE54DA00022DDF /* EventsList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,14 +344,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D0958F8A1ADA9D0900FC4AA4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D0958F8B1ADA9D0900FC4AA4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D0958F8F1ADA9D0900FC4AA4 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -524,7 +545,8 @@
 				D0958F861ADA9D0900FC4AA4 /* PSix.xcdatamodel */,
 			);
 			currentVersion = D0958F861ADA9D0900FC4AA4 /* PSix.xcdatamodel */;
-			path = PSix.xcdatamodeld;
+			name = PSix.xcdatamodeld;
+			path = PSix/PSix.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -29,14 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialStoryboardName = CurrentUser.isLoggedIn() ? "EventsListViewController" : "OnboardingViewController"
-        let initialViewController = storyboard.instantiateViewControllerWithIdentifier(initialStoryboardName) as! UIViewController
-        
-        window?.rootViewController = initialViewController
-        window?.makeKeyAndVisible()
-        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
