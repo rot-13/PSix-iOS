@@ -31,10 +31,9 @@ class OnboardingViewController: UIViewController {
         switch loginState {
         case .Login:
             setLoggingInMode()
-            User.loginWithFacebook() { (user, error) -> Void in
+            User.loginWithFacebook() { [unowned self] (user, error) -> Void in
                 if let user = user {
-                    self.setToLogoutMode()
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    self.didSignIn()
                 }
             }
         case .Logout:
@@ -50,6 +49,11 @@ class OnboardingViewController: UIViewController {
         } else {
             setToLogoutMode()
         }
+    }
+    
+    private func didSignIn() {
+        self.setToLogoutMode()
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     private func updateLoginButtonTitle() {
