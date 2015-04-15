@@ -9,22 +9,22 @@
 import Foundation
 import Parse
 
-class CurrentUser {
+class User {
     
-    private init() {}
+    private static let FB_READ_PERMISSIONS = ["public_profile", "user_events"]
     
-    static func get() -> PFUser? {
+    static func current() -> PFUser? {
         return PFUser.currentUser()
     }
     
-    static func loginWithFacebook(readPermissions: [String]?, callback: (PFUser?, NSError?) -> () ) {
-        PFFacebookUtils.logInInBackgroundWithReadPermissions(readPermissions) {
+    static func loginWithFacebook(callback: (PFUser?, NSError?) -> () ) {
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(FB_READ_PERMISSIONS) {
             (user, error) -> Void in callback(user, error)
         }
     }
     
     static func isLoggedIn() -> Bool {
-        return get() != nil
+        return current() != nil
     }
     
     static func logout() {

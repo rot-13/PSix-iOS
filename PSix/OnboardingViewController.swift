@@ -10,64 +10,67 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
     
-    enum LoginMode {
+    enum LoginState {
         case Login, Logout, DuringLogin
+        func buttonTitle() -> String {
+            switch self {
+            case .Login: return "Login with Facebook"
+            case .Logout: return "Sign out"
+            case .DuringLogin: return "Loggin in..."
+            }
+        }
     }
     
-    private let LOGIN_BUTTON_TITLE = "Login with Facebook"
-    private let LOGOUT_BUTTON_TITLE = "Sign out"
-    private let LOGGING_IN_BUTTON_TITLE = "Logging in..."
     private let FB_BLUE_COLOR = UIColor(red: 59.0/255.0, green: 89.0/255.0, blue: 152.0/255, alpha: 1.0)
     
-    private var loginMode: LoginMode = .Login
+    private var loginState: LoginState = .Login
     
     @IBOutlet weak var loginButton: UIButton!
 
     @IBAction func loginButtonClicked(sender: UIButton) {
-        switch loginMode {
+        switch loginState {
         case .Login:
             setLoggingInMode()
-            CurrentUser.loginWithFacebook(["public_profile", "user_events"]) {
-                (user, error) -> Void in
+            User.loginWithFacebook() { (user, error) -> Void in
                 if let user = user {
                     self.setToLogoutMode()
-                    self.performSegueWithIdentifier("showEventsList", sender: self)
+                    self.dismissViewControllerAnimated(true, completion: nil)
                 }
             }
         case .Logout:
-            CurrentUser.logout()
-            self.setToLoginMode()
+            User.logout()
+            self.setToLoginState()
         case .DuringLogin: break
         }
     }
     
     override func viewWillAppear(animated: Bool) {
-        if CurrentUser.isLoggedIn() {
-            setToLoginMode()
+        if !User.isLoggedIn() {
+            setToLoginState()
         } else {
             setToLogoutMode()
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private func updateLoginButtonTitle() {
+        loginButton.setTitle(loginState.buttonTitle(), forState: UIControlState.Normal)
     }
     
-    private func setToLoginMode() {
+    private func setToLoginState() {
+        loginState = .Login
         setButtonActive()
-        loginButton.setTitle(LOGIN_BUTTON_TITLE, forState: UIControlState.Normal)
-        loginMode = .Login
+        updateLoginButtonTitle()
     }
     
     private func setToLogoutMode() {
+        loginState = .Logout
         setButtonActive()
-        loginButton.setTitle(LOGOUT_BUTTON_TITLE, forState: UIControlState.Normal)
-        loginMode = .Logout
+        updateLoginButtonTitle()
     }
     
     private func setLoggingInMode() {
         setButtonInactive()
-        loginButton.setTitle(LOGGING_IN_BUTTON_TITLE, forState: UIControlState.Normal)
+        updateLoginButtonTitle()
     }
     
     private func setButtonInactive() {

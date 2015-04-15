@@ -10,7 +10,7 @@
 		A01FAC2E013F6AB831E287F0 /* libPods-PSix.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39BDBF7FFA39053123B247C8 /* libPods-PSix.a */; };
 		D00632431ADE547400022DDF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00632421ADE547400022DDF /* Onboarding.storyboard */; };
 		D00632451ADE54DA00022DDF /* EventsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00632441ADE54DA00022DDF /* EventsList.storyboard */; };
-		D008A11A1ADD2F9E00AF6666 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D008A1191ADD2F9E00AF6666 /* CurrentUser.swift */; };
+		D008A11A1ADD2F9E00AF6666 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D008A1191ADD2F9E00AF6666 /* User.swift */; };
 		D0501E0F1ADBD7E900EB6A83 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */; };
 		D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */; };
 		D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */; };
@@ -36,7 +36,7 @@
 		39BDBF7FFA39053123B247C8 /* libPods-PSix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PSix.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00632421ADE547400022DDF /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		D00632441ADE54DA00022DDF /* EventsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsList.storyboard; sourceTree = "<group>"; };
-		D008A1191ADD2F9E00AF6666 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentUser.swift; path = PSix/CurrentUser.swift; sourceTree = "<group>"; };
+		D008A1191ADD2F9E00AF6666 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = PSix/User.swift; sourceTree = "<group>"; };
 		D0501E0C1ADBBA9000EB6A83 /* ObjCBridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridging.h; sourceTree = "<group>"; };
 		D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsListViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				D0958F851ADA9D0900FC4AA4 /* PSix.xcdatamodeld */,
-				D008A1191ADD2F9E00AF6666 /* CurrentUser.swift */,
+				D008A1191ADD2F9E00AF6666 /* User.swift */,
 			);
 			name = Models;
 			path = ..;
@@ -317,7 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D008A11A1ADD2F9E00AF6666 /* CurrentUser.swift in Sources */,
+				D008A11A1ADD2F9E00AF6666 /* User.swift in Sources */,
 				D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */,
 				D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */,
 				D0958F871ADA9D0900FC4AA4 /* PSix.xcdatamodeld in Sources */,
