@@ -24,20 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize Parse.
         Parse.setApplicationId("3VYFRciY4tMgYwEwVYq2veNGbqq7CjJvQUp85IAo",
             clientKey: "Ny6h1E3DaoO5M6Kgc8tyJZEu2uMiIr7QnqRe3PqY")
-        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions([:])
+        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions ?? [:])
         
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewController: UIViewController
-        
-        if CurrentUser.isLoggedIn() {
-            initialViewController = storyboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
-        } else {
-            initialViewController = storyboard.instantiateViewControllerWithIdentifier("EventsListViewController") as! EventsListViewController
-        }
+        let initialStoryboardName = CurrentUser.isLoggedIn() ? "EventsListViewController" : "OnboardingViewController"
+        let initialViewController = storyboard.instantiateViewControllerWithIdentifier(initialStoryboardName) as! UIViewController
         
         window?.rootViewController = initialViewController
         window?.makeKeyAndVisible()
