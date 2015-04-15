@@ -14,7 +14,6 @@
 		D0501E0F1ADBD7E900EB6A83 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */; };
 		D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */; };
 		D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */; };
-		D0958F871ADA9D0900FC4AA4 /* PSix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0958F851ADA9D0900FC4AA4 /* PSix.xcdatamodeld */; };
 		D0958F8E1ADA9D0900FC4AA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */; };
 		D0958F9D1ADA9D0900FC4AA4 /* PSixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F9C1ADA9D0900FC4AA4 /* PSixTests.swift */; };
 /* End PBXBuildFile section */
@@ -42,7 +41,6 @@
 		D0958F7E1ADA9D0900FC4AA4 /* PSix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0958F821ADA9D0900FC4AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D0958F861ADA9D0900FC4AA4 /* PSix.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PSix.xcdatamodel; sourceTree = "<group>"; };
 		D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D0958F961ADA9D0900FC4AA4 /* PSixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0958F9B1ADA9D0900FC4AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 		D078119C1ADE52210005E643 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D0958F851ADA9D0900FC4AA4 /* PSix.xcdatamodeld */,
 				D008A1191ADD2F9E00AF6666 /* User.swift */,
 			);
 			name = Models;
@@ -316,7 +313,6 @@
 				D008A11A1ADD2F9E00AF6666 /* User.swift in Sources */,
 				D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */,
 				D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */,
-				D0958F871ADA9D0900FC4AA4 /* PSix.xcdatamodeld in Sources */,
 				D0501E0F1ADBD7E900EB6A83 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,20 +520,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		D0958F851ADA9D0900FC4AA4 /* PSix.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D0958F861ADA9D0900FC4AA4 /* PSix.xcdatamodel */,
-			);
-			currentVersion = D0958F861ADA9D0900FC4AA4 /* PSix.xcdatamodel */;
-			name = PSix.xcdatamodeld;
-			path = PSix/PSix.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D0958F761ADA9D0900FC4AA4 /* Project object */;
 }
