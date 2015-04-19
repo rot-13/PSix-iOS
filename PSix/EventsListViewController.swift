@@ -22,9 +22,10 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
             let onboardingStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
             let onboardingVC = onboardingStoryboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! UIViewController
             presentViewController(onboardingVC, animated: true, completion: nil)
-        } else {
-            if let currentUser = ParseUserSession.currentUser {
-                FacebookService.getFutureEventsCreatedByUser(currentUser, failure: nil, success: extractEventsFromFbResponse)
+        } else if let currentUser = ParseUserSession.currentUser {
+            FacebookService.getFutureEventsCreatedByUser(currentUser, failure: nil) { [unowned self] (eventsData) -> Void in
+                self.extractEventsFromFbResponse(eventsData)
+                self.updateUI()
             }
         }
         
@@ -32,28 +33,37 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
         eventsListTable.delegate = self
     }
     
+    func updateUI() {
+        eventsListTable.reloadData()
+    }
+    
     func extractEventsFromFbResponse(events: NSDictionary) {
         if let data = events["data"] as? NSArray {
             for eventData in data {
+                if let fbId = eventData["id"] as? String,
+                   let ownerFbId = ParseUserSession.currentUser?["facebookId"] as? String,
+                   let name = eventData["name"] as? String,
+                   let description = eventData["description"] as? String {
+                    userCreatedEvents.append(Event(fbId: fbId, ownerFbId: ownerFbId, name: name, description: description))
+                } else {
+                    println("Missing event information. Event object was not created.")
+                }
             }
         }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return userCreatedEvents.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = eventsListTable.dequeueReusableCellWithIdentifier(EventsListViewController.EVENT_CELL_ID, forIndexPath: indexPath) as! UITableViewCell
         
-        cell.textLabel?.text = "Event Name"
-        cell.detailTextLabel?.text = "Event description"
+        let event = userCreatedEvents[indexPath.row]
+        cell.textLabel?.text = event.name
+        cell.detailTextLabel?.text = event.eventDescription
         
         return cell
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return CGFloat(50)
     }
     
 }
