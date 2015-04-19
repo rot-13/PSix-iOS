@@ -31,20 +31,20 @@ class OnboardingViewController: UIViewController {
         switch loginState {
         case .Login:
             setLoggingInMode()
-            User.loginWithFacebook() { [unowned self] (user, error) -> Void in
-                if let user = user {
+            ParseUserSession.loginWithFacebook() { [unowned self] (user) -> Void in
+                if ParseUserSession.isLoggedIn {
                     self.didSignIn()
                 }
             }
         case .Logout:
-            User.logout()
+            ParseUserSession.logout()
             self.setToLoginState()
         case .DuringLogin: break
         }
     }
     
     override func viewWillAppear(animated: Bool) {
-        if !User.isLoggedIn() {
+        if !ParseUserSession.isLoggedIn {
             setToLoginState()
         } else {
             setToLogoutMode()

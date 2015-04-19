@@ -10,9 +10,12 @@
 		A01FAC2E013F6AB831E287F0 /* libPods-PSix.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39BDBF7FFA39053123B247C8 /* libPods-PSix.a */; };
 		D00632431ADE547400022DDF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00632421ADE547400022DDF /* Onboarding.storyboard */; };
 		D00632451ADE54DA00022DDF /* EventsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00632441ADE54DA00022DDF /* EventsList.storyboard */; };
-		D008A11A1ADD2F9E00AF6666 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D008A1191ADD2F9E00AF6666 /* User.swift */; };
+		D008A11A1ADD2F9E00AF6666 /* ParseUserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D008A1191ADD2F9E00AF6666 /* ParseUserSession.swift */; };
 		D0501E0F1ADBD7E900EB6A83 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */; };
 		D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */; };
+		D06957761ADEAF09009DB549 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06957751ADEAF09009DB549 /* User.swift */; };
+		D06957781ADEF3EB009DB549 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06957771ADEF3EB009DB549 /* Event.swift */; };
+		D069577B1ADFCFC4009DB549 /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069577A1ADFCFC4009DB549 /* FacebookService.swift */; };
 		D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */; };
 		D0958F8E1ADA9D0900FC4AA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */; };
 		D0958F9D1ADA9D0900FC4AA4 /* PSixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F9C1ADA9D0900FC4AA4 /* PSixTests.swift */; };
@@ -34,10 +37,13 @@
 		39BDBF7FFA39053123B247C8 /* libPods-PSix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PSix.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00632421ADE547400022DDF /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		D00632441ADE54DA00022DDF /* EventsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsList.storyboard; sourceTree = "<group>"; };
-		D008A1191ADD2F9E00AF6666 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = PSix/User.swift; sourceTree = "<group>"; };
+		D008A1191ADD2F9E00AF6666 /* ParseUserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUserSession.swift; sourceTree = "<group>"; };
 		D0501E0C1ADBBA9000EB6A83 /* ObjCBridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridging.h; sourceTree = "<group>"; };
 		D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsListViewController.swift; sourceTree = "<group>"; };
+		D06957751ADEAF09009DB549 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D06957771ADEF3EB009DB549 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		D069577A1ADFCFC4009DB549 /* FacebookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookService.swift; sourceTree = "<group>"; };
 		D0958F7E1ADA9D0900FC4AA4 /* PSix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0958F821ADA9D0900FC4AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,22 +81,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D06957791ADFCF51009DB549 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D008A1191ADD2F9E00AF6666 /* ParseUserSession.swift */,
+				D069577A1ADFCFC4009DB549 /* FacebookService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		D078119C1ADE52210005E643 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D008A1191ADD2F9E00AF6666 /* User.swift */,
+				D06957751ADEAF09009DB549 /* User.swift */,
+				D06957771ADEF3EB009DB549 /* Event.swift */,
 			);
 			name = Models;
 			path = ..;
 			sourceTree = "<group>";
 		};
-		D078119E1ADE52380005E643 /* ViewControllers */ = {
+		D078119E1ADE52380005E643 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */,
 				D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */,
 			);
-			name = ViewControllers;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		D078119F1ADE52400005E643 /* Storyboards */ = {
@@ -125,8 +141,9 @@
 		D0958F801ADA9D0900FC4AA4 /* PSix */ = {
 			isa = PBXGroup;
 			children = (
+				D06957791ADFCF51009DB549 /* Services */,
 				D078119C1ADE52210005E643 /* Models */,
-				D078119E1ADE52380005E643 /* ViewControllers */,
+				D078119E1ADE52380005E643 /* Controllers */,
 				D078119F1ADE52400005E643 /* Storyboards */,
 				D0958F811ADA9D0900FC4AA4 /* Supporting Files */,
 			);
@@ -310,9 +327,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D008A11A1ADD2F9E00AF6666 /* User.swift in Sources */,
+				D008A11A1ADD2F9E00AF6666 /* ParseUserSession.swift in Sources */,
 				D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */,
+				D069577B1ADFCFC4009DB549 /* FacebookService.swift in Sources */,
 				D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */,
+				D06957761ADEAF09009DB549 /* User.swift in Sources */,
+				D06957781ADEF3EB009DB549 /* Event.swift in Sources */,
 				D0501E0F1ADBD7E900EB6A83 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
