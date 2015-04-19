@@ -11,12 +11,11 @@ import Parse
 
 class Event: PFObject, PFSubclassing {
     
-    convenience init(fbId: String, ownerFbId: String, name: String, description: String) {
+    convenience init(fbId: String, ownerFbId: String, name: String) {
         self.init()
         self.fbId = fbId
         self.ownerFbId = ownerFbId
         self.name = name
-        self.eventDescription = description
     }
     
     override static func initialize() {
@@ -35,6 +34,8 @@ class Event: PFObject, PFSubclassing {
     @NSManaged var name: String
     @NSManaged var eventDescription: String
     @NSManaged var amountPerAttendee: Int
+    @NSManaged var location: String
+    @NSManaged var startTime: NSDate
     
 }
 
