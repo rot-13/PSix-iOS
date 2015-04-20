@@ -32,10 +32,10 @@ class Event: PFObject, PFSubclassing {
     @NSManaged var fbId: String
     @NSManaged var ownerFbId: String
     @NSManaged var name: String
-    @NSManaged var eventDescription: String
+    @NSManaged var eventDescription: String?
     @NSManaged var amountPerAttendee: Int
-    @NSManaged var location: String
-    @NSManaged var startTime: NSDate
+    @NSManaged var location: String?
+    @NSManaged var startTime: NSDate?
     
 }
 
