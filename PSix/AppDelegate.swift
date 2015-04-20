@@ -18,11 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Parse.enableLocalDatastore()
+        initModels()
         Parse.setApplicationId("3VYFRciY4tMgYwEwVYq2veNGbqq7CjJvQUp85IAo",
             clientKey: "Ny6h1E3DaoO5M6Kgc8tyJZEu2uMiIr7QnqRe3PqY")
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions ?? [:])
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
-        initModels()
         return true
     }
     

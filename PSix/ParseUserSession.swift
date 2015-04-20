@@ -13,30 +13,17 @@ class ParseUserSession {
     
     private static let FB_READ_PERMISSIONS = ["public_profile", "user_events"]
     
-    static private var currentLoggedInUser: User? = nil
-    
     static var currentUser: User? {
-        get {
-            if currentLoggedInUser == nil && PFUser.currentUser() != nil {
-                currentLoggedInUser = User(withoutDataWithObjectId: PFUser.currentUser()?.objectId)
-                currentLoggedInUser?.fetch()
-            } else if currentLoggedInUser == nil && PFUser.currentUser() == nil {
-                return nil
-            }
-            return currentLoggedInUser
-        }
+        return PFUser.currentUser() as? User
     }
     
     static func loginWithFacebook(callback: ()->()) {
         PFFacebookUtils.logInInBackgroundWithReadPermissions(FB_READ_PERMISSIONS) { (parseUser, error) -> Void in
-            if let actualUser = parseUser {
-                actualUser.saveInBackground()
+            if let user = parseUser as? User {
                 FacebookService.getLoggedInUserId() { (fbId) -> Void in
-                    let user = User(withoutDataWithObjectId: actualUser.objectId)
                     user.facebookId = fbId
                     user.pinInBackground()
                     user.saveInBackground()
-                    self.currentLoggedInUser = user
                     callback()
                 }
             }
@@ -44,9 +31,7 @@ class ParseUserSession {
     }
     
     static var isLoggedIn: Bool {
-        get {
-            return PFUser.currentUser() != nil
-        }
+        return currentUser != nil
     }
     
     static func logout() {

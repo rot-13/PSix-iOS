@@ -12,12 +12,13 @@ class FacebookEventsParser {
     
     private(set) var events = Events()
     
-    init(eventsData: NSArray) {        for eventData in eventsData {
+    init(eventsData: NSArray) {
+        for eventData in eventsData {
             if let fbId = eventData["id"] as? String,
-               let ownerFbId = ParseUserSession.currentUser?["facebookId"] as? String,
+               let currentUser = ParseUserSession.currentUser,
                let name = eventData["name"] as? String {
                 
-                let event = Event(fbId: fbId, ownerFbId: ownerFbId, name: name)
+                let event = Event(fbId: fbId, ownerFbId: currentUser.facebookId, name: name)
                 event.eventDescription = eventData["description"] as? String
                 event.location = eventData["location"] as? String
                 event.saveEventually()
