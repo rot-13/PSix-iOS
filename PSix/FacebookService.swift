@@ -25,7 +25,7 @@ class FacebookService {
         }
     }
     
-    static func getFutureEventsCreatedByUser(user: User, failure: ((NSError?) -> ())?, success: (result: NSDictionary) -> ()) {
+    static func getFutureEventsCreatedByUser(user: User, failure: ((NSError?) -> ())?, success: (result: NSArray) -> ()) {
         let params = [
             "fields": FB_EVENT_ATTRIBUTES,
             "since":  Int((NSDate.timeIntervalSinceReferenceDate() + NSTimeIntervalSince1970))
@@ -33,8 +33,10 @@ class FacebookService {
         if let fbId = user["facebookId"] as? String {
             if FBSDKAccessToken.currentAccessToken() != nil {
                 FBSDKGraphRequest(graphPath: "\(fbId)/events/created", parameters: params as [NSObject : AnyObject]).startWithCompletionHandler() { (connection, result, error) -> Void in
-                    if let events = result as? NSDictionary {
-                        success(result: events)
+                    if let eventsData = result as? NSDictionary {
+                        if let events = eventsData["data"] as? NSArray {
+                            success(result: events)
+                        }
                     } else {
                         failure?(error)
                     }

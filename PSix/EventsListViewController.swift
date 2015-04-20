@@ -37,27 +37,9 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
         eventsListTable.reloadData()
     }
     
-    func extractEventsFromFbResponse(events: NSDictionary) {
-        if let data = events["data"] as? NSArray {
-            for eventData in data {
-                if let fbId = eventData["id"] as? String,
-                   let ownerFbId = ParseUserSession.currentUser?["facebookId"] as? String,
-                   let name = eventData["name"] as? String {
-                    let event = Event(fbId: fbId, ownerFbId: ownerFbId, name: name)
-                    if let eventDescription = eventData["description"] as? String {
-                        event.eventDescription = eventDescription
-                    }
-                    if let location = eventData["location"] as? String {
-                        event.location = location
-                    }
-                    event.saveEventually()
-                    userCreatedEvents.append(event)
-                    
-                } else {
-                    println("Missing event information. Event object was not created.")
-                }
-            }
-        }
+    func extractEventsFromFbResponse(eventsData: NSArray) {
+        let eventsParser = FacebookEventsParser(eventsData: eventsData)
+        userCreatedEvents += eventsParser.events
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
