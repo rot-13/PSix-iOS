@@ -29,7 +29,7 @@ class FacebookService {
     }
     
     private static func nowAsEpoch() -> Int {
-        return Int((NSDate.timeIntervalSinceReferenceDate() + NSTimeIntervalSince1970))
+        return Int(NSDate.timeIntervalSinceReferenceDate() + NSTimeIntervalSince1970)
     }
     
     private static func extractEventsFromResponse(response: FBResponse, previousEvents: Events = Events(), onCompletionCB: (Events) -> ()) {
