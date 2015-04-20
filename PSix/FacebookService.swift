@@ -32,8 +32,9 @@ class FacebookService {
         return Int((NSDate.timeIntervalSinceReferenceDate() + NSTimeIntervalSince1970))
     }
     
-    private static func extractEventsFromResponse(response: FBResponse, onCompletionCB: (Events) -> ()) {
-        var events = Events()
+    private static func extractEventsFromResponse(response: FBResponse, previousEvents: Events = Events(), onCompletionCB: (Events) -> ()) {
+        println("Starting to populate events")
+        var events = Events(previousEvents)
         if let eventsData = response.data {
             for eventData in eventsData {
                 if let fbId = eventData[FBReq.Event.ID] as? String,
@@ -48,7 +49,17 @@ class FacebookService {
                 }
             }
         }
-        onCompletionCB(events)
+        
+        if let nextReq = response.requestNext() {
+            nextReq.execute(failure: { (error) -> Void in
+                println("There was an error getting the next page: \(error)")
+                onCompletionCB(events)
+            }) { (nextResponse) -> Void in
+                self.extractEventsFromResponse(nextResponse, previousEvents: events, onCompletionCB: onCompletionCB)
+            }
+        } else {
+            onCompletionCB(events)
+        }
     }
     
     static func getFutureEventsCreatedByUser(user: User, callback: (Events) -> ()) {
