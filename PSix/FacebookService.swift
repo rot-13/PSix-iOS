@@ -30,16 +30,14 @@ class FacebookService {
             "fields": FB_EVENT_ATTRIBUTES,
             "since":  Int((NSDate.timeIntervalSinceReferenceDate() + NSTimeIntervalSince1970))
         ]
-        if let fbId = user["facebookId"] as? String {
-            if FBSDKAccessToken.currentAccessToken() != nil {
-                FBSDKGraphRequest(graphPath: "\(fbId)/events/created", parameters: params as [NSObject : AnyObject]).startWithCompletionHandler() { (connection, result, error) -> Void in
-                    if let eventsData = result as? NSDictionary {
-                        if let events = eventsData["data"] as? NSArray {
-                            success(result: events)
-                        }
-                    } else {
-                        failure?(error)
+        if let fbId = user["facebookId"] as? String, let token = FBSDKAccessToken.currentAccessToken() {
+            FBSDKGraphRequest(graphPath: "\(fbId)/events/created", parameters: params as [NSObject : AnyObject]).startWithCompletionHandler() { (connection, result, error) -> Void in
+                if let eventsData = result as? NSDictionary {
+                    if let events = eventsData["data"] as? NSArray {
+                        success(result: events)
                     }
+                } else {
+                    failure?(error)
                 }
             }
         }
