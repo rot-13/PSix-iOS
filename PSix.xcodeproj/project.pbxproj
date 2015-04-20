@@ -23,6 +23,8 @@
 		D0C015121AE51E0B00BC9152 /* FBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C015111AE51E0B00BC9152 /* FBRequest.swift */; };
 		D0C015151AE51F2B00BC9152 /* FBUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C015141AE51F2B00BC9152 /* FBUserRequest.swift */; };
 		D0C015191AE5339300BC9152 /* FBUserEventsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C015181AE5339300BC9152 /* FBUserEventsRequest.swift */; };
+		D0C0151B1AE54A9700BC9152 /* FBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0151A1AE54A9700BC9152 /* FBConstants.swift */; };
+		D0C0151D1AE55DAC00BC9152 /* FBResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0151C1AE55DAC00BC9152 /* FBResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		D0C015111AE51E0B00BC9152 /* FBRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBRequest.swift; sourceTree = "<group>"; };
 		D0C015141AE51F2B00BC9152 /* FBUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserRequest.swift; sourceTree = "<group>"; };
 		D0C015181AE5339300BC9152 /* FBUserEventsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserEventsRequest.swift; sourceTree = "<group>"; };
+		D0C0151A1AE54A9700BC9152 /* FBConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBConstants.swift; sourceTree = "<group>"; };
+		D0C0151C1AE55DAC00BC9152 /* FBResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,8 @@
 				D0C015111AE51E0B00BC9152 /* FBRequest.swift */,
 				D0C015141AE51F2B00BC9152 /* FBUserRequest.swift */,
 				D0C015181AE5339300BC9152 /* FBUserEventsRequest.swift */,
+				D0C0151A1AE54A9700BC9152 /* FBConstants.swift */,
+				D0C0151C1AE55DAC00BC9152 /* FBResponse.swift */,
 			);
 			name = Facebook;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D008A11A1ADD2F9E00AF6666 /* ParseUserSession.swift in Sources */,
+				D0C0151B1AE54A9700BC9152 /* FBConstants.swift in Sources */,
 				D0C015121AE51E0B00BC9152 /* FBRequest.swift in Sources */,
 				D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */,
 				D0C015191AE5339300BC9152 /* FBUserEventsRequest.swift in Sources */,
@@ -357,6 +364,7 @@
 				D0C015151AE51F2B00BC9152 /* FBUserRequest.swift in Sources */,
 				D0C015101AE4E5DC00BC9152 /* FacebookEventParser.swift in Sources */,
 				D06957781ADEF3EB009DB549 /* Event.swift in Sources */,
+				D0C0151D1AE55DAC00BC9152 /* FBResponse.swift in Sources */,
 				D0501E0F1ADBD7E900EB6A83 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

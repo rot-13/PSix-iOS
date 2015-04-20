@@ -23,9 +23,8 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
             let onboardingVC = onboardingStoryboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! UIViewController
             presentViewController(onboardingVC, animated: true, completion: nil)
         } else if let currentUser = ParseUserSession.currentUser {
-            FacebookService.getFutureEventsCreatedByUser(currentUser, failure: nil) { [unowned self] (eventsData) -> Void in
-                let eventsParser = FacebookEventsParser(eventsData: eventsData)
-                self.userCreatedEvents = eventsParser.events
+            FacebookService.getFutureEventsCreatedByUser(currentUser) { [unowned self] (events) -> Void in
+                self.userCreatedEvents = events
                 self.updateUI()
             }
         }

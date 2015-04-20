@@ -12,11 +12,17 @@ import Parse
 
 class FacebookService {
     
-    private static let FB_EVENT_ATTRIBUTES = ["cover", "name","id", "start_time", "description"]
+    private static let FB_EVENT_ATTRIBUTES = [
+        FBReq.Event.ID,
+        FBReq.Event.NAME,
+        FBReq.Event.COVER,
+        FBReq.Event.START_TIME,
+        FBReq.Event.DESCRIPTION
+    ]
     
     static func getLoggedInUserId(callback: (fbId: String) -> ()) {
-        FBUserRequest(fbId: "me").about(["id"]).execute() { (result) -> Void in
-            if let fbId = result["id"] as? String {
+        FBUserRequest(fbId: FBReq.User.ME).about([FBReq.User.ID]).execute() { (response) -> Void in
+            if let fbId = response[FBReq.User.ID] as? String {
                 callback(fbId: fbId)
             }
         }
@@ -26,13 +32,30 @@ class FacebookService {
         return Int((NSDate.timeIntervalSinceReferenceDate() + NSTimeIntervalSince1970))
     }
     
-    static func getFutureEventsCreatedByUser(user: User, failure: ((NSError) -> ())?, success: (result: NSArray) -> ()) {
+    private static func extractEventsFromResponse(response: FBResponse, onCompletionCB: (Events) -> ()) {
+        var events = Events()
+        if let eventsData = response.data {
+            for eventData in eventsData {
+                if let fbId = eventData[FBReq.Event.ID] as? String,
+                   let currentUser = ParseUserSession.currentUser,
+                   let name = eventData["name"] as? String {
+                    
+                    let event = Event(fbId: fbId, ownerFbId: currentUser.facebookId, name: name)
+                    event.eventDescription = eventData[FBReq.Event.DESCRIPTION] as? String
+                    event.location = eventData[FBReq.Event.LOCATION] as? String
+                    event.saveEventually()
+                    events.append(event)
+                }
+            }
+        }
+        onCompletionCB(events)
+    }
+    
+    static func getFutureEventsCreatedByUser(user: User, callback: (Events) -> ()) {
         if FBSDKAccessToken.currentAccessToken() != nil {
-            FBUserRequest(fbId:"\(user.facebookId)").events.created.attributes(FB_EVENT_ATTRIBUTES).since(nowAsEpoch()).execute() { (result) -> Void in
-                if let eventsData = result as? NSDictionary {
-                    if let events = eventsData["data"] as? NSArray {
-                        success(result: events)
-                    }
+            FBUserRequest(fbId: user.facebookId).events.created.attributes(FB_EVENT_ATTRIBUTES).since(nowAsEpoch()).execute() { (response) -> Void in
+                self.extractEventsFromResponse(response) { (Events) -> Void in
+                    callback(Events)
                 }
             }
         }
