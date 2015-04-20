@@ -20,6 +20,9 @@
 		D0958F8E1ADA9D0900FC4AA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */; };
 		D0958F9D1ADA9D0900FC4AA4 /* PSixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F9C1ADA9D0900FC4AA4 /* PSixTests.swift */; };
 		D0C015101AE4E5DC00BC9152 /* FacebookEventParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0150F1AE4E5DC00BC9152 /* FacebookEventParser.swift */; };
+		D0C015121AE51E0B00BC9152 /* FBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C015111AE51E0B00BC9152 /* FBRequest.swift */; };
+		D0C015151AE51F2B00BC9152 /* FBUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C015141AE51F2B00BC9152 /* FBUserRequest.swift */; };
+		D0C015191AE5339300BC9152 /* FBUserEventsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C015181AE5339300BC9152 /* FBUserEventsRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		D0958F9B1ADA9D0900FC4AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0958F9C1ADA9D0900FC4AA4 /* PSixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSixTests.swift; sourceTree = "<group>"; };
 		D0C0150F1AE4E5DC00BC9152 /* FacebookEventParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookEventParser.swift; sourceTree = "<group>"; };
+		D0C015111AE51E0B00BC9152 /* FBRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBRequest.swift; sourceTree = "<group>"; };
+		D0C015141AE51F2B00BC9152 /* FBUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserRequest.swift; sourceTree = "<group>"; };
+		D0C015181AE5339300BC9152 /* FBUserEventsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserEventsRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +92,8 @@
 		D06957791ADFCF51009DB549 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D0C015131AE51EEF00BC9152 /* Facebook */,
 				D008A1191ADD2F9E00AF6666 /* ParseUserSession.swift */,
-				D069577A1ADFCFC4009DB549 /* FacebookService.swift */,
 				D0C0150F1AE4E5DC00BC9152 /* FacebookEventParser.swift */,
 			);
 			name = Services;
@@ -187,6 +193,17 @@
 				39BDBF7FFA39053123B247C8 /* libPods-PSix.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0C015131AE51EEF00BC9152 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				D069577A1ADFCFC4009DB549 /* FacebookService.swift */,
+				D0C015111AE51E0B00BC9152 /* FBRequest.swift */,
+				D0C015141AE51F2B00BC9152 /* FBUserRequest.swift */,
+				D0C015181AE5339300BC9152 /* FBUserEventsRequest.swift */,
+			);
+			name = Facebook;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,10 +348,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D008A11A1ADD2F9E00AF6666 /* ParseUserSession.swift in Sources */,
+				D0C015121AE51E0B00BC9152 /* FBRequest.swift in Sources */,
 				D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */,
+				D0C015191AE5339300BC9152 /* FBUserEventsRequest.swift in Sources */,
 				D069577B1ADFCFC4009DB549 /* FacebookService.swift in Sources */,
 				D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */,
 				D06957761ADEAF09009DB549 /* User.swift in Sources */,
+				D0C015151AE51F2B00BC9152 /* FBUserRequest.swift in Sources */,
 				D0C015101AE4E5DC00BC9152 /* FacebookEventParser.swift in Sources */,
 				D06957781ADEF3EB009DB549 /* Event.swift in Sources */,
 				D0501E0F1ADBD7E900EB6A83 /* OnboardingViewController.swift in Sources */,
