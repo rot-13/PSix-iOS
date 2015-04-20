@@ -19,7 +19,7 @@ class Event: PFObject, PFSubclassing {
     }
     
     override static func initialize() {
-        var onceToken : dispatch_once_t = 0;
+        var onceToken: dispatch_once_t = 0;
         dispatch_once(&onceToken) {
             self.registerSubclass()
         }
