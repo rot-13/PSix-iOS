@@ -23,10 +23,7 @@ class FBUserEventsRequest: FBRequest {
     }
     
     private init(copyRequest: FBUserEventsRequest, withAddedEdge: String) {
-        super.init(forResource: copyRequest.path + URI_SEP + withAddedEdge)
-        for (param, value) in copyRequest.params {
-            addParam(param as! String, value: value)
-        }
+        super.init(forResource: copyRequest.path + URI_SEP + withAddedEdge, withParams: copyRequest.params)
     }
     
     var created: FBUserEventsRequest {

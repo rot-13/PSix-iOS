@@ -18,10 +18,11 @@ let URI_SEP = "/"
 class FBRequest {
     
     private(set) var path: String
-    private(set) internal var params = FBParamsList()
+    private(set) internal var params: FBParamsList
     
-    init(forResource: String) {
+    init(forResource: String, withParams: FBParamsList = FBParamsList()) {
         path = forResource
+        params = withParams
     }
     
     func addParam(param: String, value: AnyObject) -> FBRequest {
