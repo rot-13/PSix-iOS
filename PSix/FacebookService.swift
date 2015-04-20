@@ -22,7 +22,7 @@ class FacebookService {
         }
     }
     
-    static func nowAsEpoch() -> Int {
+    private static func nowAsEpoch() -> Int {
         return Int((NSDate.timeIntervalSinceReferenceDate() + NSTimeIntervalSince1970))
     }
     

@@ -9,6 +9,13 @@
 import Foundation
 
 
+extension String {
+    func contains(other: String) -> Bool {
+        return rangeOfString(other) != nil
+    }
+}
+
+
 class FBUserEventsRequest: FBRequest {
     
     init(fromUserRequest: FBUserRequest) {
@@ -23,7 +30,7 @@ class FBUserEventsRequest: FBRequest {
     }
     
     var created: FBUserEventsRequest {
-        if path.rangeOfString("created") == nil {
+        if path.contains("created") {
             return FBUserEventsRequest(copyRequest: self, withAddedEdge: "created")
         }
         return self
