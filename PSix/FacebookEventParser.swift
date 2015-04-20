@@ -16,8 +16,8 @@ class FacebookEventsParser {
             if let fbId = eventData["id"] as? String,
                let ownerFbId = ParseUserSession.currentUser?["facebookId"] as? String,
                let name = eventData["name"] as? String {
-               let event = Event(fbId: fbId, ownerFbId: ownerFbId, name: name)
                 
+                let event = Event(fbId: fbId, ownerFbId: ownerFbId, name: name)
                 event.eventDescription = eventData["description"] as? String
                 event.location = eventData["location"] as? String
                 event.saveEventually()
