@@ -15,7 +15,6 @@ class FacebookService {
     private static let FB_EVENT_ATTRIBUTES = ["cover", "name","id", "start_time", "description"]
     
     static func getLoggedInUserId(callback: (fbId: String) -> ()) {
-        // FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id"]).startWithCompletionHandler()
         FBUserRequest(fbId: "me").about(["id"]).execute() { (result) -> Void in
             if let fbId = result["id"] as? String {
                 callback(fbId: fbId)
