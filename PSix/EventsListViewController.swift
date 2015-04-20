@@ -24,7 +24,8 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
             presentViewController(onboardingVC, animated: true, completion: nil)
         } else if let currentUser = ParseUserSession.currentUser {
             FacebookService.getFutureEventsCreatedByUser(currentUser, failure: nil) { [unowned self] (eventsData) -> Void in
-                self.extractEventsFromFbResponse(eventsData)
+                let eventsParser = FacebookEventsParser(eventsData: eventsData)
+                self.userCreatedEvents = eventsParser.events
                 self.updateUI()
             }
         }
@@ -35,11 +36,6 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
     
     func updateUI() {
         eventsListTable.reloadData()
-    }
-    
-    func extractEventsFromFbResponse(eventsData: NSArray) {
-        let eventsParser = FacebookEventsParser(eventsData: eventsData)
-        userCreatedEvents += eventsParser.events
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
