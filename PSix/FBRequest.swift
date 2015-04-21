@@ -40,13 +40,11 @@ class FBRequest {
     }
     
     func execute(failure: ((NSError) -> ())? = nil, success: (FBResponse) -> ()) {
-        if FBSDKAccessToken.currentAccessToken() != nil {
-            FBSDKGraphRequest(graphPath: path, parameters: params).startWithCompletionHandler() { (connection, result, fbError) -> Void in
-                if let error = fbError {
-                    failure?(error)
-                 } else {
-                    success(FBResponse(fbResult: result))
-                }
+        FBSDKGraphRequest(graphPath: path, parameters: params).startWithCompletionHandler() { (connection, result, fbError) -> Void in
+            if let error = fbError {
+                failure?(error)
+             } else {
+                success(FBResponse(fbResult: result))
             }
         }
     }
