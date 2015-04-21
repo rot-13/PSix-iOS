@@ -18,24 +18,23 @@ extension String {
 
 class FBUserEventsRequest: FBRequest {
     
-    init(fromUserRequest: FBUserRequest) {
-        super.init(forResource: fromUserRequest.path + URI_SEP + "events")
+    init(otherRequest: FBUserRequest) {
+        super.init(path: otherRequest.path + URI_SEP + "events")
     }
     
-    private init(copyRequest: FBUserEventsRequest, withAddedEdge: String) {
-        super.init(forResource: copyRequest.path + URI_SEP + withAddedEdge, withParams: copyRequest.params)
+    private init(copyRequest: FBUserEventsRequest, edge: String) {
+        super.init(path: copyRequest.path + URI_SEP + edge, params: copyRequest.params)
     }
     
     var created: FBUserEventsRequest {
         if !path.contains("created") {
-            return FBUserEventsRequest(copyRequest: self, withAddedEdge: "created")
+            return FBUserEventsRequest(copyRequest: self, edge: "created")
         }
         return self
     }
     
-    func attributes(values: [String]) -> FBUserEventsRequest {
-        addParam("fields", value: ",".join(values))
-        return self
+    override func fields(attributes: [String]) -> FBUserEventsRequest {
+        return super.fields(attributes) as! FBUserEventsRequest
     }
     
     func since(startTime: Int) -> FBUserEventsRequest {

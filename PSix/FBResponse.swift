@@ -12,8 +12,8 @@ class FBResponse {
     
     private let fbResponse: [String: AnyObject]
     
-    init(fromResult: AnyObject) {
-        fbResponse = fromResult as! [String: AnyObject]
+    init(fbResult: AnyObject) {
+        fbResponse = fbResult as! [String: AnyObject]
     }
     
     subscript(hash: String) -> AnyObject? {
@@ -37,7 +37,7 @@ class FBResponse {
     
     func requestNext() -> FBRequest? {
         if let path = nextPath {
-            return FBRequest(forResource: path)
+            return FBRequest(path: path)
         }
         return nil
     }

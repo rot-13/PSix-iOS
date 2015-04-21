@@ -12,16 +12,11 @@ import Foundation
 class FBUserRequest: FBRequest {
     
     init(fbId: String) {
-        super.init(forResource: fbId)
-    }
-    
-    func attributes(attributes: [String]) -> FBRequest {
-        addParam("fields", value: ",".join(attributes))
-        return self
+        super.init(path: fbId)
     }
     
     var events: FBUserEventsRequest {
-        return FBUserEventsRequest(fromUserRequest: self)
+        return FBUserEventsRequest(otherRequest: self)
     }
     
 }

@@ -21,7 +21,7 @@ class FacebookService {
     ]
     
     static func getLoggedInUserId(callback: (fbId: String) -> ()) {
-        FBUserRequest(fbId: FBReq.User.ME).attributes([FBReq.User.ID]).execute() { (response) -> Void in
+        FBUserRequest(fbId: FBReq.User.ME).fields([FBReq.User.ID]).execute() { (response) -> Void in
             if let fbId = response[FBReq.User.ID] as? String {
                 callback(fbId: fbId)
             }
@@ -63,7 +63,7 @@ class FacebookService {
     
     static func getFutureEventsCreatedByUser(user: User, callback: (Events) -> ()) {
         if FBSDKAccessToken.currentAccessToken() != nil {
-            FBUserRequest(fbId: user.facebookId).events.created.attributes(FB_EVENT_ATTRIBUTES).since(nowAsEpoch()).execute() { (response) -> Void in
+            FBUserRequest(fbId: user.facebookId).events.created.fields(FB_EVENT_ATTRIBUTES).since(nowAsEpoch()).execute() { (response) -> Void in
                 self.extractEventsFromResponse(response) { (Events) -> Void in
                     callback(Events)
                 }
