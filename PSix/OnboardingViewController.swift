@@ -25,6 +25,8 @@ class OnboardingViewController: UIViewController {
     
     private var loginState: LoginState = .Login
     
+    var successfulLoginCallback: (() -> ())? = nil
+    
     @IBOutlet weak var loginButton: UIButton!
 
     @IBAction func loginButtonClicked(sender: UIButton) {
@@ -38,7 +40,7 @@ class OnboardingViewController: UIViewController {
             }
         case .Logout:
             ParseUserSession.logout()
-            self.setToLoginState()
+            setToLoginState()
         case .DuringLogin: break
         }
     }
@@ -52,8 +54,8 @@ class OnboardingViewController: UIViewController {
     }
     
     private func didSignIn() {
-        self.setToLogoutMode()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        setToLogoutMode()
+        successfulLoginCallback?()
     }
     
     private func updateLoginButtonTitle() {
