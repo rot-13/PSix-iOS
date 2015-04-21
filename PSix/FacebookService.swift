@@ -21,7 +21,7 @@ class FacebookService {
     ]
     
     static func getLoggedInUserId(callback: (fbId: String) -> ()) {
-        FBUserRequest(fbId: FBReq.User.ME).about([FBReq.User.ID]).execute() { (response) -> Void in
+        FBUserRequest(fbId: FBReq.User.ME).attributes([FBReq.User.ID]).execute() { (response) -> Void in
             if let fbId = response[FBReq.User.ID] as? String {
                 callback(fbId: fbId)
             }

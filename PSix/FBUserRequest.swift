@@ -15,7 +15,7 @@ class FBUserRequest: FBRequest {
         super.init(forResource: fbId)
     }
     
-    func about(attributes: [String]) -> FBRequest {
+    func attributes(attributes: [String]) -> FBRequest {
         addParam("fields", value: ",".join(attributes))
         return self
     }
