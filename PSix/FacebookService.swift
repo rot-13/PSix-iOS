@@ -65,7 +65,7 @@ class FacebookService {
     
     static func getFutureEventsCreatedByUser(user: User, callback: (Events) -> ()) {
         if FBSDKAccessToken.currentAccessToken() != nil {
-            FBUserRequest(fbId: user.facebookId).events.created.fields(FB_EVENT_ATTRIBUTES).since(nowAsEpoch()).execute() { (response) -> Void in
+            FBUserRequest(user).events.created.fields(FB_EVENT_ATTRIBUTES).since(nowAsEpoch()).execute() { (response) -> Void in
                 self.extractEventsFromResponse(response) { (Events) -> Void in
                     callback(Events)
                 }

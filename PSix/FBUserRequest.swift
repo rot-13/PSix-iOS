@@ -8,11 +8,18 @@
 
 import Foundation
 
+protocol FBUser {
+    var facebookId: String { get }
+}
 
 class FBUserRequest: FBRequest {
     
     init(fbId: String) {
         super.init(fromPath: fbId)
+    }
+    
+    convenience init(_ user: FBUser) {
+        self.init(fbId: user.facebookId)
     }
     
     var events: FBUserEventsRequest {
