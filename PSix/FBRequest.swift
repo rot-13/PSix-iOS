@@ -9,16 +9,14 @@
 import Foundation
 import Parse
 
-
 typealias FBParamsList = [NSObject: AnyObject]
 
 let URI_SEP = "/"
 
-
 class FBRequest {
     
     private(set) var path: String
-    private(set) internal var params: FBParamsList
+    private(set) var params: FBParamsList
     
     init(path: String, params: FBParamsList = FBParamsList()) {
         self.path = path
