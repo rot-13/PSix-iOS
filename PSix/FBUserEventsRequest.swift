@@ -8,14 +8,6 @@
 
 import Foundation
 
-
-extension String {
-    func contains(other: String) -> Bool {
-        return rangeOfString(other) != nil
-    }
-}
-
-
 class FBUserEventsRequest: FBRequest {
     
     init(fromUserRequest request: FBUserRequest) {

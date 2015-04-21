@@ -11,6 +11,7 @@
 		D00632431ADE547400022DDF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00632421ADE547400022DDF /* Onboarding.storyboard */; };
 		D00632451ADE54DA00022DDF /* EventsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00632441ADE54DA00022DDF /* EventsList.storyboard */; };
 		D008A11A1ADD2F9E00AF6666 /* ParseUserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D008A1191ADD2F9E00AF6666 /* ParseUserSession.swift */; };
+		D04A951F1AE6990A007B1D70 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04A951E1AE6990A007B1D70 /* String.swift */; };
 		D0501E0F1ADBD7E900EB6A83 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */; };
 		D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */; };
 		D06957761ADEAF09009DB549 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06957751ADEAF09009DB549 /* User.swift */; };
@@ -43,6 +44,7 @@
 		D00632421ADE547400022DDF /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		D00632441ADE54DA00022DDF /* EventsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsList.storyboard; sourceTree = "<group>"; };
 		D008A1191ADD2F9E00AF6666 /* ParseUserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUserSession.swift; sourceTree = "<group>"; };
+		D04A951E1AE6990A007B1D70 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D0501E0C1ADBBA9000EB6A83 /* ObjCBridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridging.h; sourceTree = "<group>"; };
 		D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsListViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 				1FDEA9F7EB8198959E50BE9E /* Pods-PSix.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D04A951D1AE698FC007B1D70 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D04A951E1AE6990A007B1D70 /* String.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		D06957791ADFCF51009DB549 /* Services */ = {
@@ -151,6 +161,7 @@
 		D0958F801ADA9D0900FC4AA4 /* PSix */ = {
 			isa = PBXGroup;
 			children = (
+				D04A951D1AE698FC007B1D70 /* Extensions */,
 				D06957791ADFCF51009DB549 /* Services */,
 				D078119C1ADE52210005E643 /* Models */,
 				D078119E1ADE52380005E643 /* Controllers */,
@@ -351,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D008A11A1ADD2F9E00AF6666 /* ParseUserSession.swift in Sources */,
+				D04A951F1AE6990A007B1D70 /* String.swift in Sources */,
 				D0C0151B1AE54A9700BC9152 /* FBConstants.swift in Sources */,
 				D0C015121AE51E0B00BC9152 /* FBRequest.swift in Sources */,
 				D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */,
