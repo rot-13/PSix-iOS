@@ -12,11 +12,11 @@ import Foundation
 class FBUserRequest: FBRequest {
     
     init(fbId: String) {
-        super.init(path: fbId)
+        super.init(fromPath: fbId)
     }
     
     var events: FBUserEventsRequest {
-        return FBUserEventsRequest(otherRequest: self)
+        return FBUserEventsRequest(fromUserRequest: self)
     }
     
 }

@@ -18,7 +18,7 @@ class FBRequest {
     private(set) var path: String
     private(set) var params: FBParamsList
     
-    init(path: String, params: FBParamsList = FBParamsList()) {
+    init(fromPath path: String, params: FBParamsList = FBParamsList()) {
         self.path = path
         self.params = params
     }
@@ -29,7 +29,7 @@ class FBRequest {
     }
     
     func edge(name: String) -> FBRequest {
-        return FBRequest(path: path + URI_SEP + name)
+        return FBRequest(fromPath: path + URI_SEP + name)
     }
     
     func fields(attributes: [String]) -> FBRequest {
@@ -42,7 +42,7 @@ class FBRequest {
             if let error = fbError {
                 failure?(error)
              } else {
-                success(FBResponse(fbResult: result))
+                success(FBResponse(fromResult: result))
             }
         }
     }

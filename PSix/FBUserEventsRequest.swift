@@ -18,17 +18,17 @@ extension String {
 
 class FBUserEventsRequest: FBRequest {
     
-    init(otherRequest: FBUserRequest) {
-        super.init(path: otherRequest.path + URI_SEP + "events")
+    init(fromUserRequest request: FBUserRequest) {
+        super.init(fromPath: request.path + URI_SEP + "events")
     }
     
-    private init(copyRequest: FBUserEventsRequest, edge: String) {
-        super.init(path: copyRequest.path + URI_SEP + edge, params: copyRequest.params)
+    private init(fromOtherRequest request: FBUserEventsRequest, edge: String) {
+        super.init(fromPath: request.path + URI_SEP + edge, params: request.params)
     }
     
     var created: FBUserEventsRequest {
         if !path.contains("created") {
-            return FBUserEventsRequest(copyRequest: self, edge: "created")
+            return FBUserEventsRequest(fromOtherRequest: self, edge: "created")
         }
         return self
     }
