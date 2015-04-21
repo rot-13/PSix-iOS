@@ -33,7 +33,6 @@ class FacebookService {
     }
     
     private static func extractEventsFromResponse(response: FBResponse, previousEvents: Events = Events(), onCompletionCB: (Events) -> ()) {
-        println("Starting to populate events")
         var events = Events(previousEvents)
         if let eventsData = response.data {
             for eventData in eventsData {

@@ -11,7 +11,7 @@ import Foundation
 
 extension String {
     func contains(other: String) -> Bool {
-        return rangeOfString(other) == nil
+        return rangeOfString(other) != nil
     }
 }
 
