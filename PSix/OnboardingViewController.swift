@@ -25,26 +25,28 @@ class OnboardingViewController: UIViewController {
     
     private var loginState: LoginState = .Login
     
+    var successfulLoginCallback: (() -> ())? = nil
+    
     @IBOutlet weak var loginButton: UIButton!
 
     @IBAction func loginButtonClicked(sender: UIButton) {
         switch loginState {
         case .Login:
             setLoggingInMode()
-            User.loginWithFacebook() { [unowned self] (user, error) -> Void in
-                if let user = user {
+            ParseUserSession.loginWithFacebook() { [unowned self] (user) -> Void in
+                if ParseUserSession.isLoggedIn {
                     self.didSignIn()
                 }
             }
         case .Logout:
-            User.logout()
-            self.setToLoginState()
+            ParseUserSession.logout()
+            setToLoginState()
         case .DuringLogin: break
         }
     }
     
     override func viewWillAppear(animated: Bool) {
-        if !User.isLoggedIn() {
+        if !ParseUserSession.isLoggedIn {
             setToLoginState()
         } else {
             setToLogoutMode()
@@ -52,8 +54,8 @@ class OnboardingViewController: UIViewController {
     }
     
     private func didSignIn() {
-        self.setToLogoutMode()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        setToLogoutMode()
+        successfulLoginCallback?()
     }
     
     private func updateLoginButtonTitle() {
