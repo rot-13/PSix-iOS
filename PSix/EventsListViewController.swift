@@ -13,21 +13,33 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
     
     static let EVENT_CELL_ID = "EventCell"
     
-    private var userCreatedEvents = Events()
+    private var userCreatedEvents = Events() {
+        didSet {
+            updateUI()
+        }
+    }
     
     @IBOutlet weak var eventsListTable: UITableView!
     
-    override func viewWillAppear(animated: Bool) {
+    private func updateUserEvents() {
+        if let currentUser = ParseUserSession.currentUser {
+            FacebookService.getFutureEventsCreatedByUser(currentUser) { [unowned self] (events) -> Void in
+                self.userCreatedEvents = events
+            }
+        }
+    }
+    
+    override func viewDidLoad() {
         if !ParseUserSession.isLoggedIn {
             let onboardingStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
-            let onboardingVC = onboardingStoryboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! UIViewController
-            presentViewController(onboardingVC, animated: true, completion: nil)
-        } else if let currentUser = ParseUserSession.currentUser {
-            FacebookService.getFutureEventsCreatedByUser(currentUser, failure: nil) { [unowned self] (eventsData) -> Void in
-                let eventsParser = FacebookEventsParser(eventsData: eventsData)
-                self.userCreatedEvents = eventsParser.events
-                self.updateUI()
+            let onboardingVC = onboardingStoryboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
+            onboardingVC.successfulLoginCallback = { [unowned self] () -> Void in
+                self.updateUserEvents()
+                onboardingVC.dismissViewControllerAnimated(true, completion: nil)
             }
+            presentViewController(onboardingVC, animated: true, completion: nil)
+        } else {
+            updateUserEvents()
         }
         
         eventsListTable.dataSource = self

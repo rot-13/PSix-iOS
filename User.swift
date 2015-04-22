@@ -9,7 +9,7 @@
 import Foundation
 import Parse
 
-class User: PFUser, PFSubclassing {
+class User: PFUser, PFSubclassing, FBUser {
     
     override static func initialize() {
         var onceToken : dispatch_once_t = 0;
