@@ -32,19 +32,23 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         if !ParseUserSession.isLoggedIn {
-            let onboardingStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
-            let onboardingVC = onboardingStoryboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
-            onboardingVC.successfulLoginCallback = { [unowned self] () -> Void in
-                self.updateUserEvents()
-                onboardingVC.dismissViewControllerAnimated(true, completion: nil)
-            }
-            presentViewController(onboardingVC, animated: true, completion: nil)
+            getUserOnboard()
         } else {
             updateUserEvents()
         }
         
         eventsListTable.dataSource = self
         eventsListTable.delegate = self
+    }
+    
+    private func getUserOnboard() {
+        let onboardingStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let onboardingVC = onboardingStoryboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
+        onboardingVC.successfulLoginCallback = { [unowned self] () -> Void in
+            self.updateUserEvents()
+            onboardingVC.dismissViewControllerAnimated(true, completion: nil)
+        }
+        presentViewController(onboardingVC, animated: true, completion: nil)
     }
     
     func updateUI() {
