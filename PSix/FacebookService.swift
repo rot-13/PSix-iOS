@@ -60,6 +60,15 @@ class FacebookService {
         return nil
     }
     
+    private static func extractCoverImageUrl(eventData: AnyObject) -> NSURL? {
+        if let coverData: AnyObject? = eventData["cover"] {
+            if let sourceUrl = coverData?["source"] as? String {
+                return NSURL(string: sourceUrl)
+            }
+        }
+        return nil
+    }
+    
     private static func extractEventsFromResponse(response: FBResponse, previousEvents: Events = Events(), onCompletionCB: (Events) -> ()) {
         var events = Events(previousEvents)
         if let eventsData = response.data {
@@ -73,6 +82,7 @@ class FacebookService {
                     event.location = extractLocation(eventData)
                     event.startTime = extractTimeAttribute(eventData, attributeName: FBReq.Event.START_TIME)
                     event.endTime = extractTimeAttribute(eventData, attributeName: FBReq.Event.END_TIME)
+                    event.coverImageUrl = extractCoverImageUrl(eventData)
                     event.saveEventually()
                     events.append(event)
                 }

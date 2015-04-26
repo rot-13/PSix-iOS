@@ -37,6 +37,7 @@ class Event: PFObject, PFSubclassing {
     @NSManaged var location: String?
     @NSManaged var startTime: NSDate?
     @NSManaged var endTime: NSDate?
+    var coverImageUrl: NSURL?
     
 }
 

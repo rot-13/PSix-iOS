@@ -30,6 +30,7 @@ class EventCell: UITableViewCell {
             eventDateMonthLabel.text = event?.startTime?.monthShortName.uppercaseString
             eventDateDayLabel.text = event?.startTime?.dayDoubleDigit
             setDayAndTimeLabel()
+            setEventThumbImage()
         }
     }
     
@@ -45,6 +46,16 @@ class EventCell: UITableViewCell {
             } else {
                 eventDateDayAndTime.text = extendedText as String
             }
+        }
+    }
+    
+    private func setEventThumbImage() {
+        if let coverImageUrl = event?.coverImageUrl {
+            if let coverImageData = NSData(contentsOfURL: coverImageUrl) {
+                eventThumbImage.image = UIImage(data: coverImageData)
+            }
+        } else {
+            eventThumbImage.image = UIImage(named: "NoEventThumb")
         }
     }
 
