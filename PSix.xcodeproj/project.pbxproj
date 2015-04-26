@@ -18,6 +18,7 @@
 		D06957761ADEAF09009DB549 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06957751ADEAF09009DB549 /* User.swift */; };
 		D06957781ADEF3EB009DB549 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06957771ADEF3EB009DB549 /* Event.swift */; };
 		D069577B1ADFCFC4009DB549 /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069577A1ADFCFC4009DB549 /* FacebookService.swift */; };
+		D08A16F81AED939900EC58AE /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08A16F71AED939900EC58AE /* Payment.swift */; };
 		D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */; };
 		D0958F8E1ADA9D0900FC4AA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */; };
 		D0958F9D1ADA9D0900FC4AA4 /* PSixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F9C1ADA9D0900FC4AA4 /* PSixTests.swift */; };
@@ -55,6 +56,7 @@
 		D06957751ADEAF09009DB549 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D06957771ADEF3EB009DB549 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		D069577A1ADFCFC4009DB549 /* FacebookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookService.swift; sourceTree = "<group>"; };
+		D08A16F71AED939900EC58AE /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		D0958F7E1ADA9D0900FC4AA4 /* PSix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0958F821ADA9D0900FC4AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,13 +127,14 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
-		D078119C1ADE52210005E643 /* Models */ = {
+		D078119C1ADE52210005E643 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				D06957751ADEAF09009DB549 /* User.swift */,
 				D06957771ADEF3EB009DB549 /* Event.swift */,
+				D08A16F71AED939900EC58AE /* Payment.swift */,
 			);
-			name = Models;
+			name = Model;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -179,7 +182,7 @@
 				D0178CAC1AEE78CA00FD2DD1 /* Presenters */,
 				D04A951D1AE698FC007B1D70 /* Extensions */,
 				D06957791ADFCF51009DB549 /* Services */,
-				D078119C1ADE52210005E643 /* Models */,
+				D078119C1ADE52210005E643 /* Model */,
 				D0B8A59A1AECD3EA00B1BAC9 /* Views */,
 				D078119E1ADE52380005E643 /* Controllers */,
 				D078119F1ADE52400005E643 /* Storyboards */,
@@ -392,6 +395,7 @@
 				D0C015121AE51E0B00BC9152 /* FBRequest.swift in Sources */,
 				D0B8A59C1AECFCF900B1BAC9 /* NSDate.swift in Sources */,
 				D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */,
+				D08A16F81AED939900EC58AE /* Payment.swift in Sources */,
 				D0C015191AE5339300BC9152 /* FBUserEventsRequest.swift in Sources */,
 				D0B8A5991AECD20F00B1BAC9 /* EventCell.swift in Sources */,
 				D069577B1ADFCFC4009DB549 /* FacebookService.swift in Sources */,

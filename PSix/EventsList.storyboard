@@ -50,7 +50,7 @@
                                                     <size key="shadowOffset" width="1" height="1"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDu-9m-BEq">
-                                                    <rect key="frame" x="8" y="8" width="541" height="21"/>
+                                                    <rect key="frame" x="8" y="8" width="526" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="a7k-SY-CUP"/>
                                                     </constraints>
@@ -59,31 +59,30 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oj5-01-wyZ">
-                                                    <rect key="frame" x="139" y="37" width="410" height="17"/>
+                                                    <rect key="frame" x="139" y="37" width="395" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owa-kB-Psg">
-                                                    <rect key="frame" x="557" y="61" width="35" height="35"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owa-kB-Psg">
+                                                    <rect key="frame" x="542" y="53" width="50" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="VuG-jb-XiU"/>
-                                                        <constraint firstAttribute="width" constant="35" id="dpe-WA-PJK"/>
+                                                        <constraint firstAttribute="height" constant="50" id="VuG-jb-XiU"/>
+                                                        <constraint firstAttribute="width" constant="50" id="dpe-WA-PJK"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                    <state key="normal" title="⚙">
+                                                    <state key="normal" image="ConfigPaymentGear">
                                                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday, 9:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njx-wm-KPK">
-                                                    <rect key="frame" x="139" y="61" width="410" height="17"/>
+                                                    <rect key="frame" x="139" y="61" width="395" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collected / Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33a-Hb-Bss">
-                                                    <rect key="frame" x="139" y="85" width="410" height="17"/>
+                                                    <rect key="frame" x="139" y="85" width="395" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -163,4 +162,7 @@
             <point key="canvasLocation" x="967" y="556"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ConfigPaymentGear" width="150" height="150"/>
+    </resources>
 </document>
