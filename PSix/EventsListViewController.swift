@@ -15,6 +15,7 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
     
     private var userCreatedEvents = Events() {
         didSet {
+            sort(&userCreatedEvents)
             updateUI()
         }
     }

@@ -9,7 +9,7 @@
 import Foundation
 import Parse
 
-class Event: PFObject, PFSubclassing {
+class Event: PFObject, PFSubclassing, Comparable {
     
     convenience init(fbId: String, ownerFbId: String, name: String) {
         self.init()
@@ -47,6 +47,26 @@ class Event: PFObject, PFSubclassing {
         return nil
     }
     
+}
+
+func <(lhs: Event, rhs: Event) -> Bool {
+    if let lhsStartTime = lhs.startTime {
+        if let rhsStartTime = rhs.startTime {
+            return lhsStartTime.compare(rhsStartTime) == NSComparisonResult.OrderedAscending
+        } else {
+            return true
+        }
+    } else {
+        return false
+    }
+}
+
+func ==(lhs: Event, rhs: Event) -> Bool {
+    if let lhsStartTime = lhs.startTime,
+       let rhsStartTime = rhs.startTime {
+        return lhsStartTime.compare(rhsStartTime) == NSComparisonResult.OrderedSame
+    }
+    return false
 }
 
 typealias Events = [Event]
