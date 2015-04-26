@@ -18,9 +18,12 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var eventThumbImage: UIImageView!
     @IBOutlet weak var paymentCollectionStatus: UILabel!
     
+    private static var placeholderThumb = UIImage(named: "PlaceholderEventThumb")
+    
     override func awakeFromNib() {
         eventNameLabel.adjustsFontSizeToFitWidth = false
         eventNameLabel.lineBreakMode = NSLineBreakMode.ByTruncatingTail
+        eventThumbImage.image = EventCell.placeholderThumb
     }
     
     var event: Event? {
@@ -52,11 +55,13 @@ class EventCell: UITableViewCell {
     
     private func setEventThumbImage() {
         if let coverImageUrl = event?.coverImageUrl {
-            if let coverImageData = NSData(contentsOfURL: coverImageUrl) {
-                eventThumbImage.image = UIImage(data: coverImageData)
+            dispatch_async(dispatch_get_main_queue()) { [unowned self] () -> Void in
+                if let coverImageData = NSData(contentsOfURL: coverImageUrl) {
+                    self.eventThumbImage.image = UIImage(data: coverImageData)
+                }
             }
         } else {
-            eventThumbImage.image = UIImage(named: "PlaceholderEventThumb")
+            eventThumbImage.image = EventCell.placeholderThumb
         }
     }
     
@@ -65,7 +70,7 @@ class EventCell: UITableViewCell {
             let amountCollected = event?.moneyCollected ?? 0
             paymentCollectionStatus.text = "\(amountCollected) / \(amountToCollect)$"
         } else {
-            paymentCollectionStatus.text = "No payment setup"
+            paymentCollectionStatus.text = ""
         }
     }
 
