@@ -30,6 +30,7 @@ class EventCell: UITableViewCell {
             eventDateMonthLabel.text = event?.startTime?.monthShortName.uppercaseString
             eventDateDayLabel.text = event?.startTime?.dayDoubleDigit
             setDayAndTimeLabel()
+            setPaymentStatus()
             setEventThumbImage()
         }
     }
@@ -55,7 +56,16 @@ class EventCell: UITableViewCell {
                 eventThumbImage.image = UIImage(data: coverImageData)
             }
         } else {
-            eventThumbImage.image = UIImage(named: "NoEventThumb")
+            eventThumbImage.image = UIImage(named: "PlaceholderEventThumb")
+        }
+    }
+    
+    private func setPaymentStatus() {
+        if let amountToCollect = event?.totalMoneyToCollect {
+            let amountCollected = event?.moneyCollected ?? 0
+            paymentCollectionStatus.text = "\(amountCollected) / \(amountToCollect)$"
+        } else {
+            paymentCollectionStatus.text = "No payment setup"
         }
     }
 

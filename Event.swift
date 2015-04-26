@@ -39,6 +39,14 @@ class Event: PFObject, PFSubclassing {
     @NSManaged var endTime: NSDate?
     var coverImageUrl: NSURL?
     
+    var moneyCollected: Int? {
+        return nil
+    }
+    
+    var totalMoneyToCollect: Int? {
+        return nil
+    }
+    
 }
 
 typealias Events = [Event]
