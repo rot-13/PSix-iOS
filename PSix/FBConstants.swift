@@ -19,7 +19,9 @@ struct FBReq {
         static let NAME = "name"
         static let ID = "id"
         static let START_TIME = "start_time"
+        static let END_TIME = "end_time"
         static let DESCRIPTION = "description"
-        static let LOCATION = "location"
+        static let LOCATION = "place"
+        static let IS_DATE_ONLY = "is_date_only"
     }
 }

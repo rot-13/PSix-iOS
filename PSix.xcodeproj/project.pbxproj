@@ -20,6 +20,8 @@
 		D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */; };
 		D0958F8E1ADA9D0900FC4AA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */; };
 		D0958F9D1ADA9D0900FC4AA4 /* PSixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F9C1ADA9D0900FC4AA4 /* PSixTests.swift */; };
+		D0B8A5991AECD20F00B1BAC9 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B8A5981AECD20F00B1BAC9 /* EventCell.swift */; };
+		D0B8A59C1AECFCF900B1BAC9 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B8A59B1AECFCF900B1BAC9 /* NSDate.swift */; };
 		D0C015121AE51E0B00BC9152 /* FBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C015111AE51E0B00BC9152 /* FBRequest.swift */; };
 		D0C015151AE51F2B00BC9152 /* FBUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C015141AE51F2B00BC9152 /* FBUserRequest.swift */; };
 		D0C015191AE5339300BC9152 /* FBUserEventsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C015181AE5339300BC9152 /* FBUserEventsRequest.swift */; };
@@ -58,6 +60,8 @@
 		D0958F961ADA9D0900FC4AA4 /* PSixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0958F9B1ADA9D0900FC4AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0958F9C1ADA9D0900FC4AA4 /* PSixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSixTests.swift; sourceTree = "<group>"; };
+		D0B8A5981AECD20F00B1BAC9 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		D0B8A59B1AECFCF900B1BAC9 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		D0C015111AE51E0B00BC9152 /* FBRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBRequest.swift; sourceTree = "<group>"; };
 		D0C015141AE51F2B00BC9152 /* FBUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserRequest.swift; sourceTree = "<group>"; };
 		D0C015181AE5339300BC9152 /* FBUserEventsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserEventsRequest.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				D04A951E1AE6990A007B1D70 /* String.swift */,
+				D0B8A59B1AECFCF900B1BAC9 /* NSDate.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 				D04A951D1AE698FC007B1D70 /* Extensions */,
 				D06957791ADFCF51009DB549 /* Services */,
 				D078119C1ADE52210005E643 /* Models */,
+				D0B8A59A1AECD3EA00B1BAC9 /* Views */,
 				D078119E1ADE52380005E643 /* Controllers */,
 				D078119F1ADE52400005E643 /* Storyboards */,
 				D0958F811ADA9D0900FC4AA4 /* Supporting Files */,
@@ -205,6 +211,14 @@
 				39BDBF7FFA39053123B247C8 /* libPods-PSix.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0B8A59A1AECD3EA00B1BAC9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0B8A5981AECD20F00B1BAC9 /* EventCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		D0C015131AE51EEF00BC9152 /* Facebook */ = {
@@ -365,8 +379,10 @@
 				D04A951F1AE6990A007B1D70 /* String.swift in Sources */,
 				D0C0151B1AE54A9700BC9152 /* FBConstants.swift in Sources */,
 				D0C015121AE51E0B00BC9152 /* FBRequest.swift in Sources */,
+				D0B8A59C1AECFCF900B1BAC9 /* NSDate.swift in Sources */,
 				D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */,
 				D0C015191AE5339300BC9152 /* FBUserEventsRequest.swift in Sources */,
+				D0B8A5991AECD20F00B1BAC9 /* EventCell.swift in Sources */,
 				D069577B1ADFCFC4009DB549 /* FacebookService.swift in Sources */,
 				D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */,
 				D06957761ADEAF09009DB549 /* User.swift in Sources */,

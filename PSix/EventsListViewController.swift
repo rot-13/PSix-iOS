@@ -55,11 +55,9 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = eventsListTable.dequeueReusableCellWithIdentifier(EventsListViewController.EVENT_CELL_ID, forIndexPath: indexPath) as! UITableViewCell
+        let cell = eventsListTable.dequeueReusableCellWithIdentifier(EventsListViewController.EVENT_CELL_ID, forIndexPath: indexPath) as! EventCell
         
-        let event = userCreatedEvents[indexPath.row]
-        cell.textLabel?.text = event.name
-        cell.detailTextLabel?.text = event.eventDescription
+        cell.event = userCreatedEvents[indexPath.row]
         
         return cell
     }
