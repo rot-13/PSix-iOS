@@ -72,14 +72,21 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collected / Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njx-wm-KPK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday, 9:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njx-wm-KPK">
                                                     <rect key="frame" x="135" y="61" width="414" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collected / Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33a-Hb-Bss">
+                                                    <rect key="frame" x="135" y="85" width="414" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="owa-kB-Psg" firstAttribute="leading" secondItem="33a-Hb-Bss" secondAttribute="trailing" constant="8" id="0Gc-PE-jmo"/>
                                                 <constraint firstItem="2t2-fH-9rt" firstAttribute="width" secondItem="7rT-Le-Am5" secondAttribute="width" id="0hQ-Po-bhL"/>
                                                 <constraint firstItem="7eZ-Hg-N6j" firstAttribute="top" secondItem="FDu-9m-BEq" secondAttribute="bottom" constant="3" id="50m-Fj-E8x"/>
                                                 <constraint firstItem="owa-kB-Psg" firstAttribute="leading" secondItem="FDu-9m-BEq" secondAttribute="trailing" constant="8" symbolic="YES" id="5f6-i9-hfN"/>
@@ -89,7 +96,9 @@
                                                 <constraint firstItem="owa-kB-Psg" firstAttribute="leading" secondItem="oj5-01-wyZ" secondAttribute="trailing" constant="8" id="Fut-AU-THI"/>
                                                 <constraint firstItem="owa-kB-Psg" firstAttribute="trailing" secondItem="vKH-QX-5QW" secondAttribute="trailingMargin" id="XF7-Dr-ZMa"/>
                                                 <constraint firstItem="Njx-wm-KPK" firstAttribute="top" secondItem="oj5-01-wyZ" secondAttribute="bottom" constant="7" id="XGn-39-Zkq"/>
+                                                <constraint firstItem="33a-Hb-Bss" firstAttribute="top" secondItem="Njx-wm-KPK" secondAttribute="bottom" constant="7" id="ZNc-c2-zJ5"/>
                                                 <constraint firstItem="7eZ-Hg-N6j" firstAttribute="leading" secondItem="2t2-fH-9rt" secondAttribute="trailing" constant="-41" id="ccA-AN-hw5"/>
+                                                <constraint firstItem="33a-Hb-Bss" firstAttribute="leading" secondItem="7eZ-Hg-N6j" secondAttribute="trailing" constant="8" id="ccX-Uq-DRM"/>
                                                 <constraint firstItem="owa-kB-Psg" firstAttribute="leading" secondItem="Njx-wm-KPK" secondAttribute="trailing" constant="8" id="dHe-IA-kWu"/>
                                                 <constraint firstItem="Njx-wm-KPK" firstAttribute="leading" secondItem="7eZ-Hg-N6j" secondAttribute="trailing" constant="8" id="dZi-ID-L5U"/>
                                                 <constraint firstItem="FDu-9m-BEq" firstAttribute="leading" secondItem="vKH-QX-5QW" secondAttribute="leadingMargin" id="fRf-2e-NFa"/>
@@ -102,12 +111,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="eventDateDayAndTime" destination="Njx-wm-KPK" id="lmx-KY-biq"/>
                                             <outlet property="eventDateDayLabel" destination="2t2-fH-9rt" id="az5-DK-6zc"/>
                                             <outlet property="eventDateMonthLabel" destination="7rT-Le-Am5" id="2pI-mH-lJN"/>
                                             <outlet property="eventNameLabel" destination="FDu-9m-BEq" id="q7J-ck-EGC"/>
                                             <outlet property="eventThumbImage" destination="7eZ-Hg-N6j" id="WYO-to-Xnt"/>
                                             <outlet property="locationLabel" destination="oj5-01-wyZ" id="Cc8-Xs-zGb"/>
-                                            <outlet property="paymentCollectionStatusLabel" destination="Njx-wm-KPK" id="MQW-cx-Tvb"/>
+                                            <outlet property="paymentCollectionStatus" destination="33a-Hb-Bss" id="Z39-VP-fht"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
