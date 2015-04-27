@@ -53,7 +53,7 @@ func <(lhs: Event, rhs: Event) -> Bool {
     if let lhsStartTime = lhs.startTime,
        let rhsStartTime = rhs.startTime {
         return lhsStartTime.compare(rhsStartTime) == NSComparisonResult.OrderedAscending
-    } else if let rhsStartTime = rhs.startTime {
+    } else if lhs.startTime == nil && rhs.startTime != nil {
         return true
     }
     return false
