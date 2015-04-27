@@ -30,24 +30,9 @@ class EventCell: UITableViewCell {
             locationLabel.text = event?.location
             eventDateMonthLabel.text = event?.startTime?.monthShortName.uppercaseString
             eventDateDayLabel.text = event?.startTime?.dayDoubleDigit
-            setDayAndTimeLabel()
-            setPaymentStatus()
+            eventDateDayAndTime.text = EventPresenter.getDayHourOfStartConsideringWidth(event, boxWidth: eventDateDayAndTime.bounds.width, font: eventDateDayAndTime.font)
+            paymentCollectionStatus.text = EventPresenter.getPaymentStatus(event)
             setEventThumbImage()
-        }
-    }
-    
-    private func setDayAndTimeLabel() {
-        if let startDate = event?.startTime {
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "EEEE, h:mm"
-            let extendedText = dateFormatter.stringFromDate(startDate) as NSString
-            let extTextSize = extendedText.sizeWithAttributes([NSFontAttributeName: eventDateDayAndTime.font])
-            if eventDateDayAndTime.bounds.width < extTextSize.width {
-                dateFormatter.dateFormat = "E, h:mm"
-                eventDateDayAndTime.text = dateFormatter.stringFromDate(startDate)
-            } else {
-                eventDateDayAndTime.text = extendedText as String
-            }
         }
     }
     
@@ -60,15 +45,6 @@ class EventCell: UITableViewCell {
             }
         } else {
             eventThumbImage.image = EventCell.placeholderThumb
-        }
-    }
-    
-    private func setPaymentStatus() {
-        if let amountToCollect = event?.totalMoneyToCollect {
-            let amountCollected = event?.moneyCollected ?? 0
-            paymentCollectionStatus.text = "\(amountCollected) / \(amountToCollect)$"
-        } else {
-            paymentCollectionStatus.text = ""
         }
     }
 
