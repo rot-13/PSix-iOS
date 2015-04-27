@@ -21,8 +21,6 @@ class EventCell: UITableViewCell {
     private static var placeholderThumb = UIImage(named: "PlaceholderEventThumb")
     
     override func awakeFromNib() {
-        eventNameLabel.adjustsFontSizeToFitWidth = false
-        eventNameLabel.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         eventThumbImage.image = EventCell.placeholderThumb
     }
     
