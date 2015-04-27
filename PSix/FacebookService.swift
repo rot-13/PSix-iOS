@@ -37,10 +37,9 @@ class FacebookService {
     }
     
     private static func extractLocation(eventData: AnyObject) -> String? {
-        if let locationData: AnyObject? = eventData[FBReq.Event.LOCATION] {
-            if let locationName = locationData?["name"] as? String {
-                return locationName
-            }
+        if let locationData: AnyObject? = eventData[FBReq.Event.LOCATION],
+           let locationName = locationData?["name"] as? String {
+            return locationName
         }
         return nil
     }
@@ -61,10 +60,9 @@ class FacebookService {
     }
     
     private static func extractCoverImageUrl(eventData: AnyObject) -> NSURL? {
-        if let coverData: AnyObject? = eventData["cover"] {
-            if let sourceUrl = coverData?["source"] as? String {
-                return NSURL(string: sourceUrl)
-            }
+        if let coverData: AnyObject? = eventData["cover"],
+           let sourceUrl = coverData?["source"] as? String {
+            return NSURL(string: sourceUrl)
         }
         return nil
     }
