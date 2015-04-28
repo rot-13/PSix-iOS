@@ -26,25 +26,19 @@ class EventCell: UITableViewCell {
     
     var event: Event? {
         didSet {
-            eventNameLabel.text = event?.name
-            locationLabel.text = event?.location
-            eventDateMonthLabel.text = event?.startTime?.monthShortName.uppercaseString
-            eventDateDayLabel.text = event?.startTime?.dayDoubleDigit
-            eventDateDayAndTime.text = EventPresenter.getDayHourOfStartConsideringWidth(event, boxWidth: eventDateDayAndTime.bounds.width, font: eventDateDayAndTime.font)
-            paymentCollectionStatus.text = EventPresenter.getPaymentStatus(event)
-            setEventThumbImage()
-        }
-    }
-    
-    private func setEventThumbImage() {
-        if let coverImageUrl = event?.coverImageUrl {
-            dispatch_async(dispatch_get_main_queue()) { [unowned self] () -> Void in
-                if let coverImageData = NSData(contentsOfURL: coverImageUrl) {
-                    self.eventThumbImage.image = UIImage(data: coverImageData)
+            if let event = event {
+                eventNameLabel.text = event.name
+                locationLabel.text = event.location
+                eventDateMonthLabel.text = event.startTime?.monthShortName.uppercaseString
+                eventDateDayLabel.text = event.startTime?.dayDoubleDigit
+                eventDateDayAndTime.text = EventPresenter.getDayHourOfStartConsideringWidth(event, boxWidth: eventDateDayAndTime.bounds.width, font: eventDateDayAndTime.font)
+                paymentCollectionStatus.text = EventPresenter.getPaymentStatus(event)
+                
+                eventThumbImage.image = EventCell.placeholderThumb
+                EventPresenter.getEventImageAsync(event) { [unowned self] (image) -> Void in
+                    self.eventThumbImage.image = image
                 }
             }
-        } else {
-            eventThumbImage.image = EventCell.placeholderThumb
         }
     }
 
