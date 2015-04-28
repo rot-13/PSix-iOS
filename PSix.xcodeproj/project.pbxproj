@@ -176,6 +176,7 @@
 		D0958F801ADA9D0900FC4AA4 /* PSix */ = {
 			isa = PBXGroup;
 			children = (
+				D0178CAC1AEE78CA00FD2DD1 /* Presenters */,
 				D04A951D1AE698FC007B1D70 /* Extensions */,
 				D06957791ADFCF51009DB549 /* Services */,
 				D078119C1ADE52210005E643 /* Models */,
@@ -226,7 +227,6 @@
 		D0B8A59A1AECD3EA00B1BAC9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D0178CAC1AEE78CA00FD2DD1 /* Presenters */,
 				D0B8A5981AECD20F00B1BAC9 /* EventCell.swift */,
 			);
 			name = Views;
