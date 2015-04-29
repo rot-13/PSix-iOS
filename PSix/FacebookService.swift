@@ -70,18 +70,17 @@ class FacebookService {
     private static func extractEventsFromResponse(response: FBResponse, previousEvents: Events = Events(), onCompletionCB: (Events) -> ()) {
         var events = Events(previousEvents)
         if let eventsData = response.data {
-            for eventData in eventsData {
+            eventsData.map { (eventData) -> Void in
                 if let fbId = eventData[FBReq.Event.ID] as? String,
                    let currentUser = ParseUserSession.currentUser,
                    let name = eventData["name"] as? String {
                     
                     let event = Event(fbId: fbId, ownerFbId: currentUser.facebookId, name: name)
                     event.eventDescription = eventData[FBReq.Event.DESCRIPTION] as? String
-                    event.location = extractLocation(eventData)
-                    event.startTime = extractTimeAttribute(eventData, attributeName: FBReq.Event.START_TIME)
-                    event.endTime = extractTimeAttribute(eventData, attributeName: FBReq.Event.END_TIME)
-                    event.coverImageUrl = extractCoverImageUrl(eventData)
-                    event.saveEventually()
+                    event.location = FacebookService.extractLocation(eventData)
+                    event.startTime = FacebookService.extractTimeAttribute(eventData, attributeName: FBReq.Event.START_TIME)
+                    event.endTime = FacebookService.extractTimeAttribute(eventData, attributeName: FBReq.Event.END_TIME)
+                    event.coverImageUrl = FacebookService.extractCoverImageUrl(eventData)
                     events.append(event)
                 }
             }
