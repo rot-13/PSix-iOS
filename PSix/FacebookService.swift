@@ -70,15 +70,19 @@ class FacebookService {
     private static func storeFBEventInParse(eventData: AnyObject) -> Event? {
         if let fbId = eventData[FBReq.Event.ID] as? String,
            let currentUser = ParseUserSession.currentUser,
-           let name = eventData["name"] as? String {
-                
-            let event = Event(fbId: fbId, ownerFbId: currentUser.facebookId, name: name)
+           let name = eventData[FBReq.Event.NAME] as? String {
+            
+            let event = Event.findOrCreateBlocking(fbId)
+            event.ownerFbId = currentUser.facebookId
+            event.name = name
             event.eventDescription = eventData[FBReq.Event.DESCRIPTION] as? String
             event.location = FacebookService.extractLocation(eventData)
             event.startTime = FacebookService.extractTimeAttribute(eventData, attributeName: FBReq.Event.START_TIME)
             event.endTime = FacebookService.extractTimeAttribute(eventData, attributeName: FBReq.Event.END_TIME)
             event.coverImageUrl = FacebookService.extractCoverImageUrl(eventData)
+            event.saveEventually()
             return event
+            
         }
         return nil
     }
@@ -101,8 +105,20 @@ class FacebookService {
         }
     }
     
+    static func getFutureEventsCreatedByUserAsync(user: User, callback: (Events) -> ()) {
+        dispatch_async(dispatch_get_main_queue()) {
+            FacebookService.getFutureEventsCreatedByUser(user, callback: callback)
+        }
+    }
+    
+    private static func pinParseUserEvents(user: User) {
+        let userEventsQuery = PFQuery(className: Event.parseClassName()).whereKey("ownerFbId", equalTo: user.facebookId)
+        PFObject.pinAll(userEventsQuery.findObjects())
+    }
+
     static func getFutureEventsCreatedByUser(user: User, callback: (Events) -> ()) {
         if FBSDKAccessToken.currentAccessToken() != nil {
+            pinParseUserEvents(user)
             FBUserRequest(user).events.created.fields(FB_EVENT_ATTRIBUTES).since(nowAsEpoch()).execute() { (response) -> Void in
                 self.extractEventsFromResponse(response) { (Events) -> Void in
                     callback(Events)

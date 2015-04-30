@@ -11,11 +11,17 @@ import Parse
 
 class Event: PFObject, PFSubclassing, Comparable {
     
-    convenience init(fbId: String, ownerFbId: String, name: String) {
+    static func findOrCreateBlocking(fbId: String) -> Event {
+        let findEventQuery = PFQuery(className: parseClassName()).whereKey("fbId", equalTo: fbId)
+        if let events = findEventQuery.findObjects() as? Events, event = events.first {
+            return event
+        }
+        return Event(fbId)
+    }
+    
+    convenience init(_ fbId: String) {
         self.init()
         self.fbId = fbId
-        self.ownerFbId = ownerFbId
-        self.name = name
     }
     
     override static func initialize() {
@@ -31,12 +37,13 @@ class Event: PFObject, PFSubclassing, Comparable {
     
     @NSManaged var fbId: String
     @NSManaged var ownerFbId: String
-    @NSManaged var name: String
-    @NSManaged var eventDescription: String?
     @NSManaged var amountPerAttendee: Int
-    @NSManaged var location: String?
-    @NSManaged var startTime: NSDate?
-    @NSManaged var endTime: NSDate?
+    
+    var name: String?
+    var eventDescription: String?
+    var location: String?
+    var startTime: NSDate?
+    var endTime: NSDate?
     var coverImageUrl: NSURL?
     
     var moneyCollected: Int? {

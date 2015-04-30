@@ -21,16 +21,21 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     @IBOutlet weak var eventsListTable: UITableView!
+    let refreshControl = UIRefreshControl()
     
-    private func updateUserEvents() {
+    private func updateUserEvents(finished: (() -> ())? = nil) {
         if let currentUser = ParseUserSession.currentUser {
-            FacebookService.getFutureEventsCreatedByUser(currentUser) { [unowned self] (events) -> Void in
+            FacebookService.getFutureEventsCreatedByUserAsync(currentUser) { [unowned self] (events) -> Void in
                 self.userCreatedEvents = events
+                finished?()
             }
         }
     }
     
     override func viewDidLoad() {
+        refreshControl.addTarget(self, action: "refreshData", forControlEvents: UIControlEvents.ValueChanged)
+        eventsListTable.addSubview(refreshControl)
+        
         if !ParseUserSession.isLoggedIn {
             getUserOnboard()
         } else {
@@ -39,6 +44,12 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
         
         eventsListTable.dataSource = self
         eventsListTable.delegate = self
+    }
+    
+    func refreshData() {
+        updateUserEvents() { [unowned self] () -> Void in
+            self.refreshControl.endRefreshing()
+        }
     }
     
     private func getUserOnboard() {

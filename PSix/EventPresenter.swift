@@ -12,21 +12,21 @@ class EventPresenter {
     
     static let formatter = NSDateFormatter()
     
-    private static var eventCoverImages = [String:UIImage]()
+    private static var eventCoverImages = [NSURL:UIImage]()
     
     private static func doesTextFitInWidth(text: String, width: CGFloat, font: UIFont) -> Bool {
         return width >= (text as NSString).sizeWithAttributes([NSFontAttributeName: font]).width
     }
     
     static func getEventImageAsync(event: Event, callback: (UIImage) -> ()) {
-        if let preloadedImage = eventCoverImages[event.fbId] {
-            callback(preloadedImage)
-        } else {
-            if let coverImageUrl = event.coverImageUrl {
+        if let coverImageUrl = event.coverImageUrl {
+            if let preloadedImage = eventCoverImages[coverImageUrl] {
+                callback(preloadedImage)
+            } else {
                 dispatch_async(dispatch_get_main_queue()) {
                     if let coverImageData = NSData(contentsOfURL: coverImageUrl) {
-                        EventPresenter.eventCoverImages[event.fbId] = UIImage(data: coverImageData)
-                        callback(EventPresenter.eventCoverImages[event.fbId]!)
+                        EventPresenter.eventCoverImages[coverImageUrl] = UIImage(data: coverImageData)
+                        callback(EventPresenter.eventCoverImages[coverImageUrl]!)
                     }
                 }
             }
