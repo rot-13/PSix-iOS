@@ -16,7 +16,7 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var eventDateMonthLabel: UILabel!
     @IBOutlet weak var eventDateDayLabel: UILabel!
     @IBOutlet weak var eventThumbImage: UIImageView!
-    @IBOutlet weak var paymentCollectionStatus: UILabel!
+    @IBOutlet weak var amountPerAttendee: UILabel!
     
     private static var placeholderThumb = UIImage(named: "PlaceholderEventThumb")
     
@@ -32,7 +32,12 @@ class EventCell: UITableViewCell {
                 eventDateMonthLabel.text = event.startTime?.monthShortName.uppercaseString
                 eventDateDayLabel.text = event.startTime?.dayDoubleDigit
                 eventDateDayAndTime.text = EventPresenter.getDayHourOfStartConsideringWidth(event, boxWidth: eventDateDayAndTime.bounds.width, font: eventDateDayAndTime.font)
-                paymentCollectionStatus.text = EventPresenter.getPaymentStatus(event)
+                let paymentCollectionStatus = EventPresenter.getPaymentStatus(event)
+                if paymentCollectionStatus != "" {
+                    amountPerAttendee.text = paymentCollectionStatus
+                } else {
+                    amountPerAttendee.text = EventPresenter.getFeePerAttendee(event)
+                }
                 
                 eventThumbImage.image = EventCell.placeholderThumb
                 EventPresenter.getEventImageAsync(event) { [unowned self] (image) -> Void in

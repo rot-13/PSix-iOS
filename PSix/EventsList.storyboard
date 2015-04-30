@@ -115,7 +115,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collected / Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33a-Hb-Bss">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fee" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33a-Hb-Bss">
                                                     <rect key="frame" x="139" y="85" width="405" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,13 +148,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="amountPerAttendee" destination="33a-Hb-Bss" id="D5P-e4-a9D"/>
                                             <outlet property="eventDateDayAndTime" destination="Njx-wm-KPK" id="lmx-KY-biq"/>
                                             <outlet property="eventDateDayLabel" destination="2t2-fH-9rt" id="az5-DK-6zc"/>
                                             <outlet property="eventDateMonthLabel" destination="7rT-Le-Am5" id="2pI-mH-lJN"/>
                                             <outlet property="eventNameLabel" destination="FDu-9m-BEq" id="q7J-ck-EGC"/>
                                             <outlet property="eventThumbImage" destination="7eZ-Hg-N6j" id="WYO-to-Xnt"/>
                                             <outlet property="locationLabel" destination="oj5-01-wyZ" id="Cc8-Xs-zGb"/>
-                                            <outlet property="paymentCollectionStatus" destination="33a-Hb-Bss" id="Z39-VP-fht"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

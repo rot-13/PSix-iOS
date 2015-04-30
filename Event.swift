@@ -25,7 +25,7 @@ class Event: PFObject, PFSubclassing, Comparable {
     }
     
     override static func initialize() {
-        var onceToken: dispatch_once_t = 0;
+        var onceToken: dispatch_once_t = 0
         dispatch_once(&onceToken) {
             self.registerSubclass()
         }
@@ -46,11 +46,40 @@ class Event: PFObject, PFSubclassing, Comparable {
     var endTime: NSDate?
     var coverImageUrl: NSURL?
     
+    var _paymentsRelation: PFRelation?
+    var paymentsRelation: PFRelation {
+        if let _paymentsRelation = _paymentsRelation {
+            return _paymentsRelation
+        }
+        _paymentsRelation = self.relationForKey("payments")
+        return _paymentsRelation!
+    }
+    
+    var guests = RSVPs()
+    var attending: RSVPs {
+        return RSVP.filterAttending(guests)
+    }
+    var tentative: RSVPs {
+        return RSVP.filterMaybe(guests)
+    }
+    var declined: RSVPs {
+        return RSVP.filterDeclined(guests)
+    }
+    
     var moneyCollected: Int? {
+        // For some fucking reason I cannot seem to convert the relation query response to a Payments collection,
+        // and so I am stuck with this ugliness :(
+        // Still trying to resolve this.
+        if let payments = paymentsRelation.query()?.findObjects() as? Payments {
+            return payments.map { $0["amount"] as! Int }.reduce(0, combine: +)
+        }
         return nil
     }
     
     var totalMoneyToCollect: Int? {
+        if amountPerAttendee > 0 {
+            return RSVP.filterAttending(guests).count * amountPerAttendee
+        }
         return nil
     }
     

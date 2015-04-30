@@ -46,10 +46,19 @@ class EventPresenter {
         return ""
     }
     
+    static func getFeePerAttendee(event: Event) -> String {
+        if event.amountPerAttendee > 0 {
+            return "$\(event.amountPerAttendee)"
+        }
+        return ""
+    }
+    
     static func getPaymentStatus(event: Event) -> String {
-        if let amountToCollect = event.totalMoneyToCollect {
-            let amountCollected = event.moneyCollected ?? 0
-            return "\(amountCollected) / \(amountToCollect)"
+        if event.attending.count > 0 {
+            if let amountToCollect = event.totalMoneyToCollect {
+                let amountCollected = event.moneyCollected ?? 0
+                return "$\(amountCollected) / $\(amountToCollect)"
+            }
         }
         return ""
     }

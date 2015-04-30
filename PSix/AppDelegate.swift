@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initModels() {
         User.initialize()
         Event.initialize()
+        Payment.initialize()
     }
     
     func application(application: UIApplication,

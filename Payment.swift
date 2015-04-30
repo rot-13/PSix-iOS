@@ -7,3 +7,26 @@
 //
 
 import Foundation
+import Parse
+
+typealias Payments = [Payment]
+
+class Payment: PFObject, PFSubclassing {
+    
+    override static func initialize() {
+        var onceToken: dispatch_once_t = 0
+        dispatch_once(&onceToken) {
+            self.registerSubclass()
+        }
+    }
+    
+    static func parseClassName() -> String {
+        return "Payment"
+    }
+    
+    @NSManaged var amount: Int
+    @NSManaged var payeeFbId: String
+    
+    var event: Event?
+    
+}
