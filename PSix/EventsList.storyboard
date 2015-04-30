@@ -18,6 +18,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It seems you're not hosting any events through Facebook" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MY-wU-qxK">
+                                <rect key="frame" x="26" y="114" width="548" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ina-ab-bi7">
+                                <rect key="frame" x="280" y="228" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cK4-e4-POd"/>
+                                    <constraint firstAttribute="width" constant="40" id="xOB-lI-fYp"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeG-WJ-pAO">
+                                <rect key="frame" x="235" y="278" width="130" height="45"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.26274509800000001" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="4hi-mj-rj7"/>
+                                    <constraint firstAttribute="width" constant="130" id="k6U-Pf-HCt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="refreshForNewEvents" destination="k8Z-Qx-7sR" eventType="touchUpInside" id="NTn-Sf-Ybh"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="128" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xsc-bU-sjL">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -129,14 +163,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xsc-bU-sjL" firstAttribute="bottom" secondItem="XFW-bV-L27" secondAttribute="top" id="0VF-tW-WmU"/>
+                            <constraint firstItem="7MY-wU-qxK" firstAttribute="top" secondItem="x1u-tY-X4P" secondAttribute="bottom" constant="50" id="3FV-5N-iKD"/>
+                            <constraint firstAttribute="centerX" secondItem="OeG-WJ-pAO" secondAttribute="centerX" id="4IR-KV-2k9"/>
+                            <constraint firstAttribute="centerY" secondItem="OeG-WJ-pAO" secondAttribute="centerY" id="8dW-A6-2qw"/>
                             <constraint firstItem="xsc-bU-sjL" firstAttribute="leading" secondItem="caD-vD-u92" secondAttribute="leading" id="EFD-Ui-XQs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7MY-wU-qxK" secondAttribute="trailing" constant="10" id="EuL-m2-kB9"/>
+                            <constraint firstAttribute="centerX" secondItem="Ina-ab-bi7" secondAttribute="centerX" id="Q3i-zb-b9w"/>
                             <constraint firstAttribute="trailing" secondItem="xsc-bU-sjL" secondAttribute="trailing" id="cc9-ch-OZv"/>
                             <constraint firstItem="xsc-bU-sjL" firstAttribute="top" secondItem="x1u-tY-X4P" secondAttribute="bottom" id="cqT-x9-tCc"/>
+                            <constraint firstItem="7MY-wU-qxK" firstAttribute="leading" secondItem="caD-vD-u92" secondAttribute="leadingMargin" constant="10" id="d4X-Sw-A5g"/>
+                            <constraint firstItem="OeG-WJ-pAO" firstAttribute="top" secondItem="Ina-ab-bi7" secondAttribute="bottom" constant="10" id="t5c-dh-kLg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Events You're Hosting" id="2be-0S-qoU"/>
                     <connections>
                         <outlet property="eventsListTable" destination="xsc-bU-sjL" id="sDm-rD-HtY"/>
+                        <outlet property="noEventsRefreshSpinner" destination="Ina-ab-bi7" id="S1h-U5-idj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MU4-fR-ZXF" userLabel="First Responder" sceneMemberID="firstResponder"/>

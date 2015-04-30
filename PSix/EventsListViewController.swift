@@ -21,6 +21,8 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     @IBOutlet weak var eventsListTable: UITableView!
+    @IBOutlet weak var noEventsRefreshSpinner: UIActivityIndicatorView!
+    
     let refreshControl = UIRefreshControl()
     
     private func updateUserEvents(finished: (() -> ())? = nil) {
@@ -64,6 +66,7 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
     
     func updateUI() {
         eventsListTable.reloadData()
+        eventsListTable.hidden = userCreatedEvents.count == 0
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,6 +79,13 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
         cell.event = userCreatedEvents[indexPath.row]
         
         return cell
+    }
+    
+    @IBAction func refreshForNewEvents() {
+        noEventsRefreshSpinner.startAnimating()
+        updateUserEvents() { [unowned self] () -> Void in
+            self.noEventsRefreshSpinner.stopAnimating()
+        }
     }
     
 }
