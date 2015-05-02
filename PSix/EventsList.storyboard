@@ -67,6 +67,9 @@
                                                         <constraint firstAttribute="width" secondItem="7eZ-Hg-N6j" secondAttribute="height" multiplier="125:83" id="Czz-gQ-2JI"/>
                                                     </constraints>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DarkTopLeftCorner" translatesAutoresizingMaskIntoConstraints="NO" id="wqc-f0-08y" userLabel="Dark Corner">
+                                                    <rect key="frame" x="8" y="37" width="123" height="82"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MMM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rT-Le-Am5">
                                                     <rect key="frame" x="15" y="41" width="34" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -129,10 +132,13 @@
                                                 <constraint firstItem="owa-kB-Psg" firstAttribute="leading" secondItem="FDu-9m-BEq" secondAttribute="trailing" constant="8" symbolic="YES" id="5f6-i9-hfN"/>
                                                 <constraint firstItem="2t2-fH-9rt" firstAttribute="leading" secondItem="vKH-QX-5QW" secondAttribute="leadingMargin" constant="7" id="6DI-YG-ZZ2"/>
                                                 <constraint firstItem="7rT-Le-Am5" firstAttribute="leading" secondItem="vKH-QX-5QW" secondAttribute="leadingMargin" constant="7" id="8if-GK-X5O"/>
+                                                <constraint firstItem="wqc-f0-08y" firstAttribute="width" secondItem="wqc-f0-08y" secondAttribute="height" multiplier="125:83" id="8vx-fL-AEf"/>
                                                 <constraint firstItem="7eZ-Hg-N6j" firstAttribute="bottom" secondItem="vKH-QX-5QW" secondAttribute="bottomMargin" id="CF4-XH-uZc"/>
                                                 <constraint firstItem="owa-kB-Psg" firstAttribute="leading" secondItem="oj5-01-wyZ" secondAttribute="trailing" constant="8" id="Fut-AU-THI"/>
+                                                <constraint firstItem="wqc-f0-08y" firstAttribute="leading" secondItem="vKH-QX-5QW" secondAttribute="leadingMargin" id="MiY-95-IXh"/>
                                                 <constraint firstItem="owa-kB-Psg" firstAttribute="trailing" secondItem="vKH-QX-5QW" secondAttribute="trailingMargin" id="XF7-Dr-ZMa"/>
                                                 <constraint firstItem="Njx-wm-KPK" firstAttribute="top" secondItem="oj5-01-wyZ" secondAttribute="bottom" constant="7" id="XGn-39-Zkq"/>
+                                                <constraint firstItem="wqc-f0-08y" firstAttribute="top" secondItem="FDu-9m-BEq" secondAttribute="bottom" constant="8" id="XXr-Cb-jpX"/>
                                                 <constraint firstItem="33a-Hb-Bss" firstAttribute="top" secondItem="Njx-wm-KPK" secondAttribute="bottom" constant="7" id="ZNc-c2-zJ5"/>
                                                 <constraint firstItem="33a-Hb-Bss" firstAttribute="leading" secondItem="7eZ-Hg-N6j" secondAttribute="trailing" constant="8" id="ccX-Uq-DRM"/>
                                                 <constraint firstItem="owa-kB-Psg" firstAttribute="leading" secondItem="Njx-wm-KPK" secondAttribute="trailing" constant="8" id="dHe-IA-kWu"/>
@@ -140,6 +146,7 @@
                                                 <constraint firstItem="FDu-9m-BEq" firstAttribute="leading" secondItem="vKH-QX-5QW" secondAttribute="leadingMargin" id="fRf-2e-NFa"/>
                                                 <constraint firstItem="2t2-fH-9rt" firstAttribute="top" secondItem="vKH-QX-5QW" secondAttribute="topMargin" constant="44" id="kzZ-I0-ZmX"/>
                                                 <constraint firstItem="7rT-Le-Am5" firstAttribute="top" secondItem="vKH-QX-5QW" secondAttribute="topMargin" constant="33" id="oUN-fa-Map"/>
+                                                <constraint firstItem="wqc-f0-08y" firstAttribute="bottom" secondItem="vKH-QX-5QW" secondAttribute="bottomMargin" id="uX8-td-qRC"/>
                                                 <constraint firstItem="owa-kB-Psg" firstAttribute="centerY" secondItem="7eZ-Hg-N6j" secondAttribute="centerY" id="uw8-l3-4Fl"/>
                                                 <constraint firstItem="FDu-9m-BEq" firstAttribute="top" secondItem="vKH-QX-5QW" secondAttribute="topMargin" id="vi8-Ks-eR9"/>
                                                 <constraint firstItem="oj5-01-wyZ" firstAttribute="top" secondItem="FDu-9m-BEq" secondAttribute="bottom" constant="8" id="wJJ-cW-1JJ"/>
@@ -206,5 +213,6 @@
     </scenes>
     <resources>
         <image name="ConfigPaymentGear" width="110" height="110"/>
+        <image name="DarkTopLeftCorner" width="300" height="200"/>
     </resources>
 </document>
