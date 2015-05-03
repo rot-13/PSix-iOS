@@ -13,10 +13,9 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var eventDateDayAndTime: UILabel!
-    @IBOutlet weak var eventDateMonthLabel: UILabel!
-    @IBOutlet weak var eventDateDayLabel: UILabel!
     @IBOutlet weak var eventThumbImage: UIImageView!
     @IBOutlet weak var amountPerAttendee: UILabel!
+    @IBOutlet weak var eventMonthDayView: MonthDay!
     
     private static var placeholderThumb = UIImage(named: "PlaceholderEventThumb")
     
@@ -30,10 +29,9 @@ class EventCell: UITableViewCell {
                 let presenter = EventPresenter(event)
                 eventNameLabel.text = presenter.title
                 locationLabel.text = presenter.location
-                eventDateMonthLabel.text = event.startTime?.monthShortName.uppercaseString
-                eventDateDayLabel.text = event.startTime?.dayDoubleDigit
                 eventDateDayAndTime.text = presenter.getDayHourOfStartConsideringWidth(eventDateDayAndTime.bounds.width, font: eventDateDayAndTime.font)
                 let paymentCollectionStatus = presenter.paymentStatus
+                eventMonthDayView.date = event.startTime
                 if paymentCollectionStatus != "" {
                     amountPerAttendee.text = paymentCollectionStatus
                 } else {
