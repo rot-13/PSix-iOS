@@ -34,6 +34,8 @@
 		D0E31D4B1AF6155F007865D2 /* MonthDay.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E31D4A1AF6155F007865D2 /* MonthDay.xib */; };
 		D0E31D4D1AF62E0C007865D2 /* MonthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E31D4C1AF62E0C007865D2 /* MonthDay.swift */; };
 		D0E31D501AF65C0B007865D2 /* UIXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E31D4F1AF65C0B007865D2 /* UIXibView.swift */; };
+		D0E31D531AF66A01007865D2 /* ShadedImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E31D521AF66A01007865D2 /* ShadedImageView.xib */; };
+		D0E31D551AF66A66007865D2 /* ShadedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E31D541AF66A66007865D2 /* ShadedImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		D0E31D4A1AF6155F007865D2 /* MonthDay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthDay.xib; sourceTree = "<group>"; };
 		D0E31D4C1AF62E0C007865D2 /* MonthDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDay.swift; sourceTree = "<group>"; };
 		D0E31D4F1AF65C0B007865D2 /* UIXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIXibView.swift; sourceTree = "<group>"; };
+		D0E31D521AF66A01007865D2 /* ShadedImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShadedImageView.xib; sourceTree = "<group>"; };
+		D0E31D541AF66A66007865D2 /* ShadedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadedImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,8 +246,9 @@
 		D0B8A59A1AECD3EA00B1BAC9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D0B8A5981AECD20F00B1BAC9 /* EventCell.swift */,
+				D0E31D511AF664DA007865D2 /* ShadenedImageView */,
 				D0E31D4E1AF65BED007865D2 /* MonthDayView */,
+				D0B8A5981AECD20F00B1BAC9 /* EventCell.swift */,
 				D0E31D4F1AF65C0B007865D2 /* UIXibView.swift */,
 			);
 			name = Views;
@@ -269,6 +274,15 @@
 				D0E31D4C1AF62E0C007865D2 /* MonthDay.swift */,
 			);
 			name = MonthDayView;
+			sourceTree = "<group>";
+		};
+		D0E31D511AF664DA007865D2 /* ShadenedImageView */ = {
+			isa = PBXGroup;
+			children = (
+				D0E31D521AF66A01007865D2 /* ShadedImageView.xib */,
+				D0E31D541AF66A66007865D2 /* ShadedImageView.swift */,
+			);
+			name = ShadenedImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +375,7 @@
 			files = (
 				D0958F8E1ADA9D0900FC4AA4 /* Images.xcassets in Resources */,
 				D0E31D4B1AF6155F007865D2 /* MonthDay.xib in Resources */,
+				D0E31D531AF66A01007865D2 /* ShadedImageView.xib in Resources */,
 				D00632431ADE547400022DDF /* Onboarding.storyboard in Resources */,
 				D00632451ADE54DA00022DDF /* EventsList.storyboard in Resources */,
 			);
@@ -417,6 +432,7 @@
 				D0E31D501AF65C0B007865D2 /* UIXibView.swift in Sources */,
 				D04A951F1AE6990A007B1D70 /* String.swift in Sources */,
 				D0C0151B1AE54A9700BC9152 /* FBConstants.swift in Sources */,
+				D0E31D551AF66A66007865D2 /* ShadedImageView.swift in Sources */,
 				D0C015121AE51E0B00BC9152 /* FBRequest.swift in Sources */,
 				D0B8A59C1AECFCF900B1BAC9 /* NSDate.swift in Sources */,
 				D0E31D4D1AF62E0C007865D2 /* MonthDay.swift in Sources */,
