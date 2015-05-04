@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class EventsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class EventsListViewController: UIViewController {
     
     static let EVENT_CELL_ID = "EventCell"
     
@@ -41,7 +41,7 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
         eventsListTable.addSubview(refreshControl)
         
         if !ParseUserSession.isLoggedIn {
-            getUserOnboard()
+            presentUserOnboarding()
         } else {
             updateUserEvents()
         }
@@ -54,7 +54,7 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
         updateUserEvents()
     }
     
-    private func getUserOnboard() {
+    private func presentUserOnboarding() {
         let onboardingStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
         let onboardingVC = onboardingStoryboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
         onboardingVC.successfulLoginCallback = { [unowned self] () -> Void in
@@ -69,6 +69,21 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
         eventsListTable.hidden = userCreatedEvents.count == 0
     }
     
+    @IBAction func refreshForNewEvents() {
+        noEventsRefreshSpinner.startAnimating()
+        updateUserEvents() { [unowned self] in
+            self.noEventsRefreshSpinner.stopAnimating()
+        }
+    }
+    
+}
+
+
+extension EventsListViewController: UITableViewDelegate {}
+
+
+extension EventsListViewController: UITableViewDataSource {
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userCreatedEvents.count
     }
@@ -79,13 +94,6 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
         cell.event = userCreatedEvents[indexPath.row]
         
         return cell
-    }
-    
-    @IBAction func refreshForNewEvents() {
-        noEventsRefreshSpinner.startAnimating()
-        updateUserEvents() { [unowned self] in
-            self.noEventsRefreshSpinner.stopAnimating()
-        }
     }
     
 }
