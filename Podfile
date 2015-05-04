@@ -4,8 +4,8 @@
 target 'PSix' do
 
 pod 'Facebook-iOS-SDK', '4.0.1'
-pod 'Parse'
-pod 'ParseFacebookUtilsV4'
+pod 'Parse', '1.7.1'
+pod 'ParseFacebookUtilsV4', '1.7.1'
 
 end
 

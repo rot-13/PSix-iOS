@@ -16,7 +16,7 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var eventDateMonthLabel: UILabel!
     @IBOutlet weak var eventDateDayLabel: UILabel!
     @IBOutlet weak var eventThumbImage: UIImageView!
-    @IBOutlet weak var paymentCollectionStatus: UILabel!
+    @IBOutlet weak var amountPerAttendee: UILabel!
     
     private static var placeholderThumb = UIImage(named: "PlaceholderEventThumb")
     
@@ -27,15 +27,21 @@ class EventCell: UITableViewCell {
     var event: Event? {
         didSet {
             if let event = event {
-                eventNameLabel.text = event.name
-                locationLabel.text = event.location
+                let presenter = EventPresenter(event)
+                eventNameLabel.text = presenter.title
+                locationLabel.text = presenter.location
                 eventDateMonthLabel.text = event.startTime?.monthShortName.uppercaseString
                 eventDateDayLabel.text = event.startTime?.dayDoubleDigit
-                eventDateDayAndTime.text = EventPresenter.getDayHourOfStartConsideringWidth(event, boxWidth: eventDateDayAndTime.bounds.width, font: eventDateDayAndTime.font)
-                paymentCollectionStatus.text = EventPresenter.getPaymentStatus(event)
+                eventDateDayAndTime.text = presenter.getDayHourOfStartConsideringWidth(eventDateDayAndTime.bounds.width, font: eventDateDayAndTime.font)
+                let paymentCollectionStatus = presenter.paymentStatus
+                if paymentCollectionStatus != "" {
+                    amountPerAttendee.text = paymentCollectionStatus
+                } else {
+                    amountPerAttendee.text = presenter.attendanceFee
+                }
                 
                 eventThumbImage.image = EventCell.placeholderThumb
-                EventPresenter.getEventImageAsync(event) { [unowned self] (image) -> Void in
+                presenter.getCoverImageAsync { [unowned self] (image) -> Void in
                     self.eventThumbImage.image = image
                 }
             }

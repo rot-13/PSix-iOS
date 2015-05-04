@@ -10,48 +10,71 @@ import Foundation
 
 class EventPresenter {
     
-    static let formatter = NSDateFormatter()
+    private static let formatter = NSDateFormatter()
     
-    private static var eventCoverImages = [String:UIImage]()
+    private static var eventCoverImages = [NSURL:UIImage]()
     
     private static func doesTextFitInWidth(text: String, width: CGFloat, font: UIFont) -> Bool {
         return width >= (text as NSString).sizeWithAttributes([NSFontAttributeName: font]).width
     }
     
-    static func getEventImageAsync(event: Event, callback: (UIImage) -> ()) {
-        if let preloadedImage = eventCoverImages[event.fbId] {
-            callback(preloadedImage)
-        } else {
-            if let coverImageUrl = event.coverImageUrl {
+    private let event: Event
+    
+    init(_ event: Event) {
+        self.event = event
+    }
+    
+    func getCoverImageAsync(callback: (UIImage) -> ()) {
+        if let coverImageUrl = event.coverImageUrl {
+            if let preloadedImage = EventPresenter.eventCoverImages[coverImageUrl] {
+                callback(preloadedImage)
+            } else {
                 dispatch_async(dispatch_get_main_queue()) {
                     if let coverImageData = NSData(contentsOfURL: coverImageUrl) {
-                        EventPresenter.eventCoverImages[event.fbId] = UIImage(data: coverImageData)
-                        callback(EventPresenter.eventCoverImages[event.fbId]!)
+                        EventPresenter.eventCoverImages[coverImageUrl] = UIImage(data: coverImageData)
+                        callback(EventPresenter.eventCoverImages[coverImageUrl]!)
                     }
                 }
             }
         }
     }
     
-    static func getDayHourOfStartConsideringWidth(event: Event, boxWidth: CGFloat, font: UIFont) -> String {
+    func getDayHourOfStartConsideringWidth(boxWidth: CGFloat, font: UIFont) -> String {
         if let startDate = event.startTime {
-            formatter.dateFormat = "EEEE, h:mm"
-            let extendedText = formatter.stringFromDate(startDate)
-            if !doesTextFitInWidth(extendedText, width: boxWidth, font: font) {
-                formatter.dateFormat = "E, h:mm"
-                return formatter.stringFromDate(startDate)
+            EventPresenter.formatter.dateFormat = "EEEE, H:mm"
+            let extendedText = EventPresenter.formatter.stringFromDate(startDate)
+            if !EventPresenter.doesTextFitInWidth(extendedText, width: boxWidth, font: font) {
+                EventPresenter.formatter.dateFormat = "E, H:mm"
+                return EventPresenter.formatter.stringFromDate(startDate)
             }
             return extendedText as String
         }
         return ""
     }
     
-    static func getPaymentStatus(event: Event) -> String {
-        if let amountToCollect = event.totalMoneyToCollect {
-            let amountCollected = event.moneyCollected ?? 0
-            return "\(amountCollected) / \(amountToCollect)"
+    var attendanceFee: String {
+        if event.amountPerAttendee > 0 {
+            return "$\(event.amountPerAttendee)"
         }
         return ""
+    }
+    
+    var paymentStatus: String {
+        if event.attending.count > 0 {
+            if let amountToCollect = event.totalMoneyToCollect {
+                let amountCollected = event.moneyCollected ?? 0
+                return "$\(amountCollected) / $\(amountToCollect)"
+            }
+        }
+        return ""
+    }
+    
+    var title: String {
+        return event.name ?? ""
+    }
+    
+    var location: String {
+        return event.location ?? ""
     }
     
 }

@@ -21,24 +21,27 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     @IBOutlet weak var eventsListTable: UITableView!
+    @IBOutlet weak var noEventsRefreshSpinner: UIActivityIndicatorView!
     
-    private func updateUserEvents() {
+    let refreshControl = UIRefreshControl()
+    
+    private func updateUserEvents(finished: (() -> ())? = nil) {
         if let currentUser = ParseUserSession.currentUser {
-            FacebookService.getFutureEventsCreatedByUser(currentUser) { [unowned self] (events) -> Void in
+            refreshControl.beginRefreshing()
+            FacebookService.getFutureEventsCreatedByUserAsync(currentUser) { [unowned self] (events) -> Void in
                 self.userCreatedEvents = events
+                self.refreshControl.endRefreshing()
+                finished?()
             }
         }
     }
     
     override func viewDidLoad() {
+        refreshControl.addTarget(self, action: "refreshData", forControlEvents: UIControlEvents.ValueChanged)
+        eventsListTable.addSubview(refreshControl)
+        
         if !ParseUserSession.isLoggedIn {
-            let onboardingStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
-            let onboardingVC = onboardingStoryboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
-            onboardingVC.successfulLoginCallback = { [unowned self] () -> Void in
-                self.updateUserEvents()
-                onboardingVC.dismissViewControllerAnimated(true, completion: nil)
-            }
-            presentViewController(onboardingVC, animated: true, completion: nil)
+            getUserOnboard()
         } else {
             updateUserEvents()
         }
@@ -47,8 +50,23 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
         eventsListTable.delegate = self
     }
     
+    func refreshData() {
+        updateUserEvents()
+    }
+    
+    private func getUserOnboard() {
+        let onboardingStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let onboardingVC = onboardingStoryboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
+        onboardingVC.successfulLoginCallback = { [unowned self] () -> Void in
+            self.updateUserEvents()
+            onboardingVC.dismissViewControllerAnimated(true, completion: nil)
+        }
+        presentViewController(onboardingVC, animated: true, completion: nil)
+    }
+    
     func updateUI() {
         eventsListTable.reloadData()
+        eventsListTable.hidden = userCreatedEvents.count == 0
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,6 +79,13 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
         cell.event = userCreatedEvents[indexPath.row]
         
         return cell
+    }
+    
+    @IBAction func refreshForNewEvents() {
+        noEventsRefreshSpinner.startAnimating()
+        updateUserEvents() { [unowned self] in
+            self.noEventsRefreshSpinner.stopAnimating()
+        }
     }
     
 }
