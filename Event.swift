@@ -13,7 +13,7 @@ class Event: PFObject, PFSubclassing, Comparable {
     
     static func findOrCreateBlocking(fbId: String) -> Event {
         let findEventQuery = PFQuery(className: parseClassName()).whereKey("fbId", equalTo: fbId)
-        if let events = findEventQuery.findObjects() as? Events, event = events.first {
+        if let event = findEventQuery.getFirstObject() as? Event {
             return event
         }
         return Event(fbId)
