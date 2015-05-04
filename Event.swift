@@ -50,13 +50,13 @@ class Event: PFObject, PFSubclassing, Comparable {
     
     var guests = RSVPs()
     var attending: RSVPs {
-        return RSVP.filterAttending(guests)
+        return RSVP.filter(guests, whoAre: .Attending)
     }
     var tentative: RSVPs {
-        return RSVP.filterMaybe(guests)
+        return RSVP.filter(guests, whoAre: .Tentative)
     }
     var declined: RSVPs {
-        return RSVP.filterDeclined(guests)
+        return RSVP.filter(guests, whoAre: .NotGoing)
     }
     
     var moneyCollected: Int? {
@@ -71,7 +71,7 @@ class Event: PFObject, PFSubclassing, Comparable {
     
     var totalMoneyToCollect: Int? {
         if amountPerAttendee > 0 {
-            return RSVP.filterAttending(guests).count * amountPerAttendee
+            return RSVP.filter(guests, whoAre: .Attending).count * amountPerAttendee
         }
         return nil
     }

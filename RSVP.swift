@@ -12,8 +12,8 @@ typealias RSVPs = [RSVP]
 
 enum RsvpStatus {
     case Attending
-    case Maybe
-    case Declined
+    case Tentative
+    case NotGoing
 }
 
 class RSVP {
@@ -26,20 +26,8 @@ class RSVP {
         self.status = status
     }
     
-    private static func filterRsvpsByStatus(rsvps: RSVPs, status: RsvpStatus) -> RSVPs {
+    static func filter(rsvps: RSVPs, whoAre status: RsvpStatus) -> RSVPs {
         return rsvps.filter { $0.status == status }
-    }
-    
-    static func filterAttending(rsvps: RSVPs) -> RSVPs {
-        return filterRsvpsByStatus(rsvps, status: .Attending)
-    }
-    
-    static func filterMaybe(rsvps: RSVPs) -> RSVPs {
-        return filterRsvpsByStatus(rsvps, status: .Maybe)
-    }
-    
-    static func filterDeclined(rsvps: RSVPs) -> RSVPs {
-        return filterRsvpsByStatus(rsvps, status: .Declined)
     }
     
 }
