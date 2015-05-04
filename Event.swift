@@ -46,14 +46,7 @@ class Event: PFObject, PFSubclassing, Comparable {
     var endTime: NSDate?
     var coverImageUrl: NSURL?
     
-    var _paymentsRelation: PFRelation?
-    var paymentsRelation: PFRelation {
-        if let _paymentsRelation = _paymentsRelation {
-            return _paymentsRelation
-        }
-        _paymentsRelation = self.relationForKey("payments")
-        return _paymentsRelation!
-    }
+    lazy var paymentsRelation: PFRelation = self.relationForKey("payments")
     
     var guests = RSVPs()
     var attending: RSVPs {
