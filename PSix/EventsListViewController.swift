@@ -83,7 +83,7 @@ class EventsListViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBAction func refreshForNewEvents() {
         noEventsRefreshSpinner.startAnimating()
-        updateUserEvents() { [unowned self] () -> Void in
+        updateUserEvents() { [unowned self] in
             self.noEventsRefreshSpinner.stopAnimating()
         }
     }
