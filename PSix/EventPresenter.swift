@@ -35,10 +35,10 @@ class EventPresenter {
     
     static func getDayHourOfStartConsideringWidth(event: Event, boxWidth: CGFloat, font: UIFont) -> String {
         if let startDate = event.startTime {
-            formatter.dateFormat = "EEEE, h:mm"
+            formatter.dateFormat = "EEEE, H:mm"
             let extendedText = formatter.stringFromDate(startDate)
             if !doesTextFitInWidth(extendedText, width: boxWidth, font: font) {
-                formatter.dateFormat = "E, h:mm"
+                formatter.dateFormat = "E, H:mm"
                 return formatter.stringFromDate(startDate)
             }
             return extendedText as String
