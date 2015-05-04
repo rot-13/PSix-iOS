@@ -10,7 +10,7 @@ import Foundation
 
 class EventPresenter {
     
-    static let formatter = NSDateFormatter()
+    private static let formatter = NSDateFormatter()
     
     private static var eventCoverImages = [NSURL:UIImage]()
     
@@ -18,9 +18,15 @@ class EventPresenter {
         return width >= (text as NSString).sizeWithAttributes([NSFontAttributeName: font]).width
     }
     
-    static func getEventImageAsync(event: Event, callback: (UIImage) -> ()) {
+    private let event: Event
+    
+    init(_ event: Event) {
+        self.event = event
+    }
+    
+    func getCoverImageAsync(callback: (UIImage) -> ()) {
         if let coverImageUrl = event.coverImageUrl {
-            if let preloadedImage = eventCoverImages[coverImageUrl] {
+            if let preloadedImage = EventPresenter.eventCoverImages[coverImageUrl] {
                 callback(preloadedImage)
             } else {
                 dispatch_async(dispatch_get_main_queue()) {
@@ -33,27 +39,27 @@ class EventPresenter {
         }
     }
     
-    static func getDayHourOfStartConsideringWidth(event: Event, boxWidth: CGFloat, font: UIFont) -> String {
+    func getDayHourOfStartConsideringWidth(boxWidth: CGFloat, font: UIFont) -> String {
         if let startDate = event.startTime {
-            formatter.dateFormat = "EEEE, H:mm"
-            let extendedText = formatter.stringFromDate(startDate)
-            if !doesTextFitInWidth(extendedText, width: boxWidth, font: font) {
-                formatter.dateFormat = "E, H:mm"
-                return formatter.stringFromDate(startDate)
+            EventPresenter.formatter.dateFormat = "EEEE, H:mm"
+            let extendedText = EventPresenter.formatter.stringFromDate(startDate)
+            if !EventPresenter.doesTextFitInWidth(extendedText, width: boxWidth, font: font) {
+                EventPresenter.formatter.dateFormat = "E, H:mm"
+                return EventPresenter.formatter.stringFromDate(startDate)
             }
             return extendedText as String
         }
         return ""
     }
     
-    static func getFeePerAttendee(event: Event) -> String {
+    var attendanceFee: String {
         if event.amountPerAttendee > 0 {
             return "$\(event.amountPerAttendee)"
         }
         return ""
     }
     
-    static func getPaymentStatus(event: Event) -> String {
+    var paymentStatus: String {
         if event.attending.count > 0 {
             if let amountToCollect = event.totalMoneyToCollect {
                 let amountCollected = event.moneyCollected ?? 0
@@ -61,6 +67,14 @@ class EventPresenter {
             }
         }
         return ""
+    }
+    
+    var title: String {
+        return event.name ?? ""
+    }
+    
+    var location: String {
+        return event.location ?? ""
     }
     
 }
