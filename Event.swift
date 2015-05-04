@@ -60,9 +60,6 @@ class Event: PFObject, PFSubclassing, Comparable {
     }
     
     var moneyCollected: Int? {
-        // For some fucking reason I cannot seem to convert the relation query response to a Payments collection,
-        // and so I am stuck with this ugliness :(
-        // Still trying to resolve this.
         if let payments = paymentsRelation.query()?.findObjects() as? Payments {
             return payments.map { $0["amount"] as! Int }.reduce(0, combine: +)
         }
