@@ -57,8 +57,7 @@ class EventsListViewController: UIViewController {
     }
     
     private func presentUserOnboarding() {
-        let onboardingStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
-        let onboardingVC = onboardingStoryboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
+        let onboardingVC = UIViewController.fromStoryboard("Onboarding", controllerIdentifier: "OnboardingViewController") as! OnboardingViewController
         onboardingVC.successfulLoginCallback = { [unowned self] in
             self.updateUserEvents()
             onboardingVC.dismissViewControllerAnimated(true, completion: nil)
