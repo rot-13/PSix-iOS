@@ -78,9 +78,12 @@ class EventsListViewController: UIViewController {
     
 }
 
+extension EventsListViewController: UITableViewDelegate {
 
-extension EventsListViewController: UITableViewDelegate {}
-
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    }
+    
+}
 
 extension EventsListViewController: UITableViewDataSource {
     

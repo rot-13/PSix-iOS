@@ -15,6 +15,10 @@
 		D0124FDA1AF11B9A00965A10 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0124FD91AF11B9A00965A10 /* Array.swift */; };
 		D01418591AF76B15007358F4 /* EventDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01418581AF76B15007358F4 /* EventDetails.storyboard */; };
 		D0178CAE1AEE78DB00FD2DD1 /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0178CAD1AEE78DB00FD2DD1 /* EventPresenter.swift */; };
+		D0455D3D1AF8B9E1002148D8 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0455D3C1AF8B9E1002148D8 /* EventDetailsViewController.swift */; };
+		D0455D3F1AF8C858002148D8 /* P6Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0455D3E1AF8C858002148D8 /* P6Root.storyboard */; };
+		D0455D411AF8CC28002148D8 /* P6RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0455D401AF8CC28002148D8 /* P6RootViewController.swift */; };
+		D0455D431AF8D35A002148D8 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0455D421AF8D35A002148D8 /* UIViewController.swift */; };
 		D04A951F1AE6990A007B1D70 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04A951E1AE6990A007B1D70 /* String.swift */; };
 		D0501E0F1ADBD7E900EB6A83 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */; };
 		D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */; };
@@ -60,6 +64,10 @@
 		D0124FD91AF11B9A00965A10 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		D01418581AF76B15007358F4 /* EventDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventDetails.storyboard; sourceTree = "<group>"; };
 		D0178CAD1AEE78DB00FD2DD1 /* EventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
+		D0455D3C1AF8B9E1002148D8 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		D0455D3E1AF8C858002148D8 /* P6Root.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = P6Root.storyboard; sourceTree = "<group>"; };
+		D0455D401AF8CC28002148D8 /* P6RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P6RootViewController.swift; sourceTree = "<group>"; };
+		D0455D421AF8D35A002148D8 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		D04A951E1AE6990A007B1D70 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D0501E0C1ADBBA9000EB6A83 /* ObjCBridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridging.h; sourceTree = "<group>"; };
 		D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +139,7 @@
 				D04A951E1AE6990A007B1D70 /* String.swift */,
 				D0B8A59B1AECFCF900B1BAC9 /* NSDate.swift */,
 				D0124FD91AF11B9A00965A10 /* Array.swift */,
+				D0455D421AF8D35A002148D8 /* UIViewController.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -161,6 +170,8 @@
 			children = (
 				D0501E0E1ADBD7E900EB6A83 /* OnboardingViewController.swift */,
 				D0501E101ADBD7FF00EB6A83 /* EventsListViewController.swift */,
+				D0455D3C1AF8B9E1002148D8 /* EventDetailsViewController.swift */,
+				D0455D401AF8CC28002148D8 /* P6RootViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -171,6 +182,7 @@
 				D00632421ADE547400022DDF /* Onboarding.storyboard */,
 				D00632441ADE54DA00022DDF /* EventsList.storyboard */,
 				D01418581AF76B15007358F4 /* EventDetails.storyboard */,
+				D0455D3E1AF8C858002148D8 /* P6Root.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -198,6 +210,8 @@
 		D0958F801ADA9D0900FC4AA4 /* PSix */ = {
 			isa = PBXGroup;
 			children = (
+				D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */,
+				D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */,
 				D0178CAC1AEE78CA00FD2DD1 /* Presenters */,
 				D04A951D1AE698FC007B1D70 /* Extensions */,
 				D06957791ADFCF51009DB549 /* Services */,
@@ -213,8 +227,6 @@
 		D0958F811ADA9D0900FC4AA4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */,
-				D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */,
 				D0501E0C1ADBBA9000EB6A83 /* ObjCBridging.h */,
 				D0958F821ADA9D0900FC4AA4 /* Info.plist */,
 			);
@@ -381,6 +393,7 @@
 				D0E31D4B1AF6155F007865D2 /* MonthDay.xib in Resources */,
 				D0E31D531AF66A01007865D2 /* ShadedImageView.xib in Resources */,
 				D00632431ADE547400022DDF /* Onboarding.storyboard in Resources */,
+				D0455D3F1AF8C858002148D8 /* P6Root.storyboard in Resources */,
 				D00632451ADE54DA00022DDF /* EventsList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +449,7 @@
 				D0E31D501AF65C0B007865D2 /* UIXibView.swift in Sources */,
 				D04A951F1AE6990A007B1D70 /* String.swift in Sources */,
 				D0C0151B1AE54A9700BC9152 /* FBConstants.swift in Sources */,
+				D0455D431AF8D35A002148D8 /* UIViewController.swift in Sources */,
 				D0E31D551AF66A66007865D2 /* ShadedImageView.swift in Sources */,
 				D0C015121AE51E0B00BC9152 /* FBRequest.swift in Sources */,
 				D0B8A59C1AECFCF900B1BAC9 /* NSDate.swift in Sources */,
@@ -446,9 +460,11 @@
 				D0B8A5991AECD20F00B1BAC9 /* EventCell.swift in Sources */,
 				D0124FDA1AF11B9A00965A10 /* Array.swift in Sources */,
 				D069577B1ADFCFC4009DB549 /* FacebookService.swift in Sources */,
+				D0455D411AF8CC28002148D8 /* P6RootViewController.swift in Sources */,
 				D0178CAE1AEE78DB00FD2DD1 /* EventPresenter.swift in Sources */,
 				D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */,
 				D00D2EF41AF26B950066CE51 /* RSVP.swift in Sources */,
+				D0455D3D1AF8B9E1002148D8 /* EventDetailsViewController.swift in Sources */,
 				D06957761ADEAF09009DB549 /* User.swift in Sources */,
 				D0C015151AE51F2B00BC9152 /* FBUserRequest.swift in Sources */,
 				D06957781ADEF3EB009DB549 /* Event.swift in Sources */,
