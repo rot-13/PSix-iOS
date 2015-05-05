@@ -17,12 +17,6 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var amountPerAttendee: UILabel!
     @IBOutlet weak var eventMonthDayView: MonthDay!
     
-    private static var placeholderThumb = UIImage(named: "PlaceholderEventThumb")
-    
-    override func awakeFromNib() {
-        eventThumbImage.image = EventCell.placeholderThumb
-    }
-    
     var event: Event? {
         didSet {
             if let event = event {
@@ -37,8 +31,7 @@ class EventCell: UITableViewCell {
                 } else {
                     amountPerAttendee.text = presenter.attendanceFee
                 }
-                
-                eventThumbImage.image = EventCell.placeholderThumb
+
                 presenter.getCoverImageAsync { [unowned self] (image) -> Void in
                     self.eventThumbImage.image = image
                 }
