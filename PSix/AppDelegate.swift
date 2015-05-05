@@ -13,9 +13,6 @@ import Parse
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         initModels()
         Parse.enableLocalDatastore()
@@ -23,17 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             clientKey: "Ny6h1E3DaoO5M6Kgc8tyJZEu2uMiIr7QnqRe3PqY")
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions ?? [:])
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
-        
-//        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//        if let window = self.window {
-//            let splitViewController = UISplitViewController()
-//            let eventsListViewController = EventsListViewController()
-//            let eventDetailsViewController = EventDetailsViewController()
-//            splitViewController.viewControllers = [eventsListViewController, eventDetailsViewController]
-//            window.rootViewController = splitViewController
-//            window.makeKeyAndVisible()
-//        }
-        
         return true
     }
     
