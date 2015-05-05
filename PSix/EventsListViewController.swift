@@ -24,7 +24,7 @@ class EventsListViewController: UIViewController {
     @IBOutlet weak var eventsListTable: UITableView!
     @IBOutlet weak var noEventsRefreshSpinner: UIActivityIndicatorView!
     
-    let refreshControl = UIRefreshControl()
+    private let refreshControl = UIRefreshControl()
     
     private func updateUserEvents(finished: (() -> ())? = nil) {
         if let currentUser = ParseUserSession.currentUser {
@@ -41,10 +41,7 @@ class EventsListViewController: UIViewController {
         refreshControl.addTarget(self, action: "refreshData", forControlEvents: UIControlEvents.ValueChanged)
         eventsListTable.addSubview(refreshControl)
         
-        if !ParseUserSession.isLoggedIn {
-            println("User isn't logged in")
-            presentUserOnboarding()
-        } else {
+        if ParseUserSession.isLoggedIn {
             updateUserEvents()
         }
         
@@ -54,15 +51,6 @@ class EventsListViewController: UIViewController {
     
     func refreshData() {
         updateUserEvents()
-    }
-    
-    private func presentUserOnboarding() {
-        let onboardingVC = UIViewController.fromStoryboard("Onboarding", controllerIdentifier: "OnboardingViewController") as! OnboardingViewController
-        onboardingVC.successfulLoginCallback = { [unowned self] in
-            self.updateUserEvents()
-            onboardingVC.dismissViewControllerAnimated(true, completion: nil)
-        }
-        presentViewController(onboardingVC, animated: true, completion: nil)
     }
     
     func updateUI() {
