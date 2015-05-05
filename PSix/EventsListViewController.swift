@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 
 class EventsListViewController: UIViewController {
     
@@ -19,6 +18,8 @@ class EventsListViewController: UIViewController {
             updateUI()
         }
     }
+    
+    private(set) var eventSelected: Bool = false
     
     @IBOutlet weak var eventsListTable: UITableView!
     @IBOutlet weak var noEventsRefreshSpinner: UIActivityIndicatorView!
@@ -41,6 +42,7 @@ class EventsListViewController: UIViewController {
         eventsListTable.addSubview(refreshControl)
         
         if !ParseUserSession.isLoggedIn {
+            println("User isn't logged in")
             presentUserOnboarding()
         } else {
             updateUserEvents()
@@ -57,7 +59,7 @@ class EventsListViewController: UIViewController {
     private func presentUserOnboarding() {
         let onboardingStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
         let onboardingVC = onboardingStoryboard.instantiateViewControllerWithIdentifier("OnboardingViewController") as! OnboardingViewController
-        onboardingVC.successfulLoginCallback = { [unowned self] () -> Void in
+        onboardingVC.successfulLoginCallback = { [unowned self] in
             self.updateUserEvents()
             onboardingVC.dismissViewControllerAnimated(true, completion: nil)
         }
@@ -81,6 +83,11 @@ class EventsListViewController: UIViewController {
 extension EventsListViewController: UITableViewDelegate {
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        eventSelected = true
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        eventSelected = false
     }
     
 }
