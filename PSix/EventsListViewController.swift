@@ -19,8 +19,6 @@ class EventsListViewController: UIViewController {
         }
     }
     
-    private(set) var eventSelected: Bool = false
-    
     @IBOutlet weak var eventsListTable: UITableView!
     @IBOutlet weak var noEventsRefreshSpinner: UIActivityIndicatorView!
     
@@ -70,11 +68,11 @@ class EventsListViewController: UIViewController {
 extension EventsListViewController: UITableViewDelegate {
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        eventSelected = true
-    }
-    
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        eventSelected = false
+        if let detailViewNav = UIViewController.fromStoryboard("EventDetails", controllerIdentifier: "EventDetailsNavigationViewController") as? UINavigationController,
+           let detailView = detailViewNav.viewControllers[0] as? EventDetailsViewController {
+            splitViewController?.showDetailViewController(detailViewNav, sender: self)
+            detailView.event = userCreatedEvents[indexPath.row]
+        }
     }
     
 }
@@ -87,9 +85,7 @@ extension EventsListViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = eventsListTable.dequeueReusableCellWithIdentifier(EventsListViewController.EVENT_CELL_ID, forIndexPath: indexPath) as! EventCell
-        
         cell.event = userCreatedEvents[indexPath.row]
-        
         return cell
     }
     

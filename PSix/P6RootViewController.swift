@@ -21,7 +21,7 @@ class P6RootViewController: UISplitViewController {
             
             self.eventsListVC = eventsListVC
             self.viewControllers = [eventsNavVC, eventDetailNavVC]
-            self.delegate = self.eventsListVC
+            self.delegate = self
         }
     }
     
@@ -42,7 +42,7 @@ class P6RootViewController: UISplitViewController {
 
 }
 
-extension EventsListViewController: UISplitViewControllerDelegate {
+extension P6RootViewController: UISplitViewControllerDelegate {
     
     func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController!, ontoPrimaryViewController primaryViewController: UIViewController!) -> Bool {
         return true

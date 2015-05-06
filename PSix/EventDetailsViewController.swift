@@ -17,16 +17,26 @@ class EventDetailsViewController: UIViewController {
     
     var event: Event? {
         didSet {
-            updateUI()
+            if self.isViewLoaded() {
+                updateUI()
+            }
         }
+    }
+    
+    override func viewDidLoad() {
+        println(self.navigationController?.viewControllers)
+        updateUI()
     }
     
     private func updateUI() {
         if let event = event {
-            baseView.backgroundColor = UIColor.whiteColor()
             emptyStateLabel.hidden = true
+            
+            let presenter = EventPresenter(event)
+            baseView.backgroundColor = UIColor.whiteColor()
         } else {
             emptyStateLabel.hidden = false
+            
             baseView.backgroundColor = emptyStateBackgroundColor
         }
     }
