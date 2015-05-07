@@ -75,7 +75,7 @@ extension EventDetailsViewController: UITableViewDelegate {
         if SectionTypes(rawValue: indexPath.section) == .Header {
             if let cellType = HeaderCellTypes(rawValue: indexPath.row) {
                 switch cellType {
-                case .Cover: return eventInformationTable.frame.width / 3 * 2
+                case .Cover: return eventInformationTable.frame.width / 2
                 default: return DEFAULT_ROW_HEIGHT
                 }
             }
