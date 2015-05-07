@@ -12,6 +12,7 @@ import Parse
 class ParseUserSession {
     
     private static let FB_READ_PERMISSIONS = ["public_profile", "user_events"]
+    static var delegate: ParseUserSessionDelegate?
     
     static var currentUser: User? {
         return PFUser.currentUser() as? User
@@ -24,6 +25,7 @@ class ParseUserSession {
                     user.facebookId = fbId
                     user.pinInBackground()
                     user.saveInBackground()
+                    self.delegate?.userLoggedIn()
                     callback()
                 }
             }

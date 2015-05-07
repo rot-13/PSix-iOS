@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		A01FAC2E013F6AB831E287F0 /* libPods-PSix.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39BDBF7FFA39053123B247C8 /* libPods-PSix.a */; };
 		D00632431ADE547400022DDF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00632421ADE547400022DDF /* Onboarding.storyboard */; };
-		D00632451ADE54DA00022DDF /* EventsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00632441ADE54DA00022DDF /* EventsList.storyboard */; };
+		D00632451ADE54DA00022DDF /* EventsFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00632441ADE54DA00022DDF /* EventsFlow.storyboard */; };
 		D008A11A1ADD2F9E00AF6666 /* ParseUserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D008A1191ADD2F9E00AF6666 /* ParseUserSession.swift */; };
 		D00D2EF41AF26B950066CE51 /* RSVP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00D2EF31AF26B950066CE51 /* RSVP.swift */; };
 		D0124FDA1AF11B9A00965A10 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0124FD91AF11B9A00965A10 /* Array.swift */; };
-		D01418591AF76B15007358F4 /* EventDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01418581AF76B15007358F4 /* EventDetails.storyboard */; };
 		D0178CAE1AEE78DB00FD2DD1 /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0178CAD1AEE78DB00FD2DD1 /* EventPresenter.swift */; };
+		D01BD2AA1AFA990F0010B39A /* ParseUserSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01BD2A91AFA990F0010B39A /* ParseUserSessionDelegate.swift */; };
 		D0455D3D1AF8B9E1002148D8 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0455D3C1AF8B9E1002148D8 /* EventDetailsViewController.swift */; };
-		D0455D3F1AF8C858002148D8 /* P6Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0455D3E1AF8C858002148D8 /* P6Root.storyboard */; };
 		D0455D411AF8CC28002148D8 /* P6RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0455D401AF8CC28002148D8 /* P6RootViewController.swift */; };
 		D0455D431AF8D35A002148D8 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0455D421AF8D35A002148D8 /* UIViewController.swift */; };
 		D04A951F1AE6990A007B1D70 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04A951E1AE6990A007B1D70 /* String.swift */; };
@@ -58,14 +57,13 @@
 		1FDEA9F7EB8198959E50BE9E /* Pods-PSix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSix.release.xcconfig"; path = "Pods/Target Support Files/Pods-PSix/Pods-PSix.release.xcconfig"; sourceTree = "<group>"; };
 		39BDBF7FFA39053123B247C8 /* libPods-PSix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PSix.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00632421ADE547400022DDF /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
-		D00632441ADE54DA00022DDF /* EventsList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsList.storyboard; sourceTree = "<group>"; };
+		D00632441ADE54DA00022DDF /* EventsFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsFlow.storyboard; sourceTree = "<group>"; };
 		D008A1191ADD2F9E00AF6666 /* ParseUserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUserSession.swift; sourceTree = "<group>"; };
 		D00D2EF31AF26B950066CE51 /* RSVP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSVP.swift; sourceTree = "<group>"; };
 		D0124FD91AF11B9A00965A10 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		D01418581AF76B15007358F4 /* EventDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventDetails.storyboard; sourceTree = "<group>"; };
 		D0178CAD1AEE78DB00FD2DD1 /* EventPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
+		D01BD2A91AFA990F0010B39A /* ParseUserSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUserSessionDelegate.swift; sourceTree = "<group>"; };
 		D0455D3C1AF8B9E1002148D8 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
-		D0455D3E1AF8C858002148D8 /* P6Root.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = P6Root.storyboard; sourceTree = "<group>"; };
 		D0455D401AF8CC28002148D8 /* P6RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P6RootViewController.swift; sourceTree = "<group>"; };
 		D0455D421AF8D35A002148D8 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		D04A951E1AE6990A007B1D70 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -149,6 +147,7 @@
 			children = (
 				D0C015131AE51EEF00BC9152 /* Facebook */,
 				D008A1191ADD2F9E00AF6666 /* ParseUserSession.swift */,
+				D01BD2A91AFA990F0010B39A /* ParseUserSessionDelegate.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -180,9 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				D00632421ADE547400022DDF /* Onboarding.storyboard */,
-				D00632441ADE54DA00022DDF /* EventsList.storyboard */,
-				D01418581AF76B15007358F4 /* EventDetails.storyboard */,
-				D0455D3E1AF8C858002148D8 /* P6Root.storyboard */,
+				D00632441ADE54DA00022DDF /* EventsFlow.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -388,13 +385,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D01418591AF76B15007358F4 /* EventDetails.storyboard in Resources */,
 				D0958F8E1ADA9D0900FC4AA4 /* Images.xcassets in Resources */,
 				D0E31D4B1AF6155F007865D2 /* MonthDay.xib in Resources */,
 				D0E31D531AF66A01007865D2 /* ShadedImageView.xib in Resources */,
 				D00632431ADE547400022DDF /* Onboarding.storyboard in Resources */,
-				D0455D3F1AF8C858002148D8 /* P6Root.storyboard in Resources */,
-				D00632451ADE54DA00022DDF /* EventsList.storyboard in Resources */,
+				D00632451ADE54DA00022DDF /* EventsFlow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +462,7 @@
 				D0455D3D1AF8B9E1002148D8 /* EventDetailsViewController.swift in Sources */,
 				D06957761ADEAF09009DB549 /* User.swift in Sources */,
 				D0C015151AE51F2B00BC9152 /* FBUserRequest.swift in Sources */,
+				D01BD2AA1AFA990F0010B39A /* ParseUserSessionDelegate.swift in Sources */,
 				D06957781ADEF3EB009DB549 /* Event.swift in Sources */,
 				D0C0151D1AE55DAC00BC9152 /* FBResponse.swift in Sources */,
 				D0501E0F1ADBD7E900EB6A83 /* OnboardingViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventsListViewController: UIViewController {
+class EventsListViewController: UIViewController, ParseUserSessionDelegate {
     
     static let EVENT_CELL_ID = "EventCell"
     
@@ -23,6 +23,8 @@ class EventsListViewController: UIViewController {
     @IBOutlet weak var noEventsRefreshSpinner: UIActivityIndicatorView!
     
     private let refreshControl = UIRefreshControl()
+    private var eventSelected = false
+    private var selectedEvent: Event?
     
     private func updateUserEvents(finished: (() -> ())? = nil) {
         if let currentUser = ParseUserSession.currentUser {
@@ -39,12 +41,18 @@ class EventsListViewController: UIViewController {
         refreshControl.addTarget(self, action: "refreshData", forControlEvents: UIControlEvents.ValueChanged)
         eventsListTable.addSubview(refreshControl)
         
+        ParseUserSession.delegate = self
+        
         if ParseUserSession.isLoggedIn {
             updateUserEvents()
         }
         
         eventsListTable.dataSource = self
         eventsListTable.delegate = self
+    }
+    
+    func userLoggedIn() {
+        updateUserEvents()
     }
     
     func refreshData() {
@@ -63,16 +71,20 @@ class EventsListViewController: UIViewController {
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let eventDetailsNav = segue.destinationViewController as? UINavigationController,
+           let eventDetailsVC = eventDetailsNav.viewControllers[0] as? EventDetailsViewController {
+            eventDetailsVC.event = selectedEvent
+        }
+    }
+    
 }
 
 extension EventsListViewController: UITableViewDelegate {
-
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let detailViewNav = UIViewController.fromStoryboard("EventDetails", controllerIdentifier: "EventDetailsNavigationViewController") as? UINavigationController,
-           let detailView = detailViewNav.viewControllers[0] as? EventDetailsViewController {
-            splitViewController?.showDetailViewController(detailViewNav, sender: self)
-            detailView.event = userCreatedEvents[indexPath.row]
-        }
+        selectedEvent = userCreatedEvents[indexPath.row]
+        performSegueWithIdentifier("ShowEventDetailsSegue", sender: self)
     }
     
 }

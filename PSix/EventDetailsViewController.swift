@@ -12,6 +12,7 @@ class EventDetailsViewController: UIViewController {
     
     @IBOutlet var baseView: UIView!
     @IBOutlet weak var emptyStateLabel: UILabel!
+    @IBOutlet weak var eventInformationTable: UITableView!
     
     private let emptyStateBackgroundColor = UIColor(red: 240, green: 240, blue: 240, alpha: 1)
     
@@ -24,18 +25,20 @@ class EventDetailsViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        println(self.navigationController?.viewControllers)
+        println(event)
         updateUI()
     }
     
     private func updateUI() {
         if let event = event {
             emptyStateLabel.hidden = true
+            eventInformationTable.hidden = false
             
             let presenter = EventPresenter(event)
             baseView.backgroundColor = UIColor.whiteColor()
         } else {
             emptyStateLabel.hidden = false
+            eventInformationTable.hidden = true
             
             baseView.backgroundColor = emptyStateBackgroundColor
         }

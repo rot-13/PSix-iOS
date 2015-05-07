@@ -10,22 +10,12 @@ import UIKit
 
 class P6RootViewController: UISplitViewController {
     
-    private var eventsListVC: EventsListViewController? = nil
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        if let eventsNavVC = UIViewController.fromStoryboard("EventsList", controllerIdentifier: "EventsListNavigationViewController") as? UINavigationController,
-           let eventDetailNavVC = UIViewController.fromStoryboard("EventDetails", controllerIdentifier: "EventDetailsNavigationViewController") as? UINavigationController,
-           let eventsListVC = eventsNavVC.viewControllers[0] as? EventsListViewController,
-           let eventDetailsVC = eventDetailNavVC.viewControllers[0] as? EventDetailsViewController {
-            
-            self.eventsListVC = eventsListVC
-            self.viewControllers = [eventsNavVC, eventDetailNavVC]
-            self.delegate = self
-        }
+    override func viewDidLoad() {
+        self.delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         if !ParseUserSession.isLoggedIn {
             presentUserOnboarding()
         }
@@ -34,9 +24,10 @@ class P6RootViewController: UISplitViewController {
     private func presentUserOnboarding() {
         let onboardingVC = UIViewController.fromStoryboard("Onboarding", controllerIdentifier: "OnboardingViewController") as! OnboardingViewController
         onboardingVC.successfulLoginCallback = { [unowned self] in
-            self.eventsListVC?.refreshData()
+            println("In the login callback")
             onboardingVC.dismissViewControllerAnimated(true, completion: nil)
         }
+        println("Calling the onboarding")
         presentViewController(onboardingVC, animated: true, completion: nil)
     }
 
