@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventDetailsCoverView" customModule="PSix" customModuleProvider="target">
+            <connections>
+                <outlet property="coverImageView" destination="ByY-9I-EqT" id="5JM-AT-KU5"/>
+                <outlet property="eventDateView" destination="Q40-Uh-ZV9" id="p2G-4O-oGb"/>
+                <outlet property="eventTitleLabel" destination="mhG-er-YwZ" id="VrB-gy-TUm"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="Event Details Cover">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ByY-9I-EqT" customClass="ShadedImageView" customModule="PSix" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="placeholderImage" value="PlaceholderEventThumb"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="shadeType" value="Bottom"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="PlaceholderEventThumb"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q40-Uh-ZV9" userLabel="Event Date" customClass="MonthDay" customModule="PSix" customModuleProvider="target">
+                    <rect key="frame" x="8" y="242" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="Sym-b9-6QM"/>
+                        <constraint firstAttribute="height" constant="50" id="VIJ-hf-d3H"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhG-er-YwZ">
+                    <rect key="frame" x="66" y="242" width="526" height="50"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Q40-Uh-ZV9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="7w7-PW-cMD"/>
+                <constraint firstItem="ByY-9I-EqT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="H0e-2z-9t0"/>
+                <constraint firstItem="mhG-er-YwZ" firstAttribute="leading" secondItem="Q40-Uh-ZV9" secondAttribute="trailing" constant="8" symbolic="YES" id="Mrr-UO-AI3"/>
+                <constraint firstAttribute="trailing" secondItem="ByY-9I-EqT" secondAttribute="trailing" id="NRS-on-592"/>
+                <constraint firstItem="mhG-er-YwZ" firstAttribute="bottom" secondItem="Q40-Uh-ZV9" secondAttribute="bottom" id="TYN-CK-bNp"/>
+                <constraint firstAttribute="bottom" secondItem="ByY-9I-EqT" secondAttribute="bottom" id="Xre-li-6Th"/>
+                <constraint firstItem="mhG-er-YwZ" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="cGC-zv-QJX"/>
+                <constraint firstItem="ByY-9I-EqT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cgP-uU-eNB"/>
+                <constraint firstItem="mhG-er-YwZ" firstAttribute="top" secondItem="Q40-Uh-ZV9" secondAttribute="top" id="dAj-nH-Anl"/>
+                <constraint firstItem="Q40-Uh-ZV9" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottomMargin" id="rbS-kL-F0b"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="798" y="405"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="PlaceholderEventThumb" width="600" height="400"/>
+    </resources>
+</document>
