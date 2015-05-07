@@ -24,10 +24,8 @@ class P6RootViewController: UISplitViewController {
     private func presentUserOnboarding() {
         let onboardingVC = UIViewController.fromStoryboard("Onboarding", controllerIdentifier: "OnboardingViewController") as! OnboardingViewController
         onboardingVC.successfulLoginCallback = { [unowned self] in
-            println("In the login callback")
             onboardingVC.dismissViewControllerAnimated(true, completion: nil)
         }
-        println("Calling the onboarding")
         presentViewController(onboardingVC, animated: true, completion: nil)
     }
 

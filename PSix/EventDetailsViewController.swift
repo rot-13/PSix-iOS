@@ -25,7 +25,6 @@ class EventDetailsViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        println(event)
         updateUI()
     }
     
