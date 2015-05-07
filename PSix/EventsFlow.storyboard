@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Events You're Hosting-->
+        <!--Events List View Controller-->
         <scene sceneID="Zpf-yS-vdx">
             <objects>
                 <viewController storyboardIdentifier="EventsListViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k8Z-Qx-7sR" customClass="EventsListViewController" customModule="PSix" customModuleProvider="target" sceneMemberID="viewController">
@@ -191,11 +191,11 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Events You're Hosting" id="2be-0S-qoU"/>
+                    <navigationItem key="navigationItem" id="2be-0S-qoU"/>
                     <connections>
                         <outlet property="eventsListTable" destination="xsc-bU-sjL" id="sDm-rD-HtY"/>
                         <outlet property="noEventsRefreshSpinner" destination="Ina-ab-bi7" id="S1h-U5-idj"/>
-                        <segue destination="hri-NK-MwE" kind="showDetail" identifier="ShowEventDetailsSegue" id="jdE-tm-EkQ"/>
+                        <segue destination="kmq-3E-3co" kind="showDetail" identifier="ShowEventDetailsSegue" id="gf6-gZ-fAY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MU4-fR-ZXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -351,6 +351,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rYB-HB-eoE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.94108748435974121" green="0.94122308492660522" blue="0.94105666875839233" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -387,6 +388,6 @@
         <image name="PlaceholderEventThumb" width="600" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jdE-tm-EkQ"/>
+        <segue reference="XP7-7x-fxo"/>
     </inferredMetricsTieBreakers>
 </document>

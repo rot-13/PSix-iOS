@@ -72,8 +72,7 @@ class EventsListViewController: UIViewController, ParseUserSessionDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let eventDetailsNav = segue.destinationViewController as? UINavigationController,
-           let eventDetailsVC = eventDetailsNav.viewControllers[0] as? EventDetailsViewController {
+        if let eventDetailsVC = segue.destinationViewController as? EventDetailsViewController {
             eventDetailsVC.event = selectedEvent
         }
     }
