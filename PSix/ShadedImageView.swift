@@ -56,7 +56,7 @@ class ShadedImageView: UIXibView {
     }
     
     private func setImage(newImage: UIImage) {
-        imageView.image = newImage
+        imageView.image = newImage.cropCenterToFit(extents: CGSize())
         shadeImageView.image = shadeImage
     }
     
@@ -67,6 +67,8 @@ class ShadedImageView: UIXibView {
     
 }
 
+// MARK: UIImage extension
+
 private extension UIImage {
     static func fromShadeType(shadeType: ShadedImageView.ShadeType) -> UIImage? {
         switch shadeType {
@@ -75,4 +77,8 @@ private extension UIImage {
         default: return nil
         }
     }
+  
+  func cropCenterToFit(#extents: CGSize) -> UIImage {
+    return self
+  }
 }

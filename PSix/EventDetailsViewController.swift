@@ -81,6 +81,8 @@ class EventDetailsViewController: UIViewController {
 
 }
 
+// MARK: UITableViewDelegeate
+
 private enum SectionTypes: Int {
     case Header = 0, RSVPs
     
@@ -110,6 +112,8 @@ extension EventDetailsViewController: UITableViewDelegate {
     }
     
 }
+
+// MARK: UITableViewDataSource
 
 extension EventDetailsViewController: UITableViewDataSource {
     

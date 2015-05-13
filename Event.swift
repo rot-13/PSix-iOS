@@ -75,6 +75,8 @@ class Event: PFObject, PFSubclassing, Comparable {
     
 }
 
+// MARK: Comparable
+
 func <(lhs: Event, rhs: Event) -> Bool {
     if let lhsStartTime = lhs.startTime,
        let rhsStartTime = rhs.startTime {
@@ -92,5 +94,7 @@ func ==(lhs: Event, rhs: Event) -> Bool {
     }
     return false
 }
+
+// MARK: typealiasing
 
 typealias Events = [Event]

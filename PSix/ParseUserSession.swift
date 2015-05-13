@@ -9,6 +9,8 @@
 import Foundation
 import Parse
 
+typealias FBLoginCallback = () -> ()
+
 class ParseUserSession {
     
     private static let FB_READ_PERMISSIONS = ["public_profile", "user_events"]
@@ -18,7 +20,7 @@ class ParseUserSession {
         return PFUser.currentUser() as? User
     }
     
-    static func loginWithFacebook(callback: ()->()) {
+    static func loginWithFacebook(callback: FBLoginCallback) {
         PFFacebookUtils.logInInBackgroundWithReadPermissions(FB_READ_PERMISSIONS) { (parseUser, error) -> Void in
             if let user = parseUser as? User {
                 FacebookService.getLoggedInUserId() { (fbId) -> Void in

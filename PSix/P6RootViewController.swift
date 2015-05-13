@@ -31,6 +31,8 @@ class P6RootViewController: UISplitViewController {
 
 }
 
+// MARK: UISplitViewControllerDelegate
+
 extension P6RootViewController: UISplitViewControllerDelegate {
     
     func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController!, ontoPrimaryViewController primaryViewController: UIViewController!) -> Bool {

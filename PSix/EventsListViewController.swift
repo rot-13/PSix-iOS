@@ -79,6 +79,8 @@ class EventsListViewController: UIViewController, ParseUserSessionDelegate {
     
 }
 
+// MARK: UITableViewDelegate
+
 extension EventsListViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -87,6 +89,8 @@ extension EventsListViewController: UITableViewDelegate {
     }
     
 }
+
+// MARK: UITableViewDataSource
 
 extension EventsListViewController: UITableViewDataSource {
     

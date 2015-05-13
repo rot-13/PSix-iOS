@@ -10,6 +10,8 @@ import Foundation
 import Parse
 
 typealias FBParamsList = [NSObject: AnyObject]
+typealias FBReqFailureCallback = (NSError) -> ()
+typealias FBReqSuccessCallback = (FBResponse) -> ()
 
 let URI_SEP = "/"
 
@@ -37,7 +39,7 @@ class FBRequest {
         return self
     }
     
-    func execute(failure: ((NSError) -> ())? = nil, success: (FBResponse) -> ()) {
+    func execute(failure: FBReqFailureCallback? = nil, success: FBReqSuccessCallback) {
         FBSDKGraphRequest(graphPath: path, parameters: params).startWithCompletionHandler() { (connection, result, fbError) -> Void in
             if let error = fbError {
                 failure?(error)

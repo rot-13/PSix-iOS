@@ -8,20 +8,23 @@
 
 import Foundation
 
+private typealias FBResponseData = [String: AnyObject]
+typealias FBDataValue = [AnyObject]
+
 class FBResponse {
     
-    private let fbResponse: [String: AnyObject]
+    private let fbResponseData: FBResponseData
     
     init(fromResult result: AnyObject) {
-        fbResponse = result as! [String: AnyObject]
+        fbResponseData = result as! FBResponseData
     }
     
-    subscript(hash: String) -> AnyObject? {
-        return fbResponse[hash]
+    subscript(key: String) -> AnyObject? {
+        return fbResponseData[key]
     }
     
-    var data: [AnyObject]? {
-        return self["data"] as? [AnyObject]
+    var data: FBDataValue? {
+        return self["data"] as? FBDataValue
     }
     
     var hasNext: Bool {
@@ -29,7 +32,7 @@ class FBResponse {
     }
     
     private var nextPath: String? {
-        if let paging = self["paging"] as? [String: AnyObject] {
+        if let paging = self["paging"] as? FBResponseData {
             return paging["next"] as? String
         }
         return nil
