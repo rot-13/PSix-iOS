@@ -49,13 +49,11 @@ class EventDetailsViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        println("Setting nav options")
         setNavHideOptions()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        println("Unsetting nav options")
         unsetNavHideOptions()
     }
     
