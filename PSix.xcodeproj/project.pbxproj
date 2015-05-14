@@ -41,6 +41,7 @@
 		D0C015191AE5339300BC9152 /* FBUserEventsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C015181AE5339300BC9152 /* FBUserEventsRequest.swift */; };
 		D0C0151B1AE54A9700BC9152 /* FBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0151A1AE54A9700BC9152 /* FBConstants.swift */; };
 		D0C0151D1AE55DAC00BC9152 /* FBResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0151C1AE55DAC00BC9152 /* FBResponse.swift */; };
+		D0DFD2961B03920800E6803B /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DFD2951B03920800E6803B /* CGSize.swift */; };
 		D0E31D4B1AF6155F007865D2 /* MonthDay.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E31D4A1AF6155F007865D2 /* MonthDay.xib */; };
 		D0E31D4D1AF62E0C007865D2 /* MonthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E31D4C1AF62E0C007865D2 /* MonthDay.swift */; };
 		D0E31D501AF65C0B007865D2 /* UIXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E31D4F1AF65C0B007865D2 /* UIXibView.swift */; };
@@ -100,6 +101,7 @@
 		D0C015181AE5339300BC9152 /* FBUserEventsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserEventsRequest.swift; sourceTree = "<group>"; };
 		D0C0151A1AE54A9700BC9152 /* FBConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBConstants.swift; sourceTree = "<group>"; };
 		D0C0151C1AE55DAC00BC9152 /* FBResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBResponse.swift; sourceTree = "<group>"; };
+		D0DFD2951B03920800E6803B /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
 		D0E31D4A1AF6155F007865D2 /* MonthDay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthDay.xib; sourceTree = "<group>"; };
 		D0E31D4C1AF62E0C007865D2 /* MonthDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDay.swift; sourceTree = "<group>"; };
 		D0E31D4F1AF65C0B007865D2 /* UIXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIXibView.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				D0B8A59B1AECFCF900B1BAC9 /* NSDate.swift */,
 				D0124FD91AF11B9A00965A10 /* Array.swift */,
 				D0455D421AF8D35A002148D8 /* UIViewController.swift */,
+				D0DFD2951B03920800E6803B /* CGSize.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				D0E31D551AF66A66007865D2 /* ShadedImageView.swift in Sources */,
 				D0C015121AE51E0B00BC9152 /* FBRequest.swift in Sources */,
 				D0B8A59C1AECFCF900B1BAC9 /* NSDate.swift in Sources */,
+				D0DFD2961B03920800E6803B /* CGSize.swift in Sources */,
 				D0E31D4D1AF62E0C007865D2 /* MonthDay.swift in Sources */,
 				D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */,
 				D08A16F81AED939900EC58AE /* Payment.swift in Sources */,
