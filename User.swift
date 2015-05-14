@@ -10,18 +10,18 @@ import Foundation
 import Parse
 
 class User: PFUser, PFSubclassing, FBUser {
-    
-    override static func initialize() {
-        var onceToken : dispatch_once_t = 0;
-        dispatch_once(&onceToken) {
-            self.registerSubclass()
-        }
+  
+  override static func initialize() {
+    var onceToken : dispatch_once_t = 0;
+    dispatch_once(&onceToken) {
+      self.registerSubclass()
     }
-    
-    override static func parseClassName() -> String {
-        return "_User"
-    }
-    
-    @NSManaged var facebookId: String
-    
+  }
+  
+  override static func parseClassName() -> String {
+    return "_User"
+  }
+  
+  @NSManaged var facebookId: String
+  
 }

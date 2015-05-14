@@ -9,7 +9,7 @@
 import UIKit
 
 class RsvpStubCell: UITableViewCell {
-
-    var rsvp: RSVP?
-
+  
+  var rsvp: RSVP?
+  
 }

@@ -9,9 +9,9 @@
 import Foundation
 
 extension Array {
-    
-    static func filterNils(array: [T?]) -> [T] {
-        return array.filter { $0 != nil }.map { $0! }
-    }
-    
+  
+  static func filterNils(array: [T?]) -> [T] {
+    return array.filter { $0 != nil }.map { $0! }
+  }
+  
 }

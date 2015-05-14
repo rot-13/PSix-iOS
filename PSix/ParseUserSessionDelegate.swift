@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ParseUserSessionDelegate {
-    
-    func userLoggedIn()
-    
+  
+  func userLoggedIn()
+  
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class RsvpSelectionCell: UITableViewCell {
-
-    var event: Event?
-
+  
+  var event: Event?
+  
 }

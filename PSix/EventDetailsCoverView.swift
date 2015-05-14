@@ -9,26 +9,26 @@
 import UIKit
 
 class EventDetailsCoverView: UIXibView {
-
-    @IBOutlet private weak var coverImageView: ShadedImageView!
-    @IBOutlet private weak var eventDateView: MonthDay!
-    @IBOutlet private weak var eventTitleLabel: UILabel!
-    
-    var event: Event? {
-        didSet {
-            updateUI()
-        }
+  
+  @IBOutlet private weak var coverImageView: ShadedImageView!
+  @IBOutlet private weak var eventDateView: MonthDay!
+  @IBOutlet private weak var eventTitleLabel: UILabel!
+  
+  var event: Event? {
+    didSet {
+      updateUI()
     }
-    
-    private func updateUI() {
-        if let event = event {
-            let presenter = EventPresenter(event)
-            eventDateView.date = event.startTime
-            eventTitleLabel.text = presenter.title
-            presenter.getCoverImageAsync { [unowned self] (coverImage) -> Void in
-                self.coverImageView.image = coverImage
-            }
-        }
+  }
+  
+  private func updateUI() {
+    if let event = event {
+      let presenter = EventPresenter(event)
+      eventDateView.date = event.startTime
+      eventTitleLabel.text = presenter.title
+      presenter.getCoverImageAsync { [unowned self] (coverImage) -> Void in
+        self.coverImageView.image = coverImage
+      }
     }
-
+  }
+  
 }

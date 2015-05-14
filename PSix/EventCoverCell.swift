@@ -9,13 +9,13 @@
 import UIKit
 
 class EventCoverCell: UITableViewCell {
-
-    @IBOutlet weak var coverView: EventDetailsCoverView!
-    
-    var event: Event? {
-        didSet {
-            coverView.event = event
-        }
+  
+  @IBOutlet weak var coverView: EventDetailsCoverView!
+  
+  var event: Event? {
+    didSet {
+      coverView.event = event
     }
-    
+  }
+  
 }

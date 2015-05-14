@@ -11,13 +11,13 @@ import Foundation
 private let formatter = NSDateFormatter()
 
 extension NSDate {
-    var monthShortName: String {
-        formatter.dateFormat = "MMM"
-        return formatter.stringFromDate(self)
-    }
-    
-    var dayDoubleDigit: String {
-        formatter.dateFormat = "dd"
-        return formatter.stringFromDate(self)
-    }
+  var monthShortName: String {
+    formatter.dateFormat = "MMM"
+    return formatter.stringFromDate(self)
+  }
+  
+  var dayDoubleDigit: String {
+    formatter.dateFormat = "dd"
+    return formatter.stringFromDate(self)
+  }
 }

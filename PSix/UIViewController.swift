@@ -9,10 +9,10 @@
 import Foundation
 
 extension UIViewController {
-    
-    static func fromStoryboard(storyboardName: String, controllerIdentifier: String) -> UIViewController? {
-        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-        return storyboard.instantiateViewControllerWithIdentifier(controllerIdentifier) as? UIViewController
-    }
-    
+  
+  static func fromStoryboard(storyboardName: String, controllerIdentifier: String) -> UIViewController? {
+    let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+    return storyboard.instantiateViewControllerWithIdentifier(controllerIdentifier) as? UIViewController
+  }
+  
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class EventPaymentStatusCell: UITableViewCell {
-
-    var event: Event?
-
+  
+  var event: Event?
+  
 }

@@ -9,34 +9,34 @@
 import UIKit
 
 class P6RootViewController: UISplitViewController {
-    
-    override func viewDidLoad() {
-        self.delegate = self
+  
+  override func viewDidLoad() {
+    self.delegate = self
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    if !ParseUserSession.isLoggedIn {
+      presentUserOnboarding()
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        if !ParseUserSession.isLoggedIn {
-            presentUserOnboarding()
-        }
+  }
+  
+  private func presentUserOnboarding() {
+    let onboardingVC = UIViewController.fromStoryboard("Onboarding", controllerIdentifier: "OnboardingViewController") as! OnboardingViewController
+    onboardingVC.successfulLoginCallback = { [unowned self] in
+      onboardingVC.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    private func presentUserOnboarding() {
-        let onboardingVC = UIViewController.fromStoryboard("Onboarding", controllerIdentifier: "OnboardingViewController") as! OnboardingViewController
-        onboardingVC.successfulLoginCallback = { [unowned self] in
-            onboardingVC.dismissViewControllerAnimated(true, completion: nil)
-        }
-        presentViewController(onboardingVC, animated: true, completion: nil)
-    }
-
+    presentViewController(onboardingVC, animated: true, completion: nil)
+  }
+  
 }
 
 // MARK: UISplitViewControllerDelegate
 
 extension P6RootViewController: UISplitViewControllerDelegate {
-    
-    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController!, ontoPrimaryViewController primaryViewController: UIViewController!) -> Bool {
-        return true
-    }
-    
+  
+  func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController!, ontoPrimaryViewController primaryViewController: UIViewController!) -> Bool {
+    return true
+  }
+  
 }

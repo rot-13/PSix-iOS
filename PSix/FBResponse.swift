@@ -12,37 +12,37 @@ private typealias FBResponseData = [String: AnyObject]
 typealias FBDataValue = [AnyObject]
 
 class FBResponse {
-    
-    private let fbResponseData: FBResponseData
-    
-    init(fromResult result: AnyObject) {
-        fbResponseData = result as! FBResponseData
+  
+  private let fbResponseData: FBResponseData
+  
+  init(fromResult result: AnyObject) {
+    fbResponseData = result as! FBResponseData
+  }
+  
+  subscript(key: String) -> AnyObject? {
+    return fbResponseData[key]
+  }
+  
+  var data: FBDataValue? {
+    return self["data"] as? FBDataValue
+  }
+  
+  var hasNext: Bool {
+    return nextPath != nil
+  }
+  
+  private var nextPath: String? {
+    if let paging = self["paging"] as? FBResponseData {
+      return paging["next"] as? String
     }
-    
-    subscript(key: String) -> AnyObject? {
-        return fbResponseData[key]
+    return nil
+  }
+  
+  func requestNext() -> FBRequest? {
+    if let path = nextPath {
+      return FBRequest(fromPath: path)
     }
-    
-    var data: FBDataValue? {
-        return self["data"] as? FBDataValue
-    }
-    
-    var hasNext: Bool {
-        return nextPath != nil
-    }
-    
-    private var nextPath: String? {
-        if let paging = self["paging"] as? FBResponseData {
-            return paging["next"] as? String
-        }
-        return nil
-    }
-    
-    func requestNext() -> FBRequest? {
-        if let path = nextPath {
-            return FBRequest(fromPath: path)
-        }
-        return nil
-    }
-
+    return nil
+  }
+  
 }
