@@ -56,7 +56,7 @@ class ShadedImageView: UIXibView {
   }
   
   private func setImage(newImage: UIImage) {
-    imageView.image = newImage.cropCenterToFit(extents: CGSize())
+    imageView.image = newImage.cropCenterToFit(extents: imageView.bounds.size)
     shadeImageView.image = shadeImage
   }
   
@@ -79,20 +79,18 @@ private extension UIImage {
   }
   
   func cropCenterToFit(#extents: CGSize) -> UIImage {
-    var cropExtents = CGRect()
-    if size.aspectRatio > extents.aspectRatio {
-      let newSize = CGSize(width: size.width, height: size.width / extents.aspectRatio)
-      cropExtents = CGRect(origin: CGPoint(x: 0, y: 0), size: newSize)
-    } else if size.aspectRatio < extents.aspectRatio {
-      let newSize = CGSize(width: size.height * extents.aspectRatio, height: size.height)
-      cropExtents = CGRect(origin: CGPoint(x: 0, y: 0), size: newSize)
-    } else {
-      return self
-    }
+    println("##### Cropping image")
+    println("extents to fit inside: \(extents)")
+    println("current image size: \(size)")
+    let newSize = size.sizeThatFitsInside(extents: extents)
+    println("new image size: \(newSize)")
+    let cropExtents = CGRect.fromAxisWith(size: size.sizeThatFitsInside(extents: extents))
     
     if let croppedImage = UIImage(CGImage: CGImageCreateWithImageInRect(self.CGImage, cropExtents)) {
+      println("Succeeded cropping")
       return croppedImage
     }
+    println("Failed to crop")
     return self
   }
 }

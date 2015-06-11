@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventsListViewController: UIViewController, ParseUserSessionDelegate {
+class EventsListViewController: UIViewController {
   
   static let EVENT_CELL_ID = "EventCell"
   
@@ -21,6 +21,7 @@ class EventsListViewController: UIViewController, ParseUserSessionDelegate {
   
   @IBOutlet weak var eventsListTable: UITableView!
   @IBOutlet weak var noEventsRefreshSpinner: UIActivityIndicatorView!
+  @IBOutlet weak var eventTypesTabBar: UITabBar!
   
   private let refreshControl = UIRefreshControl()
   private var eventSelected = false
@@ -51,10 +52,6 @@ class EventsListViewController: UIViewController, ParseUserSessionDelegate {
     eventsListTable.delegate = self
   }
   
-  func userLoggedIn() {
-    updateUserEvents()
-  }
-  
   func refreshData() {
     updateUserEvents()
   }
@@ -62,6 +59,8 @@ class EventsListViewController: UIViewController, ParseUserSessionDelegate {
   func updateUI() {
     eventsListTable.reloadData()
     eventsListTable.hidden = userCreatedEvents.count == 0
+    eventTypesTabBar.hidden = eventsListTable.hidden
+    navigationController?.navigationBarHidden = eventsListTable.hidden
   }
   
   @IBAction func refreshForNewEvents() {
@@ -79,18 +78,24 @@ class EventsListViewController: UIViewController, ParseUserSessionDelegate {
   
 }
 
-// MARK: UITableViewDelegate
+// MARK: ParseUserSessionDelegate extension
+
+extension EventsListViewController: ParseUserSessionDelegate {
+  func userLoggedIn() {
+    updateUserEvents()
+  }
+}
+
+// MARK: UITableViewDelegate extension
 
 extension EventsListViewController: UITableViewDelegate {
-  
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     selectedEvent = userCreatedEvents[indexPath.row]
     performSegueWithIdentifier("ShowEventDetailsSegue", sender: self)
   }
-  
 }
 
-// MARK: UITableViewDataSource
+// MARK: UITableViewDataSource extension
 
 extension EventsListViewController: UITableViewDataSource {
   

@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+private let zeroPoint = CGPoint(x: 0, y: 0)
+
+extension CGRect {
+  
+  static func fromAxisWith(#size: CGSize) -> CGRect {
+    return CGRect(origin: zeroPoint, size: size)
+  }
+  
+}
