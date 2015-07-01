@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,17 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCa-Ye-I7R">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCa-Ye-I7R">
                                 <rect key="frame" x="171" y="277" width="259" height="46"/>
                                 <color key="backgroundColor" red="0.17254901959999999" green="0.26274509800000001" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="9hb-wP-Ive"/>
                                     <constraint firstAttribute="width" constant="259" id="ml6-Uw-huU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                                <state key="normal" title="Login with Facebook">
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="  Login with Facebook" image="FacebookLogo">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -47,21 +46,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RiX-hB-3e8" firstAttribute="leading" secondItem="TvN-fi-56h" secondAttribute="leadingMargin" constant="137" id="0ad-1O-XL7"/>
                             <constraint firstItem="RiX-hB-3e8" firstAttribute="leading" secondItem="TvN-fi-56h" secondAttribute="leadingMargin" id="5p2-lB-wVk"/>
                             <constraint firstItem="nCa-Ye-I7R" firstAttribute="top" secondItem="RiX-hB-3e8" secondAttribute="bottom" constant="44" id="6aZ-xN-INN"/>
                             <constraint firstAttribute="centerY" secondItem="nCa-Ye-I7R" secondAttribute="centerY" id="Nn6-fs-ZqN"/>
                             <constraint firstAttribute="centerX" secondItem="RiX-hB-3e8" secondAttribute="centerX" constant="-0.5" id="hMG-gW-4V2"/>
                             <constraint firstItem="RiX-hB-3e8" firstAttribute="trailing" secondItem="TvN-fi-56h" secondAttribute="trailingMargin" id="iEU-wq-l0b"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="RiX-hB-3e8" secondAttribute="trailing" constant="136" id="las-o7-z29"/>
                             <constraint firstAttribute="centerX" secondItem="nCa-Ye-I7R" secondAttribute="centerX" id="to8-Kr-lF0"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="0ad-1O-XL7"/>
-                                <exclude reference="las-o7-z29"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="nCa-Ye-I7R" id="IRp-aj-Dn3"/>
@@ -72,4 +63,7 @@
             <point key="canvasLocation" x="387" y="91"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FacebookLogo" width="33" height="32"/>
+    </resources>
 </document>
