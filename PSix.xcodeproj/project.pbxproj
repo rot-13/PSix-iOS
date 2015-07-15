@@ -162,15 +162,6 @@
 			name = EventDetailsCoverView;
 			sourceTree = "<group>";
 		};
-		D01BD2B11AFB856E0010B39A /* TableViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				D01BD2B21AFB857D0010B39A /* EventDetailsCells */,
-				D01BD2AB1AFB59D30010B39A /* EventsListCells */,
-			);
-			name = TableViewCells;
-			sourceTree = "<group>";
-		};
 		D01BD2B21AFB857D0010B39A /* EventDetailsCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +170,27 @@
 				D01BD2B91AFB91880010B39A /* RsvpInfoCell.swift */,
 			);
 			name = EventDetailsCells;
+			sourceTree = "<group>";
+		};
+		D02329761B56AB4200115E36 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				D02329771B56AB7600115E36 /* PaymentSetupButton */,
+				D01BD2AB1AFB59D30010B39A /* EventsListCells */,
+				D01BD2B21AFB857D0010B39A /* EventDetailsCells */,
+				D01BD2AC1AFB59E40010B39A /* EventDetailsCoverView */,
+				D0E31D511AF664DA007865D2 /* ShadedImageView */,
+				D0E31D4E1AF65BED007865D2 /* MonthDayView */,
+				D0E31D4F1AF65C0B007865D2 /* UIXibView.swift */,
+			);
+			name = Elements;
+			sourceTree = "<group>";
+		};
+		D02329771B56AB7600115E36 /* PaymentSetupButton */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PaymentSetupButton;
 			sourceTree = "<group>";
 		};
 		D04A951D1AE698FC007B1D70 /* Extensions */ = {
@@ -265,9 +277,8 @@
 				D04A951D1AE698FC007B1D70 /* Extensions */,
 				D06957791ADFCF51009DB549 /* Services */,
 				D078119C1ADE52210005E643 /* Model */,
-				D0B8A59A1AECD3EA00B1BAC9 /* Views */,
 				D078119E1ADE52380005E643 /* ViewControllers */,
-				D078119F1ADE52400005E643 /* Storyboards */,
+				D0B8A59A1AECD3EA00B1BAC9 /* UI */,
 				D0958F811ADA9D0900FC4AA4 /* Supporting Files */,
 			);
 			path = PSix;
@@ -307,16 +318,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D0B8A59A1AECD3EA00B1BAC9 /* Views */ = {
+		D0B8A59A1AECD3EA00B1BAC9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				D01BD2B11AFB856E0010B39A /* TableViewCells */,
-				D01BD2AC1AFB59E40010B39A /* EventDetailsCoverView */,
-				D0E31D511AF664DA007865D2 /* ShadedImageView */,
-				D0E31D4E1AF65BED007865D2 /* MonthDayView */,
-				D0E31D4F1AF65C0B007865D2 /* UIXibView.swift */,
+				D078119F1ADE52400005E643 /* Storyboards */,
+				D02329761B56AB4200115E36 /* Elements */,
 			);
-			name = Views;
+			name = UI;
 			sourceTree = "<group>";
 		};
 		D0C015131AE51EEF00BC9152 /* Facebook */ = {
