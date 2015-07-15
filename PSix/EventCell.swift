@@ -14,7 +14,6 @@ class EventCell: UITableViewCell {
   @IBOutlet weak var locationLabel: UILabel!
   @IBOutlet weak var eventDateDayAndTime: UILabel!
   @IBOutlet weak var eventThumbImage: ShadedImageView!
-  @IBOutlet weak var amountPerAttendee: UILabel!
   @IBOutlet weak var eventMonthDayView: MonthDay!
   
   var event: Event? {
@@ -26,11 +25,6 @@ class EventCell: UITableViewCell {
         eventDateDayAndTime.text = presenter.getDayHourOfStartConsideringWidth(eventDateDayAndTime.bounds.width, font: eventDateDayAndTime.font)
         let paymentCollectionStatus = presenter.paymentStatus
         eventMonthDayView.date = event.startTime
-        if paymentCollectionStatus != "" {
-          amountPerAttendee.text = paymentCollectionStatus
-        } else {
-          amountPerAttendee.text = presenter.attendanceFee
-        }
         
         presenter.getCoverImageAsync { [unowned self] (image) -> Void in
           self.eventThumbImage.image = image
