@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Events List View Controller-->
+        <!--Hosting-->
         <scene sceneID="Zpf-yS-vdx">
             <objects>
                 <viewController storyboardIdentifier="EventsListViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k8Z-Qx-7sR" customClass="EventsListViewController" customModule="PSix" customModuleProvider="target" sceneMemberID="viewController">
@@ -173,7 +173,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="2be-0S-qoU"/>
+                    <navigationItem key="navigationItem" title="Hosting" id="2be-0S-qoU"/>
                     <connections>
                         <outlet property="eventTypesTabBar" destination="oP9-fh-P3s" id="ui6-ez-ji7"/>
                         <outlet property="eventsListTable" destination="xsc-bU-sjL" id="sDm-rD-HtY"/>
