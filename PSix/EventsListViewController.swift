@@ -29,7 +29,6 @@ class EventsListViewController: UIViewController {
   
   private func updateUserEvents(finished: (() -> ())? = nil) {
     if let currentUser = ParseUserSession.currentUser {
-      refreshControl.beginRefreshing()
       FacebookService.getFutureEventsCreatedByUserAsync(currentUser) { [unowned self] (events) -> Void in
         self.userCreatedEvents = events
         self.refreshControl.endRefreshing()
