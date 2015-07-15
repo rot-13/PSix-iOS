@@ -147,6 +147,10 @@
                                     <tabBarItem title="Invites" image="EventInvites" id="oNr-ES-hJk"/>
                                 </items>
                             </tabBar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VtB-H7-Oq8" userLabel="Initial Data Loading Spinner">
+                                <rect key="frame" x="282" y="282" width="37" height="37"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -158,10 +162,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="7MY-wU-qxK" secondAttribute="trailing" constant="10" id="EuL-m2-kB9"/>
                             <constraint firstAttribute="centerX" secondItem="Ina-ab-bi7" secondAttribute="centerX" id="Q3i-zb-b9w"/>
                             <constraint firstItem="oP9-fh-P3s" firstAttribute="bottom" secondItem="XFW-bV-L27" secondAttribute="top" id="ScA-cA-QcE"/>
+                            <constraint firstAttribute="centerX" secondItem="VtB-H7-Oq8" secondAttribute="centerX" id="TbE-P0-j7U"/>
                             <constraint firstAttribute="trailing" secondItem="xsc-bU-sjL" secondAttribute="trailing" id="cc9-ch-OZv"/>
                             <constraint firstItem="xsc-bU-sjL" firstAttribute="top" secondItem="x1u-tY-X4P" secondAttribute="bottom" id="cqT-x9-tCc"/>
                             <constraint firstItem="7MY-wU-qxK" firstAttribute="leading" secondItem="caD-vD-u92" secondAttribute="leadingMargin" constant="10" id="d4X-Sw-A5g"/>
                             <constraint firstItem="oP9-fh-P3s" firstAttribute="leading" secondItem="xsc-bU-sjL" secondAttribute="leading" id="f0K-LH-PF3"/>
+                            <constraint firstAttribute="centerY" secondItem="VtB-H7-Oq8" secondAttribute="centerY" id="fQf-88-HjM"/>
                             <constraint firstItem="oP9-fh-P3s" firstAttribute="trailing" secondItem="xsc-bU-sjL" secondAttribute="trailing" id="hf1-J4-XWS"/>
                             <constraint firstItem="OeG-WJ-pAO" firstAttribute="top" secondItem="Ina-ab-bi7" secondAttribute="bottom" constant="10" id="t5c-dh-kLg"/>
                         </constraints>
@@ -171,6 +177,7 @@
                     <connections>
                         <outlet property="eventTypesTabBar" destination="oP9-fh-P3s" id="ui6-ez-ji7"/>
                         <outlet property="eventsListTable" destination="xsc-bU-sjL" id="sDm-rD-HtY"/>
+                        <outlet property="initialDataLoadingSpinner" destination="VtB-H7-Oq8" id="veP-Tw-ZuJ"/>
                         <outlet property="noEventsRefreshSpinner" destination="Ina-ab-bi7" id="S1h-U5-idj"/>
                         <segue destination="kmq-3E-3co" kind="showDetail" identifier="ShowEventDetailsSegue" id="gf6-gZ-fAY"/>
                     </connections>

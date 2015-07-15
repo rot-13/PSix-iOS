@@ -19,10 +19,12 @@ class EventsListViewController: UIViewController {
     }
   }
   
+  @IBOutlet weak var initialDataLoadingSpinner: UIActivityIndicatorView!
   @IBOutlet weak var eventsListTable: UITableView!
   @IBOutlet weak var noEventsRefreshSpinner: UIActivityIndicatorView!
   @IBOutlet weak var eventTypesTabBar: UITabBar!
   
+  private var initialDataLoading = false
   private let refreshControl = UIRefreshControl()
   private var eventSelected = false
   private var selectedEvent: Event?
@@ -30,8 +32,12 @@ class EventsListViewController: UIViewController {
   private func updateUserEvents(finished: (() -> ())? = nil) {
     if let currentUser = ParseUserSession.currentUser {
       FacebookService.getFutureEventsCreatedByUserAsync(currentUser) { [unowned self] (events) -> Void in
+        if self.initialDataLoading {
+          self.stopInitialDataLoadingSpinner()
+        } else {
+          self.refreshControl.endRefreshing()
+        }
         self.userCreatedEvents = events
-        self.refreshControl.endRefreshing()
         finished?()
       }
     }
@@ -44,6 +50,7 @@ class EventsListViewController: UIViewController {
     ParseUserSession.delegate = self
     
     if ParseUserSession.isLoggedIn {
+      startInitialDataLoadingSpinner()
       updateUserEvents()
     }
     
@@ -73,6 +80,24 @@ class EventsListViewController: UIViewController {
     if let eventDetailsVC = segue.destinationViewController as? EventDetailsViewController {
       eventDetailsVC.event = selectedEvent
     }
+  }
+  
+  private func startInitialDataLoadingSpinner() {
+    initialDataLoading = true
+    initialDataLoadingSpinner.hidden = false
+    initialDataLoadingSpinner.startAnimating()
+  }
+  
+  private func stopInitialDataLoadingSpinner() {
+    initialDataLoading = false
+    
+    let fadeOutTransition = CATransition()
+    fadeOutTransition.type = kCATransitionFade
+    fadeOutTransition.duration = 0.4
+    initialDataLoadingSpinner.layer.addAnimation(fadeOutTransition, forKey: nil)
+    
+    initialDataLoadingSpinner.hidden = true
+    initialDataLoadingSpinner.stopAnimating()
   }
   
 }
