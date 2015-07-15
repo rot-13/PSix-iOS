@@ -33,11 +33,11 @@
 		D08A16F81AED939900EC58AE /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08A16F71AED939900EC58AE /* Payment.swift */; };
 		D09341FA1B56BD2A00D96EFA /* PaymentSetupButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D09341F91B56BD2A00D96EFA /* PaymentSetupButton.xib */; };
 		D09341FC1B56BE9B00D96EFA /* PaymentSetupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09341FB1B56BE9B00D96EFA /* PaymentSetupButton.swift */; };
+		D09341FE1B56FB0800D96EFA /* NSDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09341FD1B56FB0800D96EFA /* NSDatePresenter.swift */; };
 		D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */; };
 		D0958F8E1ADA9D0900FC4AA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */; };
 		D0958F9D1ADA9D0900FC4AA4 /* PSixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F9C1ADA9D0900FC4AA4 /* PSixTests.swift */; };
 		D0B8A5991AECD20F00B1BAC9 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B8A5981AECD20F00B1BAC9 /* EventCell.swift */; };
-		D0B8A59C1AECFCF900B1BAC9 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B8A59B1AECFCF900B1BAC9 /* NSDate.swift */; };
 		D0C015121AE51E0B00BC9152 /* FBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C015111AE51E0B00BC9152 /* FBRequest.swift */; };
 		D0C015151AE51F2B00BC9152 /* FBUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C015141AE51F2B00BC9152 /* FBUserRequest.swift */; };
 		D0C015191AE5339300BC9152 /* FBUserEventsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C015181AE5339300BC9152 /* FBUserEventsRequest.swift */; };
@@ -91,6 +91,7 @@
 		D08A16F71AED939900EC58AE /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		D09341F91B56BD2A00D96EFA /* PaymentSetupButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentSetupButton.xib; sourceTree = "<group>"; };
 		D09341FB1B56BE9B00D96EFA /* PaymentSetupButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentSetupButton.swift; sourceTree = "<group>"; };
+		D09341FD1B56FB0800D96EFA /* NSDatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDatePresenter.swift; sourceTree = "<group>"; };
 		D0958F7E1ADA9D0900FC4AA4 /* PSix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0958F821ADA9D0900FC4AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		D0958F9B1ADA9D0900FC4AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0958F9C1ADA9D0900FC4AA4 /* PSixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSixTests.swift; sourceTree = "<group>"; };
 		D0B8A5981AECD20F00B1BAC9 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
-		D0B8A59B1AECFCF900B1BAC9 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		D0C015111AE51E0B00BC9152 /* FBRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBRequest.swift; sourceTree = "<group>"; };
 		D0C015141AE51F2B00BC9152 /* FBUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserRequest.swift; sourceTree = "<group>"; };
 		D0C015181AE5339300BC9152 /* FBUserEventsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserEventsRequest.swift; sourceTree = "<group>"; };
@@ -145,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				D0178CAD1AEE78DB00FD2DD1 /* EventPresenter.swift */,
+				D09341FD1B56FB0800D96EFA /* NSDatePresenter.swift */,
 			);
 			name = Presenters;
 			sourceTree = "<group>";
@@ -203,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				D04A951E1AE6990A007B1D70 /* String.swift */,
-				D0B8A59B1AECFCF900B1BAC9 /* NSDate.swift */,
 				D0124FD91AF11B9A00965A10 /* Array.swift */,
 				D0455D421AF8D35A002148D8 /* UIViewController.swift */,
 				D0DFD2951B03920800E6803B /* CGSize.swift */,
@@ -518,7 +518,6 @@
 				D0455D431AF8D35A002148D8 /* UIViewController.swift in Sources */,
 				D0E31D551AF66A66007865D2 /* ShadedImageView.swift in Sources */,
 				D0C015121AE51E0B00BC9152 /* FBRequest.swift in Sources */,
-				D0B8A59C1AECFCF900B1BAC9 /* NSDate.swift in Sources */,
 				D0DFD2961B03920800E6803B /* CGSize.swift in Sources */,
 				D0E31D4D1AF62E0C007865D2 /* MonthDay.swift in Sources */,
 				D0501E111ADBD7FF00EB6A83 /* EventsListViewController.swift in Sources */,
@@ -538,6 +537,7 @@
 				D0C015151AE51F2B00BC9152 /* FBUserRequest.swift in Sources */,
 				D01BD2B61AFB91330010B39A /* EventPaymentStatusCell.swift in Sources */,
 				D01BD2AA1AFA990F0010B39A /* ParseUserSessionDelegate.swift in Sources */,
+				D09341FE1B56FB0800D96EFA /* NSDatePresenter.swift in Sources */,
 				D01BD2B41AFB85A20010B39A /* EventCoverCell.swift in Sources */,
 				D06957781ADEF3EB009DB549 /* Event.swift in Sources */,
 				D0C0151D1AE55DAC00BC9152 /* FBResponse.swift in Sources */,

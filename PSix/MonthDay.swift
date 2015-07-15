@@ -15,8 +15,13 @@ class MonthDay: UIXibView {
   @IBOutlet private weak var dayLabel: UILabel!
   @IBOutlet private weak var view: UIView!
   
+  private var datePresenter = NSDatePresenter(NSDate())
+  
   @IBInspectable var date: NSDate? = NSDate() {
     didSet {
+      if let date = date {
+        datePresenter = NSDatePresenter(date)
+      }
       updateUI()
     }
   }
@@ -49,8 +54,8 @@ class MonthDay: UIXibView {
   }
   
   private func updateUI() {
-    monthLabel.text = date?.monthShortName.uppercaseString
-    dayLabel.text = date?.dayDoubleDigit
+    monthLabel.text = datePresenter.monthShortName.uppercaseString
+    dayLabel.text = datePresenter.dayDoubleDigit
   }
   
 }

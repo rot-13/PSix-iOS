@@ -8,11 +8,11 @@
 
 import Foundation
 
+typealias ImageByUrlIndex = [NSURL:UIImage]
+
+private var eventCoverImages = ImageByUrlIndex()
+
 class EventPresenter {
-  
-  private static let formatter = NSDateFormatter()
-  
-  private static var eventCoverImages = [NSURL:UIImage]()
   
   private static func doesTextFitInWidth(text: String, width: CGFloat, font: UIFont) -> Bool {
     return width >= (text as NSString).sizeWithAttributes([NSFontAttributeName: font]).width
@@ -26,13 +26,13 @@ class EventPresenter {
   
   func getCoverImageAsync(callback: (UIImage) -> ()) {
     if let coverImageUrl = event.coverImageUrl {
-      if let preloadedImage = EventPresenter.eventCoverImages[coverImageUrl] {
+      if let preloadedImage = eventCoverImages[coverImageUrl] {
         callback(preloadedImage)
       } else {
         dispatch_async(dispatch_get_main_queue()) {
           if let coverImageData = NSData(contentsOfURL: coverImageUrl) {
-            EventPresenter.eventCoverImages[coverImageUrl] = UIImage(data: coverImageData)
-            callback(EventPresenter.eventCoverImages[coverImageUrl]!)
+            eventCoverImages[coverImageUrl] = UIImage(data: coverImageData)
+            callback(eventCoverImages[coverImageUrl]!)
           }
         }
       }
@@ -41,13 +41,15 @@ class EventPresenter {
   
   func getDayHourOfStartConsideringWidth(boxWidth: CGFloat, font: UIFont) -> String {
     if let startDate = event.startTime {
-      EventPresenter.formatter.dateFormat = "EEEE, H:mm"
-      let extendedText = EventPresenter.formatter.stringFromDate(startDate)
-      if !EventPresenter.doesTextFitInWidth(extendedText, width: boxWidth, font: font) {
-        EventPresenter.formatter.dateFormat = "E, H:mm"
-        return EventPresenter.formatter.stringFromDate(startDate)
+      let startDatePresenter = NSDatePresenter(startDate)
+      if isAllDayEvent {
+        return startDatePresenter.longDayName
       }
-      return extendedText as String
+      let extendedText = startDatePresenter.longDayNameBigHour
+      if !EventPresenter.doesTextFitInWidth(extendedText, width: boxWidth, font: font) {
+        return startDatePresenter.shortDayNameBigHour
+      }
+      return extendedText
     }
     return ""
   }
@@ -75,6 +77,17 @@ class EventPresenter {
   
   var location: String {
     return event.location ?? ""
+  }
+  
+  var isAllDayEvent: Bool {
+    if let startDate = event.startTime {
+      let calendar = NSCalendar.currentCalendar()
+      let components = calendar.components((.HourCalendarUnit | .MinuteCalendarUnit), fromDate: startDate)
+      if components.hour == 0 && components.minute == 0 {
+        return true
+      }
+    }
+    return false
   }
   
 }
