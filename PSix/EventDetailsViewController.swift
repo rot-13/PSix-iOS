@@ -13,7 +13,6 @@ class EventDetailsViewController: UIViewController {
   private struct CellType {
     static let COVER = "EventDetailsCoverCell"
     static let PAYMENT_STATUS = "EventDetailsPaymentStatusCell"
-    static let RSVP_TPYE = "EventDetailsRsvpSelectionCell"
     static let RSVP = "EventDetailsRsvpCell"
   }
   
@@ -90,9 +89,9 @@ private enum SectionTypes: Int {
 }
 
 private enum HeaderCellTypes: Int {
-  case Cover = 0, PaymentStatus, RsvpTypeSelection
+  case Cover = 0, PaymentStatus
   
-  static let allValues = [Cover, PaymentStatus, RsvpTypeSelection]
+  static let allValues = [Cover, PaymentStatus]
 }
 
 private let DEFAULT_ROW_HEIGHT = CGFloat(44)
@@ -158,8 +157,6 @@ extension EventDetailsViewController: UITableViewDataSource {
         let cell = eventInformationTable.dequeueReusableCellWithIdentifier(CellType.PAYMENT_STATUS) as! EventPaymentStatusCell
         cell.event = event
         return cell
-      case .RsvpTypeSelection:
-        return eventInformationTable.dequeueReusableCellWithIdentifier(CellType.RSVP_TPYE) as! RsvpSelectionCell
       }
     }
     return UITableViewCell()

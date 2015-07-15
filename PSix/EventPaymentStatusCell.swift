@@ -10,6 +10,15 @@ import UIKit
 
 class EventPaymentStatusCell: UITableViewCell {
   
-  var event: Event?
+  @IBOutlet weak var paidOutOfTotal: UILabel!
+  
+  var event: Event? {
+    didSet {
+      if let event = event {
+        let presenter = EventPresenter(event)
+        paidOutOfTotal.text = presenter.paymentStatus
+      }
+    }
+  }
   
 }

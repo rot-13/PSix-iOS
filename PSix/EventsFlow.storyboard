@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V0h-mR-e0g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V0h-mR-e0g">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -267,8 +267,14 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nEe-7i-q0V" id="4B7-rk-Ce9">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBO-vC-fce">
-                                                    <rect key="frame" x="8" y="15" width="120" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payed:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBO-vC-fce">
+                                                    <rect key="frame" x="8" y="15" width="53" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0/$0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqz-ox-xyX">
+                                                    <rect key="frame" x="69" y="15" width="44" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -276,44 +282,48 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="cBO-vC-fce" firstAttribute="leading" secondItem="4B7-rk-Ce9" secondAttribute="leadingMargin" id="O4H-Sr-SpR"/>
+                                                <constraint firstItem="Rqz-ox-xyX" firstAttribute="leading" secondItem="cBO-vC-fce" secondAttribute="trailing" constant="8" id="cvR-MN-Ztz"/>
                                                 <constraint firstItem="cBO-vC-fce" firstAttribute="bottom" secondItem="4B7-rk-Ce9" secondAttribute="bottomMargin" id="l96-qr-Hd7"/>
+                                                <constraint firstItem="Rqz-ox-xyX" firstAttribute="baseline" secondItem="cBO-vC-fce" secondAttribute="baseline" id="qTq-Ug-ttX"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventDetailsRsvpSelectionCell" id="npr-sd-2nv" userLabel="RSVP Selection" customClass="RsvpSelectionCell" customModule="PSix" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="npr-sd-2nv" id="Jqm-5S-366">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select RSVP type to show below" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tD-Ac-Hap">
-                                                    <rect key="frame" x="8" y="15" width="252" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="7tD-Ac-Hap" firstAttribute="leading" secondItem="Jqm-5S-366" secondAttribute="leadingMargin" id="1Tz-cH-Pwp"/>
-                                                <constraint firstItem="7tD-Ac-Hap" firstAttribute="bottom" secondItem="Jqm-5S-366" secondAttribute="bottomMargin" id="NPH-k1-xZe"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="paidOutOfTotal" destination="Rqz-ox-xyX" id="SR6-qK-jZ4"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventDetailsRsvpCell" id="B9p-sn-MRE" userLabel="RSVP" customClass="RsvpStubCell" customModule="PSix" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B9p-sn-MRE" id="J2Z-KD-Vom">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSVP Information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7au-iW-gO3">
-                                                    <rect key="frame" x="8" y="15" width="137" height="21"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T1L-Nl-gbF" userLabel="Avatar Image">
+                                                    <rect key="frame" x="8" y="4" width="36" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="T1L-Nl-gbF" secondAttribute="height" multiplier="1:1" id="RVi-sC-XL5"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OT2-3c-BtH">
+                                                    <rect key="frame" x="52" y="11" width="46" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="$0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRq-5c-kk1" userLabel="Paid Amount">
+                                                    <rect key="frame" x="292" y="11" width="20" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="7au-iW-gO3" firstAttribute="bottom" secondItem="J2Z-KD-Vom" secondAttribute="bottomMargin" id="cgE-47-5i3"/>
-                                                <constraint firstItem="7au-iW-gO3" firstAttribute="leading" secondItem="J2Z-KD-Vom" secondAttribute="leadingMargin" id="fGM-gc-sLJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="T1L-Nl-gbF" secondAttribute="bottom" constant="4" id="0uh-Ao-DRq"/>
+                                                <constraint firstItem="CRq-5c-kk1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OT2-3c-BtH" secondAttribute="trailing" constant="8" id="JJf-sE-LSn"/>
+                                                <constraint firstItem="T1L-Nl-gbF" firstAttribute="leading" secondItem="J2Z-KD-Vom" secondAttribute="leading" constant="8" id="ZUz-Na-hdL"/>
+                                                <constraint firstItem="OT2-3c-BtH" firstAttribute="centerY" secondItem="T1L-Nl-gbF" secondAttribute="centerY" id="cWu-n6-Pog"/>
+                                                <constraint firstItem="CRq-5c-kk1" firstAttribute="centerY" secondItem="T1L-Nl-gbF" secondAttribute="centerY" id="eIq-ax-h1o"/>
+                                                <constraint firstItem="OT2-3c-BtH" firstAttribute="leading" secondItem="T1L-Nl-gbF" secondAttribute="trailing" constant="8" id="l2Y-d4-obH"/>
+                                                <constraint firstItem="CRq-5c-kk1" firstAttribute="trailing" secondItem="J2Z-KD-Vom" secondAttribute="trailingMargin" id="v0y-Jc-DDw"/>
+                                                <constraint firstItem="T1L-Nl-gbF" firstAttribute="top" secondItem="J2Z-KD-Vom" secondAttribute="top" constant="4" id="zxT-OG-haq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

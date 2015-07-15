@@ -19,8 +19,7 @@
 		D01BD2B01AFB5E5B0010B39A /* EventDetailsCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01BD2AF1AFB5E5B0010B39A /* EventDetailsCoverView.swift */; };
 		D01BD2B41AFB85A20010B39A /* EventCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01BD2B31AFB85A20010B39A /* EventCoverCell.swift */; };
 		D01BD2B61AFB91330010B39A /* EventPaymentStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01BD2B51AFB91330010B39A /* EventPaymentStatusCell.swift */; };
-		D01BD2B81AFB916F0010B39A /* RsvpSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01BD2B71AFB916F0010B39A /* RsvpSelectionCell.swift */; };
-		D01BD2BA1AFB91880010B39A /* RsvpStubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01BD2B91AFB91880010B39A /* RsvpStubCell.swift */; };
+		D01BD2BA1AFB91880010B39A /* RsvpInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01BD2B91AFB91880010B39A /* RsvpInfoCell.swift */; };
 		D0455D3D1AF8B9E1002148D8 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0455D3C1AF8B9E1002148D8 /* EventDetailsViewController.swift */; };
 		D0455D411AF8CC28002148D8 /* P6RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0455D401AF8CC28002148D8 /* P6RootViewController.swift */; };
 		D0455D431AF8D35A002148D8 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0455D421AF8D35A002148D8 /* UIViewController.swift */; };
@@ -75,8 +74,7 @@
 		D01BD2AF1AFB5E5B0010B39A /* EventDetailsCoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsCoverView.swift; sourceTree = "<group>"; };
 		D01BD2B31AFB85A20010B39A /* EventCoverCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCoverCell.swift; sourceTree = "<group>"; };
 		D01BD2B51AFB91330010B39A /* EventPaymentStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPaymentStatusCell.swift; sourceTree = "<group>"; };
-		D01BD2B71AFB916F0010B39A /* RsvpSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RsvpSelectionCell.swift; sourceTree = "<group>"; };
-		D01BD2B91AFB91880010B39A /* RsvpStubCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RsvpStubCell.swift; sourceTree = "<group>"; };
+		D01BD2B91AFB91880010B39A /* RsvpInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RsvpInfoCell.swift; sourceTree = "<group>"; };
 		D0455D3C1AF8B9E1002148D8 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		D0455D401AF8CC28002148D8 /* P6RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P6RootViewController.swift; sourceTree = "<group>"; };
 		D0455D421AF8D35A002148D8 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -178,8 +176,7 @@
 			children = (
 				D01BD2B31AFB85A20010B39A /* EventCoverCell.swift */,
 				D01BD2B51AFB91330010B39A /* EventPaymentStatusCell.swift */,
-				D01BD2B71AFB916F0010B39A /* RsvpSelectionCell.swift */,
-				D01BD2B91AFB91880010B39A /* RsvpStubCell.swift */,
+				D01BD2B91AFB91880010B39A /* RsvpInfoCell.swift */,
 			);
 			name = EventDetailsCells;
 			sourceTree = "<group>";
@@ -497,7 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D01BD2BA1AFB91880010B39A /* RsvpStubCell.swift in Sources */,
+				D01BD2BA1AFB91880010B39A /* RsvpInfoCell.swift in Sources */,
 				D06E9CD01B28870900FF91C3 /* CGRect.swift in Sources */,
 				D008A11A1ADD2F9E00AF6666 /* ParseUserSession.swift in Sources */,
 				D0E31D501AF65C0B007865D2 /* UIXibView.swift in Sources */,
@@ -519,7 +516,6 @@
 				D0455D411AF8CC28002148D8 /* P6RootViewController.swift in Sources */,
 				D0178CAE1AEE78DB00FD2DD1 /* EventPresenter.swift in Sources */,
 				D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */,
-				D01BD2B81AFB916F0010B39A /* RsvpSelectionCell.swift in Sources */,
 				D00D2EF41AF26B950066CE51 /* RSVP.swift in Sources */,
 				D0455D3D1AF8B9E1002148D8 /* EventDetailsViewController.swift in Sources */,
 				D06957761ADEAF09009DB549 /* User.swift in Sources */,
