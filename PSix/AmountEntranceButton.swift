@@ -19,6 +19,10 @@ private enum PaymentState: Int {
   case Unset, Editing, EnteredAmount
 }
 
+private enum DisplayedElement: Int {
+  case Button, TextField
+}
+
 @IBDesignable
 class AmountEntranceButton: UIXibView {
   
@@ -27,10 +31,26 @@ class AmountEntranceButton: UIXibView {
       switch(state) {
       case .Unset:
         color = unsetStateColor
+        displayedElement = .Button
       case .Editing:
         color = editingAmountColor
+        displayedElement = .TextField
       case .EnteredAmount:
         color = enteredAmounColor
+        displayedElement = .Button
+      }
+    }
+  }
+  
+  private var displayedElement: DisplayedElement = .Button {
+    didSet {
+      switch(displayedElement) {
+      case .Button:
+        setupFeeButton.hidden = false
+        amountEntranceField.hidden = true
+      case .TextField:
+        setupFeeButton.hidden = true
+        amountEntranceField.hidden = false
       }
     }
   }
@@ -49,6 +69,7 @@ class AmountEntranceButton: UIXibView {
   
   @IBOutlet var containerView: UIView!
   @IBOutlet weak var setupFeeButton: UIButton!
+  @IBOutlet weak var amountEntranceField: UITextField!
   
   @IBInspectable var payedAmount: Int?
   @IBInspectable var unsetStateColor: UIColor = kUnsetStateColor {

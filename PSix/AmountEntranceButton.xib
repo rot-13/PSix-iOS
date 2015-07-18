@@ -4,8 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentSetupButton" customModule="PSix" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AmountEntranceButton" customModule="PSix" customModuleProvider="target">
             <connections>
+                <outlet property="amountEntranceField" destination="V4x-9w-lUM" id="9o7-tC-qy0"/>
                 <outlet property="containerView" destination="iN0-l3-epB" id="k3v-aF-HFA"/>
                 <outlet property="setupFeeButton" destination="yuw-Ua-hNA" id="bJN-g6-wlD"/>
             </connections>
@@ -22,13 +23,22 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V4x-9w-lUM" userLabel="Amount Field">
+                    <rect key="frame" x="20" y="0.0" width="560" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="tintColor" red="1" green="0.49007558822631836" blue="0.13803943991661072" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="V4x-9w-lUM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="5TU-dY-YuN"/>
                 <constraint firstItem="yuw-Ua-hNA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="I3x-HP-LR4"/>
+                <constraint firstItem="V4x-9w-lUM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JBj-bi-bai"/>
                 <constraint firstItem="yuw-Ua-hNA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mso-np-OrA"/>
                 <constraint firstAttribute="bottom" secondItem="yuw-Ua-hNA" secondAttribute="bottom" id="SoJ-2Z-7T9"/>
                 <constraint firstAttribute="trailing" secondItem="yuw-Ua-hNA" secondAttribute="trailing" id="YFb-hB-X1Y"/>
+                <constraint firstAttribute="trailing" secondItem="V4x-9w-lUM" secondAttribute="trailing" constant="20" symbolic="YES" id="Z2q-8b-ijP"/>
+                <constraint firstAttribute="bottom" secondItem="V4x-9w-lUM" secondAttribute="bottom" id="rqx-iW-44w"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
