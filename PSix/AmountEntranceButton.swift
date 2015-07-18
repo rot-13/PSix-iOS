@@ -39,7 +39,7 @@ class AmountEntranceButton: UIXibView {
         color = editingAmountColor
         displayedElement = .TextField
       case .EnteredAmount:
-        setButtonLabelToEneteredFee()
+        commitEnteredFee()
         color = enteredAmounColor
         displayedElement = .Button
       }
@@ -50,8 +50,12 @@ class AmountEntranceButton: UIXibView {
     }
   }
   
-  private func setButtonLabelToEneteredFee() {
-    setupFeeButton.setTitle("$\(amountEntranceField.text)", forState: .Normal)
+  private func commitEnteredFee() {
+    amountEntranceField.text = amountEntranceField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+    fee = (amountEntranceField.text as NSString).doubleValue
+    if let fee = fee {
+      setupFeeButton.setTitle("$\(fee)", forState: .Normal)
+    }
   }
   
   private var previousState: PaymentState?
@@ -83,7 +87,7 @@ class AmountEntranceButton: UIXibView {
   @IBOutlet weak var setupFeeButton: UIButton!
   @IBOutlet weak var amountEntranceField: UITextField!
   
-  @IBInspectable var payedAmount: Int?
+  @IBInspectable var fee: Double?
   @IBInspectable var unsetStateColor: UIColor = kUnsetStateColor {
     didSet {
       if state == .Unset { state = .Unset }
@@ -111,7 +115,7 @@ class AmountEntranceButton: UIXibView {
   }
   
   override func setup() {
-    if let amount = payedAmount {
+    if let amount = fee {
       state = .EnteredAmount
     } else {
       state = .Unset
