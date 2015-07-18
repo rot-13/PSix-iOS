@@ -11,6 +11,7 @@ import UIKit
 protocol EventCellDelegate {
   func enterEditMode(sender: EventCell)
   func leaveEditMode()
+  func alertUserForYesNoQuestion(question: String, yes: ResponseBlock, no: ResponseBlock)
 }
 
 class EventCell: UITableViewCell {
@@ -57,7 +58,11 @@ class EventCell: UITableViewCell {
 
 extension EventCell: AmountEntranceButtonDelegate {
   
-  func finishedEditingAmount(newAmount: Int) {
+  func startedEditingAmount(sender: AmountEntranceButton) {
+    delegate?.enterEditMode(self)
+  }
+  
+  func finishedEditingAmount(newAmount: Double?) {
     delegate?.leaveEditMode()
   }
   
@@ -65,8 +70,12 @@ extension EventCell: AmountEntranceButtonDelegate {
     delegate?.leaveEditMode()
   }
   
-  func startedEditingAmount(sender: AmountEntranceButton) {
-    delegate?.enterEditMode(self)
+  func validateAmountToBeCleared(yes: ResponseBlock, no: ResponseBlock) {
+    if let delegate = delegate {
+      delegate.alertUserForYesNoQuestion("Are you sure you want to clear the attendance fee?", yes: yes, no: no)
+    } else {
+      yes()
+    }
   }
   
 }

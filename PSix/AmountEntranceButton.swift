@@ -8,17 +8,26 @@
 
 import Foundation
 
+typealias ResponseBlock = () -> ()
+
+protocol AmountEntranceButtonDelegate {
+  func startedEditingAmount(sender: AmountEntranceButton)
+  func finishedEditingAmount(newAmount: Double?)
+  func canceledEditing()
+  func validateAmountToBeCleared(yes: ResponseBlock, no: ResponseBlock)
+}
+
 private let kUnsetStateColor = UIColor(red: 1, green: 0.537, blue: 0.2, alpha: 1)
 private let kEditingStateColor = UIColor(red: 0.019, green: 0.56, blue: 1, alpha: 1)
 private let kEnteredAmountStateColor = UIColor(red:0, green:0.741, blue:0.326, alpha:1)
 private let kUnsetStateButtonLabel = "Enter Amount"
 
 private enum PaymentState: Int {
-  case Unset, Editing, EnteredAmount
+  case Unset, Editing, Set
 }
 
 private enum DisplayedElement: Int {
-  case Button, TextField
+  case Button, TextField, None
 }
 
 @IBDesignable
@@ -28,18 +37,20 @@ class AmountEntranceButton: UIXibView {
   
   private var state: PaymentState {
     set {
+      displayedElement = .None
       previousState = actualState
       actualState = newValue
       
       switch(state) {
       case .Unset:
         color = unsetStateColor
+        setupFeeButton.setTitle(amountEntranceLabel, forState: .Normal)
         displayedElement = .Button
       case .Editing:
         color = editingAmountColor
         displayedElement = .TextField
-      case .EnteredAmount:
-        commitEnteredFee()
+      case .Set:
+        setupFeeButton.setTitle("$\(fee!)", forState: .Normal)
         color = enteredAmounColor
         displayedElement = .Button
       }
@@ -47,14 +58,6 @@ class AmountEntranceButton: UIXibView {
     
     get {
       return actualState
-    }
-  }
-  
-  private func commitEnteredFee() {
-    amountEntranceField.text = amountEntranceField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-    fee = (amountEntranceField.text as NSString).doubleValue
-    if let fee = fee {
-      setupFeeButton.setTitle("$\(fee)", forState: .Normal)
     }
   }
   
@@ -69,6 +72,9 @@ class AmountEntranceButton: UIXibView {
       case .TextField:
         setupFeeButton.hidden = true
         amountEntranceField.hidden = false
+      case .None:
+        setupFeeButton.hidden = true
+        amountEntranceField.hidden = true
       }
     }
   }
@@ -78,6 +84,7 @@ class AmountEntranceButton: UIXibView {
       containerView.layer.borderColor = color.CGColor
       setupFeeButton.setTitleColor(color, forState: .Normal)
       amountEntranceField.tintColor = color
+      amountEntranceField.textColor = color
     }
   }
   
@@ -87,7 +94,24 @@ class AmountEntranceButton: UIXibView {
   @IBOutlet weak var setupFeeButton: UIButton!
   @IBOutlet weak var amountEntranceField: UITextField!
   
-  @IBInspectable var fee: Double?
+  @IBInspectable var amountEntranceLabel: String = "Enter Amount" {
+    didSet {
+      if state == .Unset {
+        setupFeeButton.setTitle(amountEntranceLabel, forState: .Normal)
+      }
+    }
+  }
+  
+  @IBInspectable var fee: Double? {
+    didSet {
+      if fee != nil {
+        state = .Set
+      } else {
+        state = .Unset
+      }
+    }
+  }
+  
   @IBInspectable var unsetStateColor: UIColor = kUnsetStateColor {
     didSet {
       if state == .Unset { state = .Unset }
@@ -102,7 +126,7 @@ class AmountEntranceButton: UIXibView {
   
   @IBInspectable var enteredAmounColor: UIColor = kEnteredAmountStateColor {
     didSet {
-      if state == .EnteredAmount { state = .EnteredAmount }
+      if state == .Set { state = .Set }
     }
   }
   
@@ -115,15 +139,15 @@ class AmountEntranceButton: UIXibView {
   }
   
   override func setup() {
+    amountEntranceField.delegate = self
     if let amount = fee {
-      state = .EnteredAmount
+      state = .Set
     } else {
       state = .Unset
     }
   }
   
   @IBAction func onChangeAmount() {
-    println("tapped enter amount button")
     state = .Editing
     delegate?.startedEditingAmount(self)
     amountEntranceField.becomeFirstResponder()
@@ -140,15 +164,44 @@ class AmountEntranceButton: UIXibView {
   }
   
   func doneEditing() {
-    delegate?.finishedEditingAmount(0)
-    state = .EnteredAmount
+    finishedEnteringAmount()
+  }
+  
+  private func finishedEnteringAmount() {
     amountEntranceField.resignFirstResponder()
+    let amountText = amountEntranceField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+    let newFee = (amountText as NSString).doubleValue
+    if newFee == 0 && previousState == .Set {
+      if let delegate = delegate {
+        delegate.validateAmountToBeCleared({
+          println("confirmed clearing fee")
+          self.fee = nil
+          self.delegate?.finishedEditingAmount(nil)
+        }, no: {
+          self.amountEntranceField.text = "\(self.fee!)"
+          self.amountEntranceField.becomeFirstResponder()
+        })
+      } else {
+        fee = nil
+        delegate?.finishedEditingAmount(nil)
+      }
+    } else if newFee != 0 {
+      fee = newFee
+      state = .Set
+      delegate?.finishedEditingAmount(fee)
+    } else {
+      state = .Unset
+      delegate?.canceledEditing()
+    }
   }
   
 }
 
-protocol AmountEntranceButtonDelegate {
-  func finishedEditingAmount(newAmount: Int)
-  func canceledEditing()
-  func startedEditingAmount(sender: AmountEntranceButton)
+extension AmountEntranceButton: UITextFieldDelegate {
+  
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    finishedEnteringAmount()
+    return true
+  }
+  
 }

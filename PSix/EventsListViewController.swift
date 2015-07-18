@@ -150,6 +150,13 @@ extension EventsListViewController: EventCellDelegate {
     navigationItem.rightBarButtonItem = nil
   }
   
+  func alertUserForYesNoQuestion(question: String, yes: ResponseBlock, no: ResponseBlock) {
+    let questionAlert = UIAlertController(title: nil, message: question, preferredStyle: .Alert)
+    questionAlert.addAction(UIAlertAction(title: "No", style: .Default) { _ in no() })
+    questionAlert.addAction(UIAlertAction(title: "Yes", style: .Destructive) { _ in yes() })
+    presentViewController(questionAlert, animated: true, completion: nil)
+  }
+  
   private func createEditModeCancelButton(target: EventCell) -> UIBarButtonItem {
     return UIBarButtonItem(title: "Cancel", style: .Plain, target: target, action: "cancelEditing")
   }
