@@ -130,7 +130,32 @@ extension EventsListViewController: UITableViewDataSource {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = eventsListTable.dequeueReusableCellWithIdentifier(EventsListViewController.EVENT_CELL_ID, forIndexPath: indexPath) as! EventCell
     cell.event = userCreatedEvents[indexPath.row]
+    cell.delegate = self
     return cell
+  }
+  
+}
+
+// MARK: AmountEntranceButtonDelegate
+
+extension EventsListViewController: EventCellDelegate {
+  
+  func enterEditMode(sender: EventCell) {
+    navigationItem.leftBarButtonItem = createEditModeCancelButton(sender)
+    navigationItem.rightBarButtonItem = createEditModeDoneButton(sender)
+  }
+  
+  func leaveEditMode() {
+    navigationItem.leftBarButtonItem = nil
+    navigationItem.rightBarButtonItem = nil
+  }
+  
+  private func createEditModeCancelButton(target: EventCell) -> UIBarButtonItem {
+    return UIBarButtonItem(title: "Cancel", style: .Plain, target: target, action: "cancelEditing")
+  }
+  
+  private func createEditModeDoneButton(target: EventCell) -> UIBarButtonItem {
+    return UIBarButtonItem(title: "Done", style: .Plain, target: target, action: "doneEditing")
   }
   
 }

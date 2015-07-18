@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol EventCellDelegate {
+  func enterEditMode(sender: EventCell)
+  func leaveEditMode()
+}
+
 class EventCell: UITableViewCell {
   
   @IBOutlet weak var eventNameLabel: UILabel!
@@ -15,6 +20,13 @@ class EventCell: UITableViewCell {
   @IBOutlet weak var eventDateDayAndTime: UILabel!
   @IBOutlet weak var eventThumbImage: ShadedImageView!
   @IBOutlet weak var eventMonthDayView: MonthDay!
+  @IBOutlet weak var feeSetupButton: AmountEntranceButton!
+  
+  var delegate: EventCellDelegate? {
+    didSet {
+      feeSetupButton.delegate = self
+    }
+  }
   
   var event: Event? {
     didSet {
@@ -31,6 +43,30 @@ class EventCell: UITableViewCell {
         }
       }
     }
+  }
+  
+  func cancelEditing() {
+    feeSetupButton.cancelEditing()
+  }
+  
+  func doneEditing() {
+    feeSetupButton.doneEditing()
+  }
+  
+}
+
+extension EventCell: AmountEntranceButtonDelegate {
+  
+  func finishedEditingAmount(newAmount: Int) {
+    delegate?.leaveEditMode()
+  }
+  
+  func canceledEditing() {
+    delegate?.leaveEditMode()
+  }
+  
+  func startedEditingAmount(sender: AmountEntranceButton) {
+    delegate?.enterEditMode(self)
   }
   
 }

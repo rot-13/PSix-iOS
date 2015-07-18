@@ -151,6 +151,7 @@
                                             <outlet property="eventMonthDayView" destination="9B2-Dh-9Xf" id="e5B-bP-NXL"/>
                                             <outlet property="eventNameLabel" destination="FDu-9m-BEq" id="q7J-ck-EGC"/>
                                             <outlet property="eventThumbImage" destination="8NA-cy-DWy" id="hsU-aQ-w9E"/>
+                                            <outlet property="feeSetupButton" destination="wfM-Es-IPs" id="nYl-LH-mIq"/>
                                             <outlet property="locationLabel" destination="oj5-01-wyZ" id="Cc8-Xs-zGb"/>
                                         </connections>
                                     </tableViewCell>

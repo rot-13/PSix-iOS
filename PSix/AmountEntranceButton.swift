@@ -8,8 +8,6 @@
 
 import Foundation
 
-typealias OnFinishedEnteringAmountBlock = (Int) -> ()
-
 private let kUnsetStateColor = UIColor(red: 1, green: 0.537, blue: 0.2, alpha: 1)
 private let kEditingStateColor = UIColor(red: 0.019, green: 0.56, blue: 1, alpha: 1)
 private let kEnteredAmountStateColor = UIColor(red:0, green:0.741, blue:0.326, alpha:1)
@@ -26,8 +24,13 @@ private enum DisplayedElement: Int {
 @IBDesignable
 class AmountEntranceButton: UIXibView {
   
-  private var state: PaymentState = .Unset {
-    didSet {
+  private var actualState: PaymentState = .Unset
+  
+  private var state: PaymentState {
+    set {
+      previousState = actualState
+      actualState = newValue
+      
       switch(state) {
       case .Unset:
         color = unsetStateColor
@@ -36,11 +39,22 @@ class AmountEntranceButton: UIXibView {
         color = editingAmountColor
         displayedElement = .TextField
       case .EnteredAmount:
+        setButtonLabelToEneteredFee()
         color = enteredAmounColor
         displayedElement = .Button
       }
     }
+    
+    get {
+      return actualState
+    }
   }
+  
+  private func setButtonLabelToEneteredFee() {
+    setupFeeButton.setTitle("$\(amountEntranceField.text)", forState: .Normal)
+  }
+  
+  private var previousState: PaymentState?
   
   private var displayedElement: DisplayedElement = .Button {
     didSet {
@@ -55,17 +69,15 @@ class AmountEntranceButton: UIXibView {
     }
   }
   
-  private var color: UIColor {
-    set {
-      containerView.layer.borderColor = newValue.CGColor
-      setupFeeButton.setTitleColor(newValue, forState: .Normal)
-    }
-    get {
-      return setupFeeButton.titleColorForState(.Normal)!
+  private var color: UIColor = kUnsetStateColor {
+    didSet {
+      containerView.layer.borderColor = color.CGColor
+      setupFeeButton.setTitleColor(color, forState: .Normal)
+      amountEntranceField.tintColor = color
     }
   }
   
-  var onFinishedEditingAmountBlock: OnFinishedEnteringAmountBlock?
+  var delegate: AmountEntranceButtonDelegate?
   
   @IBOutlet var containerView: UIView!
   @IBOutlet weak var setupFeeButton: UIButton!
@@ -106,4 +118,33 @@ class AmountEntranceButton: UIXibView {
     }
   }
   
+  @IBAction func onChangeAmount() {
+    println("tapped enter amount button")
+    state = .Editing
+    delegate?.startedEditingAmount(self)
+    amountEntranceField.becomeFirstResponder()
+  }
+  
+  func cancelEditing() {
+    delegate?.canceledEditing()
+    if let previousState = previousState {
+      state = previousState
+    } else {
+      state = .Unset
+    }
+    amountEntranceField.resignFirstResponder()
+  }
+  
+  func doneEditing() {
+    delegate?.finishedEditingAmount(0)
+    state = .EnteredAmount
+    amountEntranceField.resignFirstResponder()
+  }
+  
+}
+
+protocol AmountEntranceButtonDelegate {
+  func finishedEditingAmount(newAmount: Int)
+  func canceledEditing()
+  func startedEditingAmount(sender: AmountEntranceButton)
 }

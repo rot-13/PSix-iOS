@@ -22,11 +22,14 @@
                         <color key="titleColor" red="1" green="0.49007558822631836" blue="0.13803943991661072" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="onChangeAmount" destination="-1" eventType="touchUpInside" id="xQ0-Dq-P1K"/>
+                    </connections>
                 </button>
-                <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V4x-9w-lUM" userLabel="Amount Field">
+                <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V4x-9w-lUM" userLabel="Amount Field">
                     <rect key="frame" x="20" y="0.0" width="560" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done"/>
                 </textField>
             </subviews>
             <color key="tintColor" red="1" green="0.49007558822631836" blue="0.13803943991661072" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
