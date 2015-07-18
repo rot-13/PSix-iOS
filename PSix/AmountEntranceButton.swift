@@ -62,10 +62,19 @@ class AmountEntranceButton: UIXibView {
       if state == .Editing { state = .Editing }
     }
   }
+  
   @IBInspectable var enteredAmounColor: UIColor = kEnteredAmountStateColor {
     didSet {
       if state == .EnteredAmount { state = .EnteredAmount }
     }
+  }
+  
+  @IBInspectable var cornerRadius: CGFloat = 5 {
+    didSet { containerView.layer.cornerRadius = cornerRadius }
+  }
+  
+  @IBInspectable var borderWidth: CGFloat = 1 {
+    didSet { containerView.layer.borderWidth = borderWidth }
   }
   
   override func setup() {
