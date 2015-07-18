@@ -11,7 +11,7 @@ import Foundation
 private let kUnsetColor = UIColor(red: 1, green: 0.537, blue: 0.2, alpha: 1)
 
 @IBDesignable
-class PaymentSetupButton: UIXibView {
+class AmountEntranceButton: UIXibView {
   
   @IBOutlet var containerView: UIView!
   @IBOutlet weak var setupFeeButton: UIButton!

@@ -31,8 +31,8 @@
 		D069577B1ADFCFC4009DB549 /* FacebookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069577A1ADFCFC4009DB549 /* FacebookService.swift */; };
 		D06E9CD01B28870900FF91C3 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E9CCF1B28870900FF91C3 /* CGRect.swift */; };
 		D08A16F81AED939900EC58AE /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08A16F71AED939900EC58AE /* Payment.swift */; };
-		D09341FA1B56BD2A00D96EFA /* PaymentSetupButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D09341F91B56BD2A00D96EFA /* PaymentSetupButton.xib */; };
-		D09341FC1B56BE9B00D96EFA /* PaymentSetupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09341FB1B56BE9B00D96EFA /* PaymentSetupButton.swift */; };
+		D09341FA1B56BD2A00D96EFA /* AmountEntranceButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D09341F91B56BD2A00D96EFA /* AmountEntranceButton.xib */; };
+		D09341FC1B56BE9B00D96EFA /* AmountEntranceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09341FB1B56BE9B00D96EFA /* AmountEntranceButton.swift */; };
 		D09341FE1B56FB0800D96EFA /* NSDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09341FD1B56FB0800D96EFA /* NSDatePresenter.swift */; };
 		D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0958F831ADA9D0900FC4AA4 /* AppDelegate.swift */; };
 		D0958F8E1ADA9D0900FC4AA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0958F8D1ADA9D0900FC4AA4 /* Images.xcassets */; };
@@ -89,8 +89,8 @@
 		D069577A1ADFCFC4009DB549 /* FacebookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookService.swift; sourceTree = "<group>"; };
 		D06E9CCF1B28870900FF91C3 /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		D08A16F71AED939900EC58AE /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
-		D09341F91B56BD2A00D96EFA /* PaymentSetupButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentSetupButton.xib; sourceTree = "<group>"; };
-		D09341FB1B56BE9B00D96EFA /* PaymentSetupButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentSetupButton.swift; sourceTree = "<group>"; };
+		D09341F91B56BD2A00D96EFA /* AmountEntranceButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmountEntranceButton.xib; sourceTree = "<group>"; };
+		D09341FB1B56BE9B00D96EFA /* AmountEntranceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountEntranceButton.swift; sourceTree = "<group>"; };
 		D09341FD1B56FB0800D96EFA /* NSDatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDatePresenter.swift; sourceTree = "<group>"; };
 		D0958F7E1ADA9D0900FC4AA4 /* PSix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0958F821ADA9D0900FC4AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -194,8 +194,8 @@
 		D02329771B56AB7600115E36 /* PaymentSetupButton */ = {
 			isa = PBXGroup;
 			children = (
-				D09341F91B56BD2A00D96EFA /* PaymentSetupButton.xib */,
-				D09341FB1B56BE9B00D96EFA /* PaymentSetupButton.swift */,
+				D09341F91B56BD2A00D96EFA /* AmountEntranceButton.xib */,
+				D09341FB1B56BE9B00D96EFA /* AmountEntranceButton.swift */,
 			);
 			name = PaymentSetupButton;
 			sourceTree = "<group>";
@@ -457,7 +457,7 @@
 				D0E31D531AF66A01007865D2 /* ShadedImageView.xib in Resources */,
 				D00632431ADE547400022DDF /* Onboarding.storyboard in Resources */,
 				D01BD2AE1AFB5A520010B39A /* EventDetailsCoverView.xib in Resources */,
-				D09341FA1B56BD2A00D96EFA /* PaymentSetupButton.xib in Resources */,
+				D09341FA1B56BD2A00D96EFA /* AmountEntranceButton.xib in Resources */,
 				D00632451ADE54DA00022DDF /* EventsFlow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,7 +528,7 @@
 				D069577B1ADFCFC4009DB549 /* FacebookService.swift in Sources */,
 				D01BD2B01AFB5E5B0010B39A /* EventDetailsCoverView.swift in Sources */,
 				D0455D411AF8CC28002148D8 /* P6RootViewController.swift in Sources */,
-				D09341FC1B56BE9B00D96EFA /* PaymentSetupButton.swift in Sources */,
+				D09341FC1B56BE9B00D96EFA /* AmountEntranceButton.swift in Sources */,
 				D0178CAE1AEE78DB00FD2DD1 /* EventPresenter.swift in Sources */,
 				D0958F841ADA9D0900FC4AA4 /* AppDelegate.swift in Sources */,
 				D00D2EF41AF26B950066CE51 /* RSVP.swift in Sources */,
