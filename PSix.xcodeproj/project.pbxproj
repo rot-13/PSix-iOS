@@ -181,8 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				D02329771B56AB7600115E36 /* PaymentSetupButton */,
-				D01BD2AB1AFB59D30010B39A /* EventsListCells */,
-				D01BD2B21AFB857D0010B39A /* EventDetailsCells */,
+				D0684DB61B5B793A00DFD1D7 /* TableViewCells */,
 				D01BD2AC1AFB59E40010B39A /* EventDetailsCoverView */,
 				D0E31D511AF664DA007865D2 /* ShadedImageView */,
 				D0E31D4E1AF65BED007865D2 /* MonthDayView */,
@@ -210,6 +209,15 @@
 				D06E9CCF1B28870900FF91C3 /* CGRect.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		D0684DB61B5B793A00DFD1D7 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				D01BD2AB1AFB59D30010B39A /* EventsListCells */,
+				D01BD2B21AFB857D0010B39A /* EventDetailsCells */,
+			);
+			name = TableViewCells;
 			sourceTree = "<group>";
 		};
 		D06957791ADFCF51009DB549 /* Services */ = {
