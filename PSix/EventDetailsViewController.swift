@@ -22,38 +22,12 @@ class EventDetailsViewController: UIViewController {
   
   private let emptyStateBackgroundColor = UIColor(red: 240, green: 240, blue: 240, alpha: 1)
   
-  private var previousHideBarsOnSwipe: Bool?
-  private var previousHidesBarsWhenVerticallyCompact: Bool?
-  
   var event: Event? {
     didSet {
       if self.isViewLoaded() {
         updateUI()
       }
     }
-  }
-  
-  private func setNavHideOptions() {
-    previousHideBarsOnSwipe = self.navigationController?.hidesBarsOnSwipe
-    previousHidesBarsWhenVerticallyCompact = self.navigationController?.hidesBarsWhenVerticallyCompact
-    
-    self.navigationController?.hidesBarsOnSwipe = true
-    self.navigationController?.hidesBarsWhenVerticallyCompact = true
-  }
-  
-  private func unsetNavHideOptions() {
-    self.navigationController?.hidesBarsOnSwipe = previousHideBarsOnSwipe ?? false
-    self.navigationController?.hidesBarsWhenVerticallyCompact = previousHidesBarsWhenVerticallyCompact ?? false
-  }
-  
-  override func viewDidAppear(animated: Bool) {
-    super.viewDidAppear(animated)
-    setNavHideOptions()
-  }
-  
-  override func viewWillDisappear(animated: Bool) {
-    super.viewWillDisappear(animated)
-    unsetNavHideOptions()
   }
   
   override func viewDidLoad() {
