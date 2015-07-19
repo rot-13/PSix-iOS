@@ -33,7 +33,7 @@
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="value" red="0.99993699790000001" green="1" blue="0.99987250569999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="frameColor">
                             <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,9 +48,12 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhG-er-YwZ">
-                    <rect key="frame" x="66" y="242" width="526" height="50"/>
+                    <rect key="frame" x="66" y="254" width="526" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="kiC-Ue-PnL"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" red="0.99993699790000001" green="1" blue="0.99987250569999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -64,11 +67,10 @@
                 <constraint firstAttribute="bottom" secondItem="ByY-9I-EqT" secondAttribute="bottom" id="Xre-li-6Th"/>
                 <constraint firstItem="mhG-er-YwZ" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="cGC-zv-QJX"/>
                 <constraint firstItem="ByY-9I-EqT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cgP-uU-eNB"/>
-                <constraint firstItem="mhG-er-YwZ" firstAttribute="top" secondItem="Q40-Uh-ZV9" secondAttribute="top" id="dAj-nH-Anl"/>
                 <constraint firstItem="Q40-Uh-ZV9" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottomMargin" id="rbS-kL-F0b"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="798" y="405"/>
+            <point key="canvasLocation" x="798" y="409"/>
         </view>
     </objects>
     <resources>
