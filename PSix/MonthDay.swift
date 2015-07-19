@@ -13,9 +13,43 @@ class MonthDay: UIXibView {
   
   @IBOutlet private weak var monthLabel: UILabel!
   @IBOutlet private weak var dayLabel: UILabel!
-  @IBOutlet private weak var view: UIView!
+  @IBOutlet private weak var containerView: UIView!
   
   private var datePresenter = NSDatePresenter(NSDate())
+  
+  @IBInspectable var showFrame: Bool = false {
+    didSet {
+      if showFrame {
+        renderBorder()
+      } else {
+        containerView.layer.borderWidth = 0
+      }
+    }
+  }
+  
+  @IBInspectable var frameColor: UIColor = UIColor.whiteColor() {
+    didSet {
+      if showFrame {
+        containerView.layer.borderColor = frameColor.CGColor
+      }
+    }
+  }
+  
+  @IBInspectable var frameWidth: CGFloat = 1 {
+    didSet {
+      if showFrame {
+        containerView.layer.borderWidth = frameWidth
+      }
+    }
+  }
+  
+  @IBInspectable var cornerRadius: CGFloat = 8 {
+    didSet {
+      if showFrame {
+        containerView.layer.cornerRadius = cornerRadius
+      }
+    }
+  }
   
   @IBInspectable var date: NSDate? = NSDate() {
     didSet {
@@ -56,6 +90,12 @@ class MonthDay: UIXibView {
   private func updateUI() {
     monthLabel.text = datePresenter.monthShortName.uppercaseString
     dayLabel.text = datePresenter.dayDoubleDigit
+  }
+  
+  private func renderBorder() {
+    containerView.layer.borderWidth = frameWidth
+    containerView.layer.borderColor = frameColor.CGColor
+    containerView.layer.cornerRadius = cornerRadius
   }
   
 }
