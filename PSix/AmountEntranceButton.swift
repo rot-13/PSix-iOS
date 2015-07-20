@@ -22,12 +22,16 @@ private let kEditingStateColor = UIColor(red: 0.019, green: 0.56, blue: 1, alpha
 private let kEnteredAmountStateColor = UIColor(red:0, green:0.741, blue:0.326, alpha:1)
 private let kUnsetStateButtonLabel = "Enter Amount"
 
-private enum PaymentState: Int {
-  case Unset, Editing, Set
+private enum PaymentState {
+  case Unset
+  case Editing
+  case Set
 }
 
-private enum DisplayedElement: Int {
-  case Button, TextField, None
+private enum DisplayedElement {
+  case Button
+  case TextField
+  case None
 }
 
 @IBDesignable
