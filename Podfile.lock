@@ -1,4 +1,7 @@
 PODS:
+  - AsyncDisplayKit (1.2.2):
+    - AsyncDisplayKit/ASDealloc2MainObject (= 1.2.2)
+  - AsyncDisplayKit/ASDealloc2MainObject (1.2.2)
   - Bolts (1.1.5):
     - Bolts/AppLinks (= 1.1.5)
     - Bolts/Tasks (= 1.1.5)
@@ -26,16 +29,21 @@ PODS:
   - ParseFacebookUtilsV4 (1.7.1):
     - Facebook-iOS-SDK/LoginKit (~> 4.0)
     - Parse (~> 1.7.1)
+  - pop (1.0.7)
 
 DEPENDENCIES:
+  - AsyncDisplayKit
   - Facebook-iOS-SDK (= 4.0.1)
   - Parse (= 1.7.1)
   - ParseFacebookUtilsV4 (= 1.7.1)
+  - pop
 
 SPEC CHECKSUMS:
+  AsyncDisplayKit: 6b943f45844558fde1d82468820dbefcc77c7271
   Bolts: aac24961496d504aa56fc267cde95162a71bac39
   Facebook-iOS-SDK: 6d05532c97e9c542f8d87f94b7f6ee217493d00b
   Parse: fa8ec29de6d82035635986c11946299fb1b38316
   ParseFacebookUtilsV4: fc44a339e38513fb6fc0bafbef34f69df6559e06
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
 
-COCOAPODS: 0.36.1
+COCOAPODS: 0.36.0
