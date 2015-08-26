@@ -8,12 +8,6 @@
 
 import UIKit
 
-protocol EventCellDelegate {
-  func enterEditMode(sender: EventCell)
-  func leaveEditMode()
-  func alertUserForYesNoQuestion(question: String, yes: ResponseBlock, no: ResponseBlock)
-}
-
 class EventCell: UITableViewCell {
   
   @IBOutlet weak var eventNameLabel: UILabel!
@@ -21,13 +15,6 @@ class EventCell: UITableViewCell {
   @IBOutlet weak var eventDateDayAndTime: UILabel!
   @IBOutlet weak var eventThumbImage: ShadedImageView!
   @IBOutlet weak var eventMonthDayView: MonthDay!
-  @IBOutlet weak var feeSetupButton: AmountEntranceButton!
-  
-  var delegate: EventCellDelegate? {
-    didSet {
-      feeSetupButton.delegate = self
-    }
-  }
   
   var event: Event? {
     didSet {
@@ -43,38 +30,6 @@ class EventCell: UITableViewCell {
           self.eventThumbImage.image = image
         }
       }
-    }
-  }
-  
-  func cancelEditing() {
-    feeSetupButton.cancelEditing()
-  }
-  
-  func doneEditing() {
-    feeSetupButton.doneEditing()
-  }
-  
-}
-
-extension EventCell: AmountEntranceButtonDelegate {
-  
-  func startedEditingAmount(sender: AmountEntranceButton) {
-    delegate?.enterEditMode(self)
-  }
-  
-  func finishedEditingAmount(newAmount: Double?) {
-    delegate?.leaveEditMode()
-  }
-  
-  func canceledEditing() {
-    delegate?.leaveEditMode()
-  }
-  
-  func validateAmountToBeCleared(yes: ResponseBlock, no: ResponseBlock) {
-    if let delegate = delegate {
-      delegate.alertUserForYesNoQuestion("Are you sure you want to clear the attendance fee?", yes: yes, no: no)
-    } else {
-      yes()
     }
   }
   

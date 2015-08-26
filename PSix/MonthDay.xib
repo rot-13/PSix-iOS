@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MonthDay" customModule="PSix" customModuleProvider="target">
             <connections>
+                <outlet property="background" destination="cXF-O0-9tj" id="gCs-SC-bpN"/>
                 <outlet property="containerView" destination="iN0-l3-epB" id="3gz-VM-I5s"/>
                 <outlet property="dayLabel" destination="odY-eq-JgK" id="VOH-Wx-HIj"/>
                 <outlet property="monthLabel" destination="wv3-2h-Eam" id="Enk-h7-K0e"/>
@@ -16,6 +17,10 @@
             <rect key="frame" x="0.0" y="1" width="51" height="56"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXF-O0-9tj" userLabel="Background">
+                    <rect key="frame" x="0.0" y="0.0" width="51" height="56"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="MMM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wv3-2h-Eam">
                     <rect key="frame" x="8" y="8" width="35" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -33,11 +38,15 @@
             <constraints>
                 <constraint firstItem="odY-eq-JgK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="1l4-Mw-DGi"/>
                 <constraint firstItem="wv3-2h-Eam" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="1qV-jT-Rg7"/>
+                <constraint firstAttribute="bottom" secondItem="cXF-O0-9tj" secondAttribute="bottom" id="6yT-XG-F17"/>
                 <constraint firstItem="odY-eq-JgK" firstAttribute="top" secondItem="wv3-2h-Eam" secondAttribute="bottom" constant="-4" id="8zw-MF-IIx"/>
                 <constraint firstItem="wv3-2h-Eam" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="FXz-ug-I7M"/>
+                <constraint firstItem="cXF-O0-9tj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="FYR-Jo-TBi"/>
                 <constraint firstAttribute="trailing" secondItem="odY-eq-JgK" secondAttribute="trailing" constant="8" id="Jdc-Eh-Z8I"/>
                 <constraint firstAttribute="trailing" secondItem="wv3-2h-Eam" secondAttribute="trailing" constant="8" id="L4w-Im-NG7"/>
+                <constraint firstItem="cXF-O0-9tj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eFL-sn-g8b"/>
                 <constraint firstAttribute="bottom" secondItem="odY-eq-JgK" secondAttribute="bottom" constant="8" id="hiW-dK-OZp"/>
+                <constraint firstItem="cXF-O0-9tj" firstAttribute="centerX" secondItem="wv3-2h-Eam" secondAttribute="centerX" id="tol-2c-P4v"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

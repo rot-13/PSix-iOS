@@ -8,6 +8,7 @@ pod 'Parse', '1.7.1'
 pod 'ParseFacebookUtilsV4', '1.7.1'
 pod 'AsyncDisplayKit'
 pod 'pop'
+pod 'SDWebImage'
 
 end
 

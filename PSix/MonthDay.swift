@@ -14,6 +14,7 @@ class MonthDay: UIXibView {
   @IBOutlet private weak var monthLabel: UILabel!
   @IBOutlet private weak var dayLabel: UILabel!
   @IBOutlet private weak var containerView: UIView!
+  @IBOutlet weak var background: UIView!
   
   private var datePresenter = NSDatePresenter(NSDate())
   
@@ -85,6 +86,12 @@ class MonthDay: UIXibView {
     updateUI()
     monthLabel.textColor = textColor
     dayLabel.textColor = textColor
+    
+    containerView.backgroundColor = UIColor.clearColor()
+    let blurView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Light))
+    blurView.frame = background.frame
+    background.addSubview(blurView)
+    containerView.layer.masksToBounds = true
   }
   
   private func updateUI() {
